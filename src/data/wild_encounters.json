@@ -85,7 +85,7 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_WO_CHIEN"
+                "species": "SPECIES_SQUIRTLE"
               },
               {
                 "min_level": 2,
@@ -95,12 +95,12 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_WO_CHIEN"
+                "species": "SPECIES_WOOPER"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_WUGTRIO"
+                "species": "SPECIES_WEEDLE"
               },
               {
                 "min_level": 3,
