@@ -314,14 +314,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .speciesName = _("Torchic"),
         .cryId = CRY_TORCHIC,
         .natDexNum = NATIONAL_DEX_TORCHIC,
-        .categoryName = _("Lizard"),
+        .categoryName = _("Crybaby"),
         .height = 4,
         .weight = 25,
         .description = COMPOUND_STRING(
-            "A difficult pokemon to train.\n"
-            "When it cries, get ready to pay hefty repair costs\n"
-            "as it's tears are so hot they can melt metal and their surroundings.\n"
-            "Their tears are very similar to lava."),
+            "A difficult pokemon to train. When it cries,\n"
+            "get ready to pay hefty repair costs\n"
+            "as it's tears can melt their surroundings,\n"
+            "similar to lava."),
         .pokemonScale = 566,
         .pokemonOffset = 19,
         .trainerScale = 256,
