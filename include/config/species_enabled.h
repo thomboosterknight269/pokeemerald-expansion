@@ -20,7 +20,7 @@
 #define P_GEN_9_POKEMON                  FALSE // Generation 9 Pokémon (SV)
 
 // Setting this to TRUE will add the new evolutions to the Regional Dex.
-#define P_NEW_EVOS_IN_REGIONAL_DEX       FALSE
+#define P_NEW_EVOS_IN_REGIONAL_DEX       TRUE
 
 // Battle gimmick specific Forms.
 #define P_MEGA_EVOLUTIONS                FALSE
@@ -47,7 +47,7 @@
 #define P_CAP_PIKACHU_FORMS              P_PIKACHU_EXTRA_FORMS
 
 // Cross-generation evolutions. Includes pre-evolutions.
-#define P_CROSS_GENERATION_EVOS          FALSE
+#define P_CROSS_GENERATION_EVOS          TRUE
 #define P_GEN_2_CROSS_EVOS               P_CROSS_GENERATION_EVOS
 #define P_GEN_3_CROSS_EVOS               P_CROSS_GENERATION_EVOS
 #define P_GEN_4_CROSS_EVOS               P_CROSS_GENERATION_EVOS
@@ -236,7 +236,7 @@
 #define P_FAMILY_LILEEP                  P_GEN_3_POKEMON
 #define P_FAMILY_ANORITH                 P_GEN_3_POKEMON
 #define P_FAMILY_FEEBAS                  P_GEN_3_POKEMON
-#define P_FAMILY_CASTFORM                P_GEN_3_POKEMON
+#define P_FAMILY_CASTFORM                FALSE
 #define P_FAMILY_KECLEON                 P_GEN_3_POKEMON
 #define P_FAMILY_SHUPPET                 P_GEN_3_POKEMON
 #define P_FAMILY_DUSKULL                 P_GEN_3_POKEMON
