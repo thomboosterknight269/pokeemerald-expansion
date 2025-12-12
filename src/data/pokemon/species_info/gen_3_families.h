@@ -396,17 +396,17 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_SPEED_BOOST },
         .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Emolteen"),
+        .speciesName = _("Embedge"),
         .cryId = CRY_COMBUSKEN,
         .natDexNum = NATIONAL_DEX_COMBUSKEN,
         .categoryName = _("Devil"),
         .height = 9,
         .weight = 195,
         .description = COMPOUND_STRING(
-            "It lashes out with 10 kicks per second.\n"
-            "Its strong fighting instinct compels it\n"
-            "to keep up its offensive until the\n"
-            "opponent gives up."),
+            "Pfft...nothing personnel kid...\n"
+            "It has the power to teleport behind you\n"
+            "and strike you with its white hot blade,\n"
+            "leaving behind nothing but ashes...."),
         .pokemonScale = 343,
         .pokemonOffset = 5,
         .trainerScale = 256,
@@ -483,17 +483,17 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_SPEED_BOOST },
         .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Asshassin"),
+        .speciesName = _("Ashassin"),
         .cryId = CRY_BLAZIKEN,
         .natDexNum = NATIONAL_DEX_BLAZIKEN,
         .categoryName = _("Devil"),
         .height = 19,
         .weight = 520,
         .description = COMPOUND_STRING(
-            "It learns martial arts that use punches\n"
-            "and kicks. Every several years, its old\n"
-            "feathers burn off, and new, supple\n"
-            "feathers grow back in their place."),
+            "Known as the Devil of the Desert,\n"
+            "it's said that if you wander alone\n"
+            "in the desert at night and cross it's path,\n"
+            "you'll never be seen again."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 301,
@@ -508,7 +508,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             ANIMCMD_FRAME(1, 7),
             ANIMCMD_FRAME(0, 7),
         ),
-        .frontAnimId = ANIM_H_SHAKE,
+        .frontAnimId = ANIM_VIBRATE_TO_CORNERS,
         .backPic = gMonBackPic_Blaziken,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -524,7 +524,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
 #endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(4, 8, SHADOW_SIZE_M)
+        SHADOW(-2, 15, SHADOW_SIZE_M)
         FOOTPRINT(Blaziken)
         OVERWORLD(
             sPicTable_Blaziken,
@@ -815,7 +815,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             ANIMCMD_FRAME(1, 18),
             ANIMCMD_FRAME(0, 7),
         ),
-        .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_V_JUMPS_BIG : ANIM_H_SHAKE,
+        .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_V_JUMPS_BIG : ANIM_LUNGE_GROW,
         .backPic = gMonBackPic_Swampert,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 5 : 6,
