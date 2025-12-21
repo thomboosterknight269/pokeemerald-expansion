@@ -249,6 +249,10 @@ LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
 	end
 
+LittlerootTown_EventScript_Man::
+	msgbox LittlerootTown_Text_Pray, MSGBOX_NPC
+	end	
+
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
@@ -964,6 +968,10 @@ LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "When does PROF. BIRCH spend time\n"
 	.string "at home?$"
 
+LittlerootTown_Text_Pray:
+	.string "Leave me alone!\p"
+	.string "I'm busy!$"
+	
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "mmmmmm.....no\p"
 	.string "Im not letting you in lil bro$"
