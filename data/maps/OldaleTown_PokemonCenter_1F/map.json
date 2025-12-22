@@ -9,7 +9,7 @@
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
@@ -84,25 +84,18 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 1,
-      "y": 6,
-      "elevation": 4,
-      "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_2F",
-      "dest_warp_id": "0"
+      "x": 13,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_OLDALE_TOWN_MART",
+      "dest_warp_id": "2"
     },
     {
       "x": 13,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_MART",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 13,
-      "y": 4,
-      "elevation": 0,
-      "dest_map": "MAP_OLDALE_TOWN_MART",
-      "dest_warp_id": "1"
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],

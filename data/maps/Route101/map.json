@@ -128,8 +128,8 @@
     },
     {
       "type": "trigger",
-      "x": 10,
-      "y": 24,
+      "x": 9,
+      "y": 25,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "2",
@@ -137,8 +137,8 @@
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 24,
+      "x": 8,
+      "y": 25,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "2",
