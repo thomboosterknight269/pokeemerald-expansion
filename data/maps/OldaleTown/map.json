@@ -102,15 +102,15 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
+      "x": 1,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
-      "y": 6,
+      "x": 5,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_MART",
       "dest_warp_id": "0"
@@ -165,7 +165,7 @@
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 2,
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -173,15 +173,15 @@
     },
     {
       "type": "sign",
-      "x": 15,
-      "y": 6,
+      "x": 6,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
     },
     {
       "type": "sign",
-      "x": 8,
+      "x": 3,
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -189,8 +189,8 @@
     },
     {
       "type": "sign",
-      "x": 16,
-      "y": 6,
+      "x": 7,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
