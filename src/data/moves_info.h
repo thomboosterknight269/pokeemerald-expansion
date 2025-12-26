@@ -418,11 +418,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Guillotine"),
         .description = COMPOUND_STRING(
             "A powerful pincer attack\n"
-            "that KOs if it hits."),
-        .effect = EFFECT_OHKO,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 30,
+            "with a high critical hit ratio."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_STEEL,
+        .accuracy = 80,
+        .criticalHitStage = 1,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
