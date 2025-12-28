@@ -51,14 +51,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .frontAnimId = ANIM_SHRINK_GROW_VIBRATE,
         .backPic = gMonBackPic_Treecko,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(56, 48),
-        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 8,
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 13,
         .backAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES,
         .palette = gMonPalette_Treecko,
         .shinyPalette = gMonShinyPalette_Treecko,
         .iconSprite = gMonIcon_Treecko,
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
-        SHADOW(-3, 4, SHADOW_SIZE_S)
+        SHADOW(-3, 0, SHADOW_SIZE_S)
         FOOTPRINT(Treecko)
         OVERWORLD(
             sPicTable_Treecko,
