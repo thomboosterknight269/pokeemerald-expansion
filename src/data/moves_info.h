@@ -2466,12 +2466,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Fissure"),
         .description = COMPOUND_STRING(
-            "A one-hit KO move that\n"
+            "A powerful move that\n"
             "drops the foe in a fissure."),
-        .effect = EFFECT_OHKO,
-        .power = 1,
+        .effect = EFFECT_HIT,
+        .power = 110,
         .type = TYPE_GROUND,
-        .accuracy = 30,
+        .accuracy = 70,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -17800,13 +17800,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Lowers the foe's Speed and\n"
             "makes it weak to Fire."),
         .effect = EFFECT_TAR_SHOT,
-        .power = 0,
+        .power = 60,
         .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
         .magicCoatAffected = TRUE,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
