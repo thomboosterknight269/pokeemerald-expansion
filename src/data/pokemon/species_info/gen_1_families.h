@@ -110,16 +110,16 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Ivysaur,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 48) : MON_COORDS_SIZE(56, 48),
-        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 9,
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 5,
         .frontAnimFrames = ANIM_FRAMES(
             ANIMCMD_FRAME(0, 1),
             ANIMCMD_FRAME(1, 36),
             ANIMCMD_FRAME(0, 10),
         ),
-        .frontAnimId = ANIM_V_STRETCH,
+        .frontAnimId = ANIM_SHAKE_GLOW_GREEN_SLOW,
         .backPic = gMonBackPic_Ivysaur,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 9,
+        .backPicYOffset = 16,
         .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Ivysaur,
         .shinyPalette = gMonShinyPalette_Ivysaur,
@@ -191,11 +191,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             ANIMCMD_FRAME(1, 25),
             ANIMCMD_FRAME(0, 10),
         ),
-        .frontAnimId = ANIM_ROTATE_UP_SLAM_DOWN,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_GREEN,
         .backPic = gMonBackPic_Venusaur,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 48),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 7 : 10,
-        .backAnimId = BACK_ANIM_H_SHAKE,
         .palette = gMonPalette_Venusaur,
         .shinyPalette = gMonShinyPalette_Venusaur,
         .iconSprite = gMonIcon_Venusaur,
@@ -230,136 +229,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sVenusaurFormSpeciesIdTable,
         .formChangeTable = sVenusaurFormChangeTable,
     },
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_VENUSAUR_MEGA] =
-    {
-        .baseHP        = 80,
-        .baseAttack    = 100,
-        .baseDefense   = 123,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 122,
-        .baseSpDefense = 120,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 313 : 281,
-        .evYield_SpAttack = 2,
-        .evYield_SpDefense = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_THICK_FAT, ABILITY_THICK_FAT, ABILITY_THICK_FAT },
-        .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Venusaur"),
-        .cryId = CRY_VENUSAUR_MEGA,
-        .natDexNum = NATIONAL_DEX_VENUSAUR,
-        .categoryName = _("Seed"),
-        .height = 24,
-        .weight = 1555,
-        .description = COMPOUND_STRING(
-            "In order to support its flower, which\n"
-            "has grown larger due to Mega Evolution,\n"
-            "its back and legs have become stronger."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 388,
-        .trainerOffset = 6,
-        .frontPic = gMonFrontPic_VenusaurMega,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_VenusaurMega,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 8,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_GREEN,
-        .palette = gMonPalette_VenusaurMega,
-        .shinyPalette = gMonShinyPalette_VenusaurMega,
-        .iconSprite = gMonIcon_VenusaurMega,
-        .iconPalIndex = 4,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 6, SHADOW_SIZE_XL_BATTLE_ONLY)
-        FOOTPRINT(Venusaur)
-    #if OW_BATTLE_ONLY_FORMS
-        OVERWORLD(
-            sPicTable_VenusaurMega,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_VenusaurMega,
-            gShinyOverworldPalette_VenusaurMega
-        )
-    #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
-        .levelUpLearnset = sVenusaurLevelUpLearnset,
-        .teachableLearnset = sVenusaurTeachableLearnset,
-        .formSpeciesIdTable = sVenusaurFormSpeciesIdTable,
-        .formChangeTable = sVenusaurFormChangeTable,
-    },
-#endif //P_MEGA_EVOLUTIONS
-
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_VENUSAUR_GMAX] =
-    {
-        .baseHP        = 80,
-        .baseAttack    = 82,
-        .baseDefense   = 83,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 100,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
-        .catchRate = 45,
-        .expYield = 236,
-        .evYield_SpAttack = 2,
-        .evYield_SpDefense = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL },
-        .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Venusaur"),
-        .cryId = CRY_VENUSAUR,
-        .natDexNum = NATIONAL_DEX_VENUSAUR,
-        .categoryName = _("Seed"),
-        .height = 240,
-        .weight = 0,
-        .description = COMPOUND_STRING(
-            "Spits big amounts of pollen like a volcano.\n"
-            "Breathing too much of it causes fainting.\n"
-            "In battle, it swings around two thick vines\n"
-            "that can easily topple 10-story buildings."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 388,
-        .trainerOffset = 6,
-        .frontPic = gMonFrontPic_VenusaurGmax,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 5,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_VenusaurGmax,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 11,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_VenusaurGmax,
-        .shinyPalette = gMonShinyPalette_VenusaurGmax,
-        .iconSprite = gMonIcon_VenusaurGmax,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 4, SHADOW_SIZE_XL_BATTLE_ONLY)
-        FOOTPRINT(Venusaur)
-        .isGigantamax = TRUE,
-        .levelUpLearnset = sVenusaurLevelUpLearnset,
-        .teachableLearnset = sVenusaurTeachableLearnset,
-        .formSpeciesIdTable = sVenusaurFormSpeciesIdTable,
-        .formChangeTable = sVenusaurFormChangeTable,
-    },
-#endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_BULBASAUR
 
 #if P_FAMILY_CHARMANDER
@@ -574,202 +443,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sCharizardFormSpeciesIdTable,
         .formChangeTable = sCharizardFormChangeTable,
     },
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_CHARIZARD_MEGA_X] =
-    {
-        .baseHP        = 78,
-        .baseAttack    = 130,
-        .baseDefense   = 111,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 130,
-        .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_FIRE, TYPE_DRAGON),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 317 : 285,
-        .evYield_SpAttack = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS },
-        .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("Charizard"),
-        .cryId = CRY_CHARIZARD_MEGA_X,
-        .natDexNum = NATIONAL_DEX_CHARIZARD,
-        .categoryName = _("Flame"),
-        .height = 17,
-        .weight = 1105,
-        .description = COMPOUND_STRING(
-            "The overwhelming power that fills its\n"
-            "entire body causes it to turn black\n"
-            "and creates intense blue flames."),
-        .pokemonScale = 256,
-        .pokemonOffset = 1,
-        .trainerScale = 302,
-        .trainerOffset = 3,
-        .frontPic = gMonFrontPic_CharizardMegaX,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CharizardMegaX,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 1,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
-        .palette = gMonPalette_CharizardMegaX,
-        .shinyPalette = gMonShinyPalette_CharizardMegaX,
-        .iconSprite = gMonIcon_CharizardMegaX,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 13, SHADOW_SIZE_L)
-        FOOTPRINT(Charizard)
-    #if OW_BATTLE_ONLY_FORMS
-        OVERWORLD(
-            sPicTable_CharizardMegaX,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_CharizardMegaX,
-            gShinyOverworldPalette_CharizardMegaX
-        )
-    #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
-        .levelUpLearnset = sCharizardLevelUpLearnset,
-        .teachableLearnset = sCharizardTeachableLearnset,
-        .formSpeciesIdTable = sCharizardFormSpeciesIdTable,
-        .formChangeTable = sCharizardFormChangeTable,
-    },
-
-    [SPECIES_CHARIZARD_MEGA_Y] =
-    {
-        .baseHP        = 78,
-        .baseAttack    = 104,
-        .baseDefense   = 78,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 159,
-        .baseSpDefense = 115,
-        .types = MON_TYPES(TYPE_FIRE, TYPE_FLYING),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 317 : 285,
-        .evYield_SpAttack = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_DROUGHT, ABILITY_DROUGHT, ABILITY_DROUGHT },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Charizard"),
-        .cryId = CRY_CHARIZARD_MEGA_Y,
-        .natDexNum = NATIONAL_DEX_CHARIZARD,
-        .categoryName = _("Flame"),
-        .height = 17,
-        .weight = 1005,
-        .description = COMPOUND_STRING(
-            "Its bond with its Trainer is the source\n"
-            "of its power. It boasts speed and\n"
-            "maneuverability greater than that of a\n"
-            "jet fighter."),
-        .pokemonScale = 256,
-        .pokemonOffset = 1,
-        .trainerScale = 302,
-        .trainerOffset = 3,
-        .frontPic = gMonFrontPic_CharizardMegaY,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CharizardMegaY,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 1,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
-        .palette = gMonPalette_CharizardMegaY,
-        .shinyPalette = gMonShinyPalette_CharizardMegaY,
-        .iconSprite = gMonIcon_CharizardMegaY,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-1, 14, SHADOW_SIZE_L)
-        FOOTPRINT(Charizard)
-    #if OW_BATTLE_ONLY_FORMS
-        OVERWORLD(
-            sPicTable_CharizardMegaY,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_CharizardMegaY,
-            gShinyOverworldPalette_CharizardMegaY
-        )
-    #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
-        .levelUpLearnset = sCharizardLevelUpLearnset,
-        .teachableLearnset = sCharizardTeachableLearnset,
-        .formSpeciesIdTable = sCharizardFormSpeciesIdTable,
-        .formChangeTable = sCharizardFormChangeTable,
-    },
-#endif //P_MEGA_EVOLUTIONS
-
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_CHARIZARD_GMAX] =
-    {
-        .baseHP        = 78,
-        .baseAttack    = 84,
-        .baseDefense   = 78,
-        .baseSpeed     = 100,
-        .baseSpAttack  = P_UPDATED_STATS >= GEN_2 ? 109 : 85,
-        .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_FIRE, TYPE_FLYING),
-        .catchRate = 45,
-        .expYield = 240,
-        .evYield_SpAttack = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Charizard"),
-        .cryId = CRY_CHARIZARD,
-        .natDexNum = NATIONAL_DEX_CHARIZARD,
-        .categoryName = _("Flame"),
-        .height = 280,
-        .weight = 0,
-        .description = COMPOUND_STRING(
-            "The flame inside its body burns\n"
-            "hotter than 3,600 degrees Fahrenheit.\n"
-            "When Charizard roars, that\n"
-            "temperature climbs even higher."),
-        .pokemonScale = 256,
-        .pokemonOffset = 1,
-        .trainerScale = 302,
-        .trainerOffset = 3,
-        .frontPic = gMonFrontPic_CharizardGmax,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CharizardGmax,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 1,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CharizardGmax,
-        .shinyPalette = gMonShinyPalette_CharizardGmax,
-        .iconSprite = gMonIcon_CharizardGmax,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(1, 13, SHADOW_SIZE_L)
-        FOOTPRINT(Charizard)
-        .isGigantamax = TRUE,
-        .levelUpLearnset = sCharizardLevelUpLearnset,
-        .teachableLearnset = sCharizardTeachableLearnset,
-        .formSpeciesIdTable = sCharizardFormSpeciesIdTable,
-        .formChangeTable = sCharizardFormChangeTable,
-    },
-#endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_CHARMANDER
 
 #if P_FAMILY_SQUIRTLE
