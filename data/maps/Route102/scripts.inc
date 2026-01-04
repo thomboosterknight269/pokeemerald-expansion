@@ -1,5 +1,30 @@
 Route102_MapScripts::
 	.byte 0
+	call Common_EventScript_SetupRivalGfxId
+
+Route102_EventScript_Rival::
+	bufferleadmonspeciesname STR_VAR_1
+	applymovement LOCALID_ROUTE103_RIVAL, Common_Movement_FacePlayer
+	msgbox Route102_Text_Rival, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, Route102_EventScript_StartNeroBattleTreecko
+	case 1, Route102_EventScript_StartNeroBattleTorchic
+	case 2, Route102_EventScript_StartNeroBattleMudkip
+	end
+
+Route102_EventScript_AfterNeroBattle::
+	lockall
+	msgbox Route102_Text_NeroSpeech, MSGBOX_DEFAULT
+	applymovement 10, GoAway
+	waitmovement 10
+	goto Route102_EventScript_RivalEnd
+	end
+
+Route102_EventScript_RivalEnd::
+	removeobject 10
+	setflag FLAG_HIDE_ROUTE_102_RIVAL
+	releaseall
+	end
 
 Route102_EventScript_LittleBoy::
 	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
@@ -11,6 +36,10 @@ Route102_EventScript_RouteSignOldale::
 
 Route102_EventScript_RouteSignPetalburg::
 	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
+	end
+
+Route102_EventScript_RouteSignFlower::
+	msgbox Route102_Text_RouteSignFlower, MSGBOX_SIGN
 	end
 
 Route102_EventScript_Boy::
@@ -107,3 +136,52 @@ Route102_Text_RouteSignOldale:
 Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
+
+Route102_Text_RouteSignFlower:
+	.string "Dedicated to Flora.\n"
+	.string "May you rest in peace.$"
+
+Route102_Text_Rival:
+	.string "...\p"
+	.string "What do you want?\p"
+	.string "Hmph! You think you're tough with \n"
+	.string "that weak POKéMON of yours?\p"
+	.string "Fine then.\p"
+	.string "Prove to me that you are worthy \n"
+	.string "of your {STR_VAR_1}! $"
+
+Route102_EventScript_StartNeroBattleTreecko::
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route102_Text_NeroDefeated
+	goto Route102_EventScript_AfterNeroBattle
+	end
+
+Route102_EventScript_StartNeroBattleTorchic::
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route102_Text_NeroDefeated
+	goto Route102_EventScript_AfterNeroBattle
+	end
+
+Route102_EventScript_StartNeroBattleMudkip::
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route102_Text_NeroDefeated
+	goto Route102_EventScript_AfterNeroBattle
+	end
+
+Route102_Text_NeroDefeated:
+	.string "tch...$"
+
+Route102_Text_NeroSpeech :
+	.string "You think you're SO \n"
+	.string "much better, huh?\p"
+	.string "This is merely just the beginning...\p"
+	.string "I'll show what this world what \n"
+	.string "it truly means when its rules \p" 
+	.string "are upside down...$"
+	end
+
+GoAway :
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
