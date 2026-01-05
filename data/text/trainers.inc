@@ -1,73 +1,48 @@
 Route102_Text_CalvinIntro:
-	.string "If you have POKéMON with you, then\n"
-	.string "you're an official POKéMON TRAINER!\l"
-	.string "You can't say no to my challenge!$"
+	.string "Your journey ends here.$"
 
 Route102_Text_CalvinDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "I should have trained mine more…$"
+	.string "…$"
 
 Route102_Text_CalvinPostBattle:
-	.string "Listen, you. If you're strong,\n"
-	.string "you should have told me before!$"
-
-Route102_Text_CalvinRegister:
-	.string "I've been working hard at this since\n"
-	.string "I saw you before.\p"
-	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
-
-Route102_Text_CalvinRegisterShort:
-	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
-
-Route102_Text_CalvinRematchIntro:
-	.string "Ever since I lost to you, I desperately\n"
-	.string "trained my POKéMON.\l"
-	.string "You can't say no to my challenge!$"
-
-Route102_Text_CalvinRematchDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "Is my training method not right?$"
-
-Route102_Text_CalvinRematchPostBattle:
-	.string "If you're going to get stronger,\n"
-	.string "I'll get stronger, too.$"
+	.string "This isn't the last you'll see me.\p"
+	.string "I will come back to haunt you.\p"
+	.string "and you will F E A R   M E . . .$"
 
 Route102_Text_AllenIntro:
-	.string "Did you just become a TRAINER?\n"
-	.string "We're both beginners!$"
+	.string "I'd never thought I'd do this...\n"
+	.string "but time to put you down!$"
 
 Route102_Text_AllenDefeated:
-	.string "I called you because I thought\n"
-	.string "I could beat you…$"
+	.string "SO sorry!!\n"
+	.string "I mistook you for something else..$"
 
 Route102_Text_AllenPostBattle:
-	.string "I haven't won once yet…\n"
-	.string "I wish I would win soon…$"
+	.string "Be careful around these parts,\n"
+	.string "there're rumors about a ghost \l"
+	.string "wandering around here...$"
 
 Route102_Text_RickIntro:
-	.string "Hahah! Our eyes met!\n"
 	.string "I'll take you on with my BUG POKéMON!$"
 
 Route102_Text_RickDefeated:
 	.string "Ow! Down and out!$"
 
 Route102_Text_RickPostBattle:
-	.string "If you lock eyes with a TRAINER,\n"
-	.string "you have to challenge! It's a rule!$"
+	.string "Do you really think us Bug-Catchers\n"
+	.string "WOULDN'T have Flying Types to \l"
+	.string "help us catch Bug Types? \p"
+	.string "You're sorely mistaken my friend.$"
 
 Route102_Text_TianaIntro:
-	.string "I'm going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
-	.string "Help me further my career!$"
+	.string "EEEEEEEEEkkkkk!!!!!!!!!!!!\p"
+	.string "Don't hurt me!!!!$"
 
 Route102_Text_TianaDefeated:
-	.string "I ended up furthering your career…$"
+	.string "Oh no oh no....$"
 
 Route102_Text_TianaPostBattle:
-	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
+	.string "Get away from me you freak!!!$"
 
 Route103_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"

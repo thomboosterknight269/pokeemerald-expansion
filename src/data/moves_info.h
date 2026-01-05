@@ -4374,18 +4374,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
                 "A triangular field of energy\n"
                 "is created and launched.");
         #endif
-        .effect = EFFECT_HIT,
-        .power = 80,
+        .effect = EFFECT_TRIPLE_KICK,
+        .power = 30,
         .type = TYPE_NORMAL,
-        .accuracy = 100,
+        .accuracy = 95,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .strikeCount = 3,
         #if B_UPDATED_MOVE_DATA >= GEN_2
             .additionalEffects = ADDITIONAL_EFFECTS({
                 .moveEffect = MOVE_EFFECT_TRI_ATTACK,
-                .chance = 20,
+                .chance = 25,
             }),
         #endif
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING : CONTEST_EFFECT_STARTLE_PREV_MONS,
@@ -4561,9 +4562,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Kicks the foe 3 times in a\n"
             "row with rising intensity."),
         .effect = EFFECT_TRIPLE_KICK,
-        .power = 10,
+        .power = 30,
         .type = TYPE_FIGHTING,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11307,7 +11308,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Flash Cannon"),
         .description = COMPOUND_STRING(
             "Releases a blast of light\n"
-            "that may lower Sp. Def."),
+            "that lowers Sp. Def and flinches."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_STEEL,
@@ -11318,7 +11319,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
-            .chance = 10,
+            .chance = 20,
+        }, {
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 20,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_BEAUTY : CONTEST_CATEGORY_SMART,
@@ -18918,9 +18922,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A 3-kick attack that gets\n"
             "more powerful with each hit."),
         .effect = EFFECT_TRIPLE_KICK,
-        .power = 20,
+        .power = 30,
         .type = TYPE_ICE,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
