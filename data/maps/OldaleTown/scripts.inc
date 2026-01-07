@@ -21,7 +21,7 @@ OldaleTown_EventScript_BlockWestEntrance::
 	return
 
 OldaleTown_EventScript_MoveMartEmployee::
-	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 13, 14
+	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 19, 12
 	setobjectmovementtype LOCALID_OLDALE_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
@@ -200,13 +200,9 @@ OldaleTown_EventScript_FootprintsMan::
 
 OldaleTown_EventScript_BlockedPath::
 	lockall
+	msgbox OldaleTown_Text_GoBack, MSGBOX_AUTOCLOSE
 	applymovement LOCALID_PLAYER, OldaleTown_Movement_PlayerStepBack
-	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_BackUp
-	waitmovement 0
-	msgbox OldaleTown_Text_WaitDontComeInHere, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_ReturnToOriginalPosition
-	waitmovement 0
+	waitmovement LOCALID_PLAYER
 	releaseall
 	end
 
@@ -341,7 +337,10 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "progress.\p"
+	.string "I heard that there's been some meddling\n"
+	.string "over at the next town, so I'm\l"
+	.string "recuperating and planning ahead.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
@@ -361,13 +360,9 @@ OldaleTown_Text_PotionExplanation:
 	.string "even more useful than a POKéMON CENTER\l"
 	.string "in certain situations.$"
 
-OldaleTown_Text_WaitDontComeInHere:
-	.string "Aaaaah! Wait!\n"
-	.string "Please don't come in here.\p"
-	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
-	.string "Wait until I finish sketching\n"
-	.string "them, okay?$"
+OldaleTown_Text_GoBack:
+	.string "There's something going on.\p"
+	.string "I'm sure it won't affect us...$"
 
 OldaleTown_Text_DiscoveredFootprints:
 	.string "I just discovered the footprints of\n"

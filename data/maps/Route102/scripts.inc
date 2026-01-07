@@ -1,10 +1,19 @@
 Route102_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route102_OnTransition
+	setvar VAR_ROUTE_102_STATE, 0
 	.byte 0
 
 Route102_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
 	call_if_unset FLAG_RUN_TO_NERO, Route102_EventScript_UnawareTiana
+	setflag FLAG_HIDE_ROUTE_102_RIVAL
+	end
+
+Route102_EventScript_BlockedPath::
+	lockall
+	msgbox Route102_Text_GoBack, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, goBack
+	waitmovement LOCALID_PLAYER
+	releaseall
 	end
 
 Route102_EventScript_UnawareTiana::
@@ -13,6 +22,12 @@ Route102_EventScript_UnawareTiana::
 
 Route102_EventScript_Tiana::
 	goto_if_set FLAG_RUN_TO_NERO, Route102_EventScript_SaveMe
+	applymovement 4, Common_Movement_FacePlayer
+	waitmovement 4
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 4
+	applymovement 4, Common_Movement_Delay48
+	waitmovement 4
 	msgbox Route102_Text_TianaIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_TIANA, Route102_Text_TianaDefeated
 	goto Route102_EventScript_AfterTianaBattle
@@ -21,36 +36,40 @@ Route102_EventScript_Tiana::
 Route102_EventScript_AfterTianaBattle::
 	lockall
 	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
-	applymovement 4, flee
+	applymovement LOCAL_ID_TIANA, flee
 	waitmovement
 	setflag FLAG_RUN_TO_NERO
+	clearflag FLAG_HIDE_ROUTE_102_RIVAL
 	releaseall
 	end
 
 Route102_EventScript_SaveMe::
-	msgbox Route102_Text_TianaSaveMe, MSGBOX_AUTOCLOSE
+	msgbox Route102_Text_TianaSaveMe, MSGBOX_DEFAULT
+	closemessage
 	goto Route102_EventScript_Rival
 	end
 
 
 Route102_EventScript_Rival::
-	bufferleadmonspeciesname STR_VAR_1
-	msgbox Route102_Text_RivalIntro,  MSGBOX_AUTOCLOSE
+	applymovement LOCAL_ID_NERO, Irritated
+	waitmovement LOCAL_ID_NERO
+	msgbox Route102_Text_RivalIntro,  MSGBOX_DEFAULT
 	goto Route102_EventScript_TianaFlees
-	lockall
 	end
 
 Route102_EventScript_TianaFlees::
-	lockall
 	applymovement 4, GoAwayT
+	waitmovement 4
 	removeobject 4
 	setflag FLAG_HIDE_ROUTE_102_TIANA
 	goto Route102_EventScript_RivalBattle
+	lockall
 	end
 
 Route102_EventScript_RivalBattle::
-	applymovement 10, Common_Movement_FacePlayer
-	delay 20
+	bufferleadmonspeciesname STR_VAR_1
+	applymovement LOCAL_ID_NERO, LookAtBro
+	delay 60
 	msgbox Route102_Text_Rival, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
 	case 0, Route102_EventScript_StartNeroBattleTreecko
@@ -77,19 +96,20 @@ Route102_EventScript_AfterNeroBattle::
 	lockall
 	msgbox Route102_Text_NeroSpeech, MSGBOX_AUTOCLOSE
 	closemessage
-	applymovement 10, GoAway
-	waitmovement 10
+	applymovement LOCAL_ID_NERO, GoAway
+	waitmovement LOCAL_ID_NERO
 	goto Route102_EventScript_RivalEnd
 	end
 
 Route102_EventScript_RivalEnd::
-	removeobject 10
+	setvar VAR_ROUTE_102_STATE, 1
+	removeobject LOCAL_ID_NERO
 	setflag FLAG_HIDE_ROUTE_102_RIVAL
 	releaseall
 	end
 
 Route102_EventScript_LittleBoy::
-	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
+	msgbox Route102_Text_HaHa, MSGBOX_NPC
 	end
 
 Route102_EventScript_RouteSignOldale::
@@ -109,6 +129,7 @@ Route102_EventScript_Boy::
 	end
 
 Route102_EventScript_Calvin::
+	applymovement 2, Common_Movement_FacePlayer
 	msgbox Route102_Text_CalvinIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_CALVIN_1, Route102_Text_CalvinDefeated
 	goto Route102_EventScript_AfterCalvinBattle
@@ -149,18 +170,19 @@ Route102_Text_LetsGoBack:
 	.string "{PLAYER}, thank you!\n"
 	.string "Let's go back to the GYM!$"
 
-Route102_Text_ImNotVeryTall:
-	.string "I'm…not very tall, so I sink right\n"
-	.string "into tall grass.\p"
-	.string "The grass goes up my nose and…\n"
-	.string "Fwafwafwafwafwa…\p"
-	.string "Fwatchoo!$"
+Route102_Text_HaHa:
+	.string "Hahahaha!\p"
+	.string "That girl Tiana is such a wimp!\n"
+	.string "She gets spooked by anything!\p"
+	.string "How did she never make it over\n"
+	.string "here without her boyfriend? Hahaha!!$"
 
 Route102_Text_WeirdGuy:
 	.string "Hey if you see Calvin...\p"
-	.string "Please remember you didn't ok? \p"
-	.string "I heard it's a ghost pretending \n"
-	.string "to be him...$"
+	.string "Please remember to not talk to him ok? \p"
+	.string "I heard it's his vengeful \n"
+	.string "spirit...\p"
+	.string "...What does it want from us?$"
 
 Route102_Text_RouteSignOldale:
 	.string "ROUTE 102\n"
@@ -175,14 +197,21 @@ Route102_Text_RouteSignFlower:
 	.string "Was once an aspiring trainer,\l"
 	.string "but has since gone missing.$"
 
+Route102_Text_GoBack:
+	.string "You should go check on Tiana\n"
+	.string "and check if she's okay...$"
+
 Route102_Text_TianaSaveMe:
 	.string "TIANA: Oh my handsome prince!\n"
 	.string "Please save me from this meanie! \p"
 	.string "They were about to ruthlessly-$"
 
 Route102_Text_RivalIntro:
-	.string "???: SHUT UP!!\n"
+	.string "???: Shut up! Shut up! SHUT UP!!\p"
 	.string "CHATTERBOXES LIKE YOU PISS ME OFF!\p"
+
+Route102_Text_E:
+	.string "TIANA: EEEEEEK!$"
 
 Route102_Text_Rival:
 	.string "...\p"
@@ -206,6 +235,10 @@ Route102_Text_NeroSpeech :
 	.string "precious rules...$"
 	end
 
+goBack :
+	walk_slow_right
+	step_end
+
 GoAway :
 	walk_left
 	walk_left
@@ -217,19 +250,25 @@ GoAway :
 	walk_left
 	step_end
 
+Irritated :
+	jump_in_place_up_down
+	emote_exclamation_mark
+	delay_16
+	step_end
+
 GoAwayT :
 	jump_in_place_up_down
 	delay_16
 	emote_exclamation_mark
 	delay_16
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
 	step_end
 
 flee :
@@ -254,4 +293,9 @@ flee :
 	walk_fast_down
 	walk_fast_down
 	face_up
+	step_end
+
+LookAtBro :
+	walk_down
+	face_right
 	step_end

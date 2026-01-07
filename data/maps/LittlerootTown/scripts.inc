@@ -947,7 +947,6 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "in the great outdoors!”$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
-	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "To think that you have your very own\n"
 	.string "POKéMON now…\l"
@@ -984,12 +983,13 @@ LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "yeah ill let you in g$"
 
 LittlerootTown_Text_YouSavedBirch:
-	.string "You saved PROF. BIRCH!\n"
-	.string "I'm so glad!$"
+	.string "You saved the Professor!\n"
+	.string "I'm afraid this is only \l"
+	.string "the beginning.\n"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
-	.string "Are you going to catch POKéMON?\n"
-	.string "Good luck!$"
+	.string "May the Gods wish you\n"
+	.string "good luck ahead...$"
 
 LittlerootTown_Text_TownSign:
 	.string "LITTLEROOT TOWN\n"

@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE102",
   "name": "Route102",
   "layout": "LAYOUT_ROUTE102",
-  "music": "MUS_ROUTE101",
+  "music": "MUS_RG_ROUTE1",
   "region_map_section": "MAPSEC_ROUTE_102",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -36,7 +36,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route102_EventScript_LittleBoy",
-      "flag": "FLAG_HIDE_ROUTE_102_RIVAL"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -65,6 +65,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCAL_ID_TIANA",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 23,
       "y": 5,
@@ -143,6 +144,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCAL_ID_NERO",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 7,
       "y": 8,
@@ -157,7 +159,35 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_ROUTE_102_STATE",
+      "var_value": "0",
+      "script": "Route102_EventScript_BlockedPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ROUTE_102_STATE",
+      "var_value": "0",
+      "script": "Route102_EventScript_BlockedPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_ROUTE_102_STATE",
+      "var_value": "0",
+      "script": "Route102_EventScript_BlockedPath"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

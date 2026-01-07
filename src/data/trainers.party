@@ -9502,9 +9502,9 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Future Sight
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
-Name: BRENDAN
+Name: ???
 Class: Rival
-Pic: Brendan
+Pic: Nero
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9557,9 +9557,9 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
-Name: BRENDAN
+Name: ???
 Class: Rival
-Pic: Brendan
+Pic: Nero
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9612,9 +9612,9 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
-Name: BRENDAN
+Name: ???
 Class: Rival
-Pic: Brendan
+Pic: Nero
 Gender: Male
 Music: Male
 Double Battle: No
@@ -11054,10 +11054,6 @@ Double Battle: No
 AI: Check Bad Move
 
 Zigzagoon
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shroomish
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
