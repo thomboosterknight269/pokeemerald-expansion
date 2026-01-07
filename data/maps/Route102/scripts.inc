@@ -22,6 +22,7 @@ Route102_EventScript_UnawareTiana::
 
 Route102_EventScript_Tiana::
 	goto_if_set FLAG_RUN_TO_NERO, Route102_EventScript_SaveMe
+	playbgm MUS_HELP, TRUE
 	applymovement 4, Common_Movement_FacePlayer
 	waitmovement 4
 	applymovement 4, Common_Movement_ExclamationMark
@@ -40,6 +41,8 @@ Route102_EventScript_AfterTianaBattle::
 	waitmovement
 	setflag FLAG_RUN_TO_NERO
 	clearflag FLAG_HIDE_ROUTE_102_RIVAL
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	releaseall
 	end
 
