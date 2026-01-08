@@ -6,12 +6,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_TREECKO
     [SPECIES_TREECKO] =
     {
-        .baseHP        = 40,
+        .baseHP        = 65,
         .baseAttack    = 45,
-        .baseDefense   = 35,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 55,
+        .baseDefense   = 55,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 45,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
@@ -30,10 +30,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 5,
         .weight = 50,
         .description = COMPOUND_STRING(
-            "It makes its nest in a giant tree in the\n"
-            "forest. It ferociously guards against\n"
-            "anything nearing its territory. It is said\n"
-            "to be the protector of the forest's trees."),
+            "A Pokémon born weak. It relies on\n"
+            "it's stick that it constantly carries\n"
+            "around with to stand upright and defend\n"
+            "itself. Each stick is unique to it."),
         .pokemonScale = 541,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -77,12 +77,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_GROVYLE] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 65,
-        .baseDefense   = 45,
-        .baseSpeed     = 95,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 65,
+        .baseHP        = 80,
+        .baseAttack    = 60,
+        .baseDefense   = 75,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 141,
@@ -97,14 +97,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .speciesName = _("Snacolyte"),
         .cryId = CRY_GROVYLE,
         .natDexNum = NATIONAL_DEX_GROVYLE,
-        .categoryName = _("Nun"),
+        .categoryName = _("Healing"),
         .height = 9,
         .weight = 216,
         .description = COMPOUND_STRING(
-            "Leaves grow out of this Pokémon's body.\n"
-            "They help obscure a Grovyle from the eyes\n"
-            "of its enemies while it is in a thickly\n"
-            "overgrown forest."),
+            "If you ever get lost or hurt in a forest,\n"
+            "you can count on Snacolyte to help out.\n"
+            "Its stick is a medium for it to channel\n"
+            "healing powers or powerful attacks."),
         .pokemonScale = 360,
         .pokemonOffset = 5,
         .trainerScale = 256,
@@ -177,10 +177,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 17,
         .weight = 522,
         .description = COMPOUND_STRING(
-            "In the jungle, its power is without equal.\n"
-            "This Pokémon carefully grows trees and\n"
-            "plants. It regulates its body temperature\n"
-            "by basking in sunlight."),
+            "A group of Serapents are known as a circle.\n"
+            "They bask in the sun, praying to it everyday.\n"
+            "Usually pacifist by nature, they can sense\n"
+            "a person's heart and won't hesitate to attack.\n"),
         .pokemonScale = 256,
         .pokemonOffset = -1,
         .trainerScale = 275,
@@ -219,87 +219,17 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formSpeciesIdTable = sSceptileFormSpeciesIdTable,
         .formChangeTable = sSceptileFormChangeTable,
     },
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_SCEPTILE_MEGA] =
-    {
-        .baseHP        = 70,
-        .baseAttack    = 110,
-        .baseDefense   = 75,
-        .baseSpeed     = 145,
-        .baseSpAttack  = 145,
-        .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_DRAGON),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 315 : 284,
-        .evYield_Speed = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD },
-        .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Sceptile"),
-        .cryId = CRY_SCEPTILE_MEGA,
-        .natDexNum = NATIONAL_DEX_SCEPTILE,
-        .categoryName = _("Forest"),
-        .height = 19,
-        .weight = 552,
-        .description = COMPOUND_STRING(
-            "Thanks to the power in its quick legs,\n"
-            "Mega Sceptile can be on its opponent in a\n"
-            "flash. It can cut off a portion of its tail\n"
-            "to fire it like a missile at an opponent."),
-        .pokemonScale = 256,
-        .pokemonOffset = -1,
-        .trainerScale = 275,
-        .trainerOffset = 2,
-        .frontPic = gMonFrontPic_SceptileMega,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_SceptileMega,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 3,
-        .backAnimId = BACK_ANIM_V_SHAKE,
-        .palette = gMonPalette_SceptileMega,
-        .shinyPalette = gMonShinyPalette_SceptileMega,
-        .iconSprite = gMonIcon_SceptileMega,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(3, 11, SHADOW_SIZE_L)
-        FOOTPRINT(Sceptile)
-    #if OW_BATTLE_ONLY_FORMS
-        OVERWORLD(
-            sPicTable_SceptileMega,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_SceptileMega,
-            gShinyOverworldPalette_SceptileMega
-        )
-    #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
-        .levelUpLearnset = sSceptileLevelUpLearnset,
-        .teachableLearnset = sSceptileTeachableLearnset,
-        .formSpeciesIdTable = sSceptileFormSpeciesIdTable,
-        .formChangeTable = sSceptileFormChangeTable,
-    },
-#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TREECKO
 
 #if P_FAMILY_TORCHIC
     [SPECIES_TORCHIC] =
     {
-        .baseHP        = 45,
-        .baseAttack    = 60,
-        .baseDefense   = 40,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 50,
+        .baseHP        = 40,
+        .baseAttack    = 65,
+        .baseDefense   = 35,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
@@ -320,8 +250,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .description = COMPOUND_STRING(
             "A difficult pokemon to train. When it cries,\n"
             "get ready to pay hefty repair costs\n"
-            "as it's tears can melt their surroundings,\n"
-            "similar to lava."),
+            "as it's tears can melt their \n"
+            "surroundings, similar to lava."),
         .pokemonScale = 566,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -347,10 +277,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .shinyPalette = gMonShinyPalette_Torchic,
         .iconSprite = gMonIcon_Torchic,
         .iconPalIndex = 0,
-#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
-        .backPicFemale = gMonBackPic_TorchicF,
-        .backPicSizeFemale = MON_COORDS_SIZE(40, 48),
-#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
         .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
         SHADOW(-1, 1, SHADOW_SIZE_S)
         FOOTPRINT(Torchic)
@@ -378,12 +304,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_COMBUSKEN] =
     {
-        .baseHP        = 60,
+        .baseHP        = 50,
         .baseAttack    = 85,
-        .baseDefense   = 60,
-        .baseSpeed     = 55,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 60,
+        .baseDefense   = 45,
+        .baseSpeed     = 95,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_FIRE, TYPE_GROUND),
         .catchRate = 45,
         .expYield = 142,
@@ -403,10 +329,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 9,
         .weight = 195,
         .description = COMPOUND_STRING(
-            "Pfft...nothing personnel kid...\n"
-            "It has the power to teleport behind you\n"
-            "and strike you with its white hot blade,\n"
-            "leaving behind nothing but ashes...."),
+            "Be wary of this when raising Embedge!\n"
+            "It strikes are swift and can completely\n"
+            "incinerate an enemy, leaving nothing\n"
+            "behind nothing like footsteps in the sand..."),
         .pokemonScale = 343,
         .pokemonOffset = 5,
         .trainerScale = 256,
@@ -428,12 +354,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .shinyPalette = gMonShinyPalette_Combusken,
         .iconSprite = gMonIcon_Combusken,
         .iconPalIndex = 0,
-#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
-        .frontPicFemale = gMonFrontPic_CombuskenF,
-        .frontPicSizeFemale = MON_COORDS_SIZE(48, 64),
-        .backPicFemale = gMonBackPic_CombuskenF,
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
-#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 8, SHADOW_SIZE_M)
         FOOTPRINT(Combusken)
@@ -492,7 +412,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .description = COMPOUND_STRING(
             "Known as the Devil of the Desert,\n"
             "it's said that if you wander alone\n"
-            "in the desert at night and cross it's path,\n"
+            "in the desert at night and cross its path,\n"
             "you'll never be seen again."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
@@ -517,12 +437,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .shinyPalette = gMonShinyPalette_Blaziken,
         .iconSprite = gMonIcon_Blaziken,
         .iconPalIndex = 0,
-#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
-        .frontPicFemale = gMonFrontPic_BlazikenF,
-        .frontPicSizeFemale = MON_COORDS_SIZE(56, 64),
-        .backPicFemale = gMonBackPic_BlazikenF,
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
-#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 15, SHADOW_SIZE_M)
         FOOTPRINT(Blaziken)
@@ -547,87 +461,17 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formSpeciesIdTable = sBlazikenFormSpeciesIdTable,
         .formChangeTable = sBlazikenFormChangeTable,
     },
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_BLAZIKEN_MEGA] =
-    {
-        .baseHP        = 80,
-        .baseAttack    = 160,
-        .baseDefense   = 80,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 130,
-        .baseSpDefense = 80,
-        .types = MON_TYPES(TYPE_FIRE, TYPE_FIGHTING),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 315 : 284,
-        .evYield_Attack = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SPEED_BOOST, ABILITY_SPEED_BOOST, ABILITY_SPEED_BOOST },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Blaziken"),
-        .cryId = CRY_BLAZIKEN_MEGA,
-        .natDexNum = NATIONAL_DEX_BLAZIKEN,
-        .categoryName = _("Blaze"),
-        .height = 19,
-        .weight = 520,
-        .description = COMPOUND_STRING(
-            "As it unleashes a flurry of savage kicks,\n"
-            "its legs can begin to burn from the\n"
-            "friction of the surrounding atmosphere.\n"
-            "They're always a source of pride to it."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 301,
-        .trainerOffset = 4,
-        .frontPic = gMonFrontPic_BlazikenMega,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_BlazikenMega,
-        .backPicSize = MON_COORDS_SIZE(56, 64),
-        .backPicYOffset = 0,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
-        .palette = gMonPalette_BlazikenMega,
-        .shinyPalette = gMonShinyPalette_BlazikenMega,
-        .iconSprite = gMonIcon_BlazikenMega,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 11, SHADOW_SIZE_M)
-        FOOTPRINT(Blaziken)
-    #if OW_BATTLE_ONLY_FORMS
-        OVERWORLD(
-            sPicTable_BlazikenMega,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_BlazikenMega,
-            gShinyOverworldPalette_BlazikenMega
-        )
-    #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
-        .levelUpLearnset = sBlazikenLevelUpLearnset,
-        .teachableLearnset = sBlazikenTeachableLearnset,
-        .formSpeciesIdTable = sBlazikenFormSpeciesIdTable,
-        .formChangeTable = sBlazikenFormChangeTable,
-    },
-#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TORCHIC
 
 #if P_FAMILY_MUDKIP
     [SPECIES_MUDKIP] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 70,
-        .baseDefense   = 50,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
+        .baseHP        = 52,
+        .baseAttack    = 56,
+        .baseDefense   = 67,
+        .baseSpeed     = 35,
+        .baseSpAttack  = 46,
+        .baseSpDefense = 54,
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
@@ -646,10 +490,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 4,
         .weight = 76,
         .description = COMPOUND_STRING(
-            "On land, it can powerfully lift large\n"
-            "boulders by planting its four feet and\n"
-            "heaving. It sleeps by burying itself in soil\n"
-            "at the water's edge."),
+            "A popular Pokémon among youngsters.\n"
+            "Its playful disposition makes it a favorite\n"
+            "among children. Many people choose to\n"
+            "not evolve it for this reason."),
         .pokemonScale = 535,
         .pokemonOffset = 20,
         .trainerScale = 256,
@@ -693,12 +537,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_MARSHTOMP] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 85,
-        .baseDefense   = 70,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 70,
+        .baseHP        = 69,
+        .baseAttack    = 74,
+        .baseDefense   = 89,
+        .baseSpeed     = 46,
+        .baseSpAttack  = 61,
+        .baseSpDefense = 71,
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 143,
@@ -717,10 +561,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 7,
         .weight = 280,
         .description = COMPOUND_STRING(
-            "Its toughened hind legs enable it to stand\n"
-            "upright. Because it weakens if its skin\n"
-            "dries out, it replenishes fluids by playing\n"
-            "in mud."),
+            "A ruff and tuff Pokémon. It's a very\n"
+            "rowdy and aggressive Pokémon. Despite this,\n"
+            "It's has a heart of gold and won't hesitate\n"
+            "defend those it cares about."),
         .pokemonScale = 340,
         .pokemonOffset = 7,
         .trainerScale = 256,
@@ -797,10 +641,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 15,
         .weight = 819,
         .description = COMPOUND_STRING(
-            "If it senses the approach of a storm and\n"
-            "a tidal wave, it protects its seaside nest\n"
-            "by piling up boulders. It swims as fast as\n"
-            "a jet ski."),
+            "Its bite can crush even the strongest\n"
+            "materials. Once every full moon, a pack\n"
+            "of Gladiaciers swim up to the surface\n"
+            "of the ocean to leap out and howl."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -841,76 +685,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formSpeciesIdTable = sSwampertFormSpeciesIdTable,
         .formChangeTable = sSwampertFormChangeTable,
     },
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_SWAMPERT_MEGA] =
-    {
-        .baseHP        = 100,
-        .baseAttack    = 150,
-        .baseDefense   = 110,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 95,
-        .baseSpDefense = 110,
-        .types = MON_TYPES(TYPE_WATER, TYPE_GROUND),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 318 : 286,
-        .evYield_Attack = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM },
-        .bodyColor = BODY_COLOR_BLUE,
-        .speciesName = _("Swampert"),
-        .cryId = CRY_SWAMPERT_MEGA,
-        .natDexNum = NATIONAL_DEX_SWAMPERT,
-        .categoryName = _("Mud Fish"),
-        .height = 19,
-        .weight = 1020,
-        .description = COMPOUND_STRING(
-            "When it Mega Evolves, the strength that it\n"
-            "needs to act in the water is increased.\n"
-            "It can use its tenacious power\n"
-            "both on land and in the water."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_SwampertMega,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 6,
-        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_SwampertMega,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 6,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
-        .palette = gMonPalette_SwampertMega,
-        .shinyPalette = gMonShinyPalette_SwampertMega,
-        .iconSprite = gMonIcon_SwampertMega,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(6, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
-        FOOTPRINT(Swampert)
-    #if OW_BATTLE_ONLY_FORMS
-        OVERWORLD(
-            sPicTable_SwampertMega,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_SwampertMega,
-            gShinyOverworldPalette_SwampertMega
-        )
-    #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
-        .levelUpLearnset = sSwampertLevelUpLearnset,
-        .teachableLearnset = sSwampertTeachableLearnset,
-        .formSpeciesIdTable = sSwampertFormSpeciesIdTable,
-        .formChangeTable = sSwampertFormChangeTable,
-    },
-#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_MUDKIP
 
 #if P_FAMILY_POOCHYENA
