@@ -9674,13 +9674,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-#if P_GENDER_DIFFERENCES
-    const u32 gMonBackPic_TorchicF[] = INCBIN_U32("graphics/pokemon/torchic/backf.4bpp.smol");
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_TorchicF[] = INCBIN_COMP("graphics/pokemon/torchic/overworldf.4bpp");
-#endif //OW_POKEMON_OBJECT_EVENTS
-#endif //P_GENDER_DIFFERENCES
-
 #if !P_GBA_STYLE_SPECIES_GFX
     const u32 gMonFrontPic_Combusken[] = INCBIN_U32("graphics/pokemon/combusken/anim_front.4bpp.smol");
     const u16 gMonPalette_Combusken[] = INCBIN_U16("graphics/pokemon/combusken/normal.gbapal");
@@ -9708,14 +9701,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-#if P_GENDER_DIFFERENCES
-    const u32 gMonFrontPic_CombuskenF[] = INCBIN_U32("graphics/pokemon/combusken/anim_frontf.4bpp.smol");
-    const u32 gMonBackPic_CombuskenF[] = INCBIN_U32("graphics/pokemon/combusken/backf.4bpp.smol");
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_CombuskenF[] = INCBIN_COMP("graphics/pokemon/combusken/overworldf.4bpp");
-#endif //OW_POKEMON_OBJECT_EVENTS
-#endif //P_GENDER_DIFFERENCES
-
 #if !P_GBA_STYLE_SPECIES_GFX
     const u32 gMonFrontPic_Blaziken[] = INCBIN_U32("graphics/pokemon/blaziken/anim_front.4bpp.smol");
     const u16 gMonPalette_Blaziken[] = INCBIN_U16("graphics/pokemon/blaziken/normal.gbapal");
@@ -9742,14 +9727,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Blaziken[] = INCBIN_U16("graphics/pokemon/blaziken/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
-
-#if P_GENDER_DIFFERENCES
-    const u32 gMonFrontPic_BlazikenF[] = INCBIN_U32("graphics/pokemon/blaziken/anim_frontf.4bpp.smol");
-    const u32 gMonBackPic_BlazikenF[] = INCBIN_U32("graphics/pokemon/blaziken/backf.4bpp.smol");
-#if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_BlazikenF[] = INCBIN_COMP("graphics/pokemon/blaziken/overworldf.4bpp");
-#endif //OW_POKEMON_OBJECT_EVENTS
-#endif //P_GENDER_DIFFERENCES
 
 #if P_MEGA_EVOLUTIONS
     const u32 gMonFrontPic_BlazikenMega[] = INCBIN_U32("graphics/pokemon/blaziken/mega/front.4bpp.smol");

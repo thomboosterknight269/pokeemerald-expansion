@@ -38,6 +38,7 @@ const u32 gObjectEventPic_RubySapphireMayNormal[] = INCBIN_U32("graphics/object_
 const u32 gObjectEventPic_RubySapphireMayRunning[] = INCBIN_U32("graphics/object_events/pics/people/ruby_sapphire_may/running.4bpp");
 const u16 gObjectEventPal_RubySapphireMay[] = INCBIN_U16("graphics/object_events/palettes/ruby_sapphire_may.gbapal");
 const u16 gUnusedObjectEventPalette[] = INCBIN_U16("graphics/object_events/palettes/unused_palette.gbapal");
+const u16 gObjectEventPal_Luca[] = INCBIN_U16("graphics/object_events/palettes/luca.gbapal");
 const u16 gObjectEventPal_Null16[16] = {};
 const u16 gObjectEventPal_Null17[16] = {};
 const u16 gObjectEventPal_Null18[16] = {};
@@ -360,6 +361,8 @@ const u32 gObjectEventPic_Noland[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/lucy.4bpp");
 const u32 gObjectEventPic_Brandon[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/brandon.4bpp");
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
+const u32 gObjectEventPic_Nero[] = INCBIN_U32("graphics/object_events/pics/people/neroOverworld.4bpp");
+const u16 gObjectEventPal_Nero[] = INCBIN_U16("graphics/object_events/palettes/neroOverworld.gbapal");
 
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");

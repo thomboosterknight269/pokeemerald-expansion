@@ -9509,6 +9509,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Treecko
 Level: 5
@@ -9522,6 +9523,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Slugma
 Level: 18
@@ -9564,6 +9566,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Mugshot: Purple
 
 Torchic
 Level: 5
@@ -9616,9 +9619,10 @@ Name: ???
 Class: Rival
 Pic: Nero
 Gender: Male
-Music: Male
+Music: Intense
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Mudkip
 Level: 5

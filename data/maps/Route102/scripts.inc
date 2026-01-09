@@ -41,7 +41,6 @@ Route102_EventScript_AfterTianaBattle::
 	waitmovement
 	setflag FLAG_RUN_TO_NERO
 	clearflag FLAG_HIDE_ROUTE_102_RIVAL
-	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
 	end
@@ -54,6 +53,7 @@ Route102_EventScript_SaveMe::
 
 
 Route102_EventScript_Rival::
+	playbgm MUS_ENCOUNTER_INTENSE, TRUE
 	applymovement LOCAL_ID_NERO, Irritated
 	waitmovement LOCAL_ID_NERO
 	msgbox Route102_Text_RivalIntro,  MSGBOX_DEFAULT
@@ -75,9 +75,9 @@ Route102_EventScript_RivalBattle::
 	delay 60
 	msgbox Route102_Text_Rival, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
-	case 0, Route102_EventScript_StartNeroBattleTreecko
-	case 1, Route102_EventScript_StartNeroBattleTorchic
-	case 2, Route102_EventScript_StartNeroBattleMudkip
+	case 2, Route102_EventScript_StartNeroBattleTreecko
+	case 0, Route102_EventScript_StartNeroBattleTorchic
+	case 1, Route102_EventScript_StartNeroBattleMudkip
 	end
 
 Route102_EventScript_StartNeroBattleTreecko::
@@ -101,6 +101,8 @@ Route102_EventScript_AfterNeroBattle::
 	closemessage
 	applymovement LOCAL_ID_NERO, GoAway
 	waitmovement LOCAL_ID_NERO
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	goto Route102_EventScript_RivalEnd
 	end
 

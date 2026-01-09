@@ -1360,3 +1360,15 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
 static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
     overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Nero[] = {
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Nero, 2, 4, 8),
+};
