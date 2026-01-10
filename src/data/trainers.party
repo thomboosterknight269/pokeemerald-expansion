@@ -9565,7 +9565,7 @@ Pic: Nero
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+AI: Basic Trainer
 Mugshot: Purple
 
 Torchic
@@ -9671,7 +9671,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
-Name: MAY
+Name: NORA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9726,7 +9726,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
-Name: MAY
+Name: NORA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9781,7 +9781,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
-Name: MAY
+Name: NORA
 Class: Rival
 Pic: May
 Gender: Female

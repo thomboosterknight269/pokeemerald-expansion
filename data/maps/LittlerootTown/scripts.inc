@@ -36,6 +36,10 @@ LittlerootTown_MapScripts::
 
 LittlerootTown_OnTransition:
 	setflag FLAG_VISITED_LITTLEROOT_TOWN
+	setvar VAR_LITTLEROOT_TOWN_STATE, 1
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
+	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 2
+	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_MoveMomToMaysDoor
 	call_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_SetTwinPos
@@ -249,10 +253,6 @@ LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
 	end
 
-LittlerootTown_EventScript_Man::
-	msgbox LittlerootTown_Text_Pray, MSGBOX_NPC
-	end	
-
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
@@ -377,18 +377,7 @@ LittlerootTown_Movement_TwinReturnRight:
 	step_end
 
 LittlerootTown_EventScript_GoSaveBirchTrigger::
-	lockall
-	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	special GetPlayerBigGuyGirlString
-	msgbox LittlerootTown_Text_CanYouGoSeeWhatsHappening, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
-	waitmovement 0
 	setvar VAR_LITTLEROOT_TOWN_STATE, 2
-	releaseall
 	end
 
 LittlerootTown_EventScript_TownSign::
@@ -909,16 +898,14 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	return
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
-	.string "MOM: {PLAYER}, we're here, honey!\p"
-	.string "It must be tiring riding with our things\n"
-	.string "in the moving truck.\p"
-	.string "Well, this is LITTLEROOT TOWN.\p"
+	.string "MOM: We're finally here, honey!\p"
+	.string "Must've been tiring riding with our things\n"
+	.string "our things in that truck.\p"
+	.string "Well, this is Dawna Town.\p"
 	.string "How do you like it?\n"
-	.string "This is our new home!\p"
-	.string "It has a quaint feel, but it seems to be\n"
+	.string "It has a quaint feel, but it seems to be\l"
 	.string "an easy place to live, don't you think?\p"
-	.string "And, you get your own room, {PLAYER}!\n"
-	.string "Let's go inside.$"
+	.string "Let's head inside!$"
 
 LittlerootTown_Text_WaitPlayer:
 	.string "MOM: Wait, {PLAYER}!$"
@@ -956,20 +943,18 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "If you use a PC, you can store items\n"
-	.string "and POKéMON.\p"
-	.string "The power of science is staggering!$"
+	.string "I'm indifferent to technology \n"
+	.string "to be honest. \p"
+	.string "I'm thinking about taking up\n"
+	.string "hiking.$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
-
-LittlerootTown_Text_Pray:
-	.string "Leave me alone!\p"
-	.string "I'm busy!$"
+	.string "PROF. LUCA spends days in her LAB\n"
+	.string "playing video games and watching anime,\l"
+	.string "then suddenly she would just vanish,\l"
+	.string "coming out of that building.\p"
+	.string "How did she ever become a\n"
+	.string "Pokemon Professor?$"
 	
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "mmmmmm.....no\p"
@@ -980,11 +965,13 @@ LittlerootTown_Text_DangerousIfYouDontHavePokemon:
 	.string " $"
 
 LittlerootTown_Text_CanYouGoSeeWhatsHappening:
-	.string "yeah ill let you in g$"
+	.string "I sense something wrong up ahead.\p"
+	.string "It is imperative that you\n"
+	.string "take a look.$"
 
 LittlerootTown_Text_YouSavedBirch:
 	.string "You saved the Professor!\n"
-	.string "I'm afraid this is only \l"
+	.string "But I'm afraid this is only \l"
 	.string "the beginning.\n"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
@@ -992,17 +979,17 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "good luck ahead...$"
 
 LittlerootTown_Text_TownSign:
-	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+	.string "DAWNA TOWN\n"
+	.string "“The hearth of humble origins.”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "PROF. LUCA'S POKéMON LAB$"
 
 LittlerootTown_Text_PlayersHouse:
 	.string "{PLAYER}'s HOUSE$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "PROF. LUCA'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"

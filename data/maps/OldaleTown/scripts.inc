@@ -21,7 +21,7 @@ OldaleTown_EventScript_BlockWestEntrance::
 	return
 
 OldaleTown_EventScript_MoveMartEmployee::
-	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 19, 12
+	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 21, 13
 	setobjectmovementtype LOCALID_OLDALE_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
@@ -33,6 +33,23 @@ OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
 	end
 
+OldaleTown_EventScript_QuestBoy::
+	msgbox OldaleTown_Text_GachaRoboBroke, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_Psychic::
+	msgbox OldaleTown_Text_Psychic, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_Camper::
+	msgbox OldaleTown_Text_Camper, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_Hiker::
+	msgbox OldaleTown_Text_Hiker, MSGBOX_NPC
+	end
+
+	
 OldaleTown_EventScript_MartEmployee::
 	lock
 	faceplayer
@@ -250,18 +267,11 @@ OldaleTown_EventScript_RivalTrigger3::
 	end
 
 OldaleTown_EventScript_ShowRivalMessage::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, OldaleTown_EventScript_ShowMayMessage
-	goto_if_eq VAR_RESULT, FEMALE, OldaleTown_EventScript_ShowBrendanMessage
+	goto OldaleTown_EventScript_ShowMayMessage
 	end
 
 OldaleTown_EventScript_ShowMayMessage::
 	msgbox OldaleTown_Text_MayLetsGoBack, MSGBOX_DEFAULT
-	goto OldaleTown_EventScript_RivalFinish
-	end
-
-OldaleTown_EventScript_ShowBrendanMessage::
-	msgbox OldaleTown_Text_BrendanLetsGoBack, MSGBOX_DEFAULT
 	goto OldaleTown_EventScript_RivalFinish
 	end
 
@@ -377,16 +387,34 @@ OldaleTown_Text_FinishedSketchingFootprints:
 	.string "own footprints…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
-	.string "Over here!\l"
-	.string "Let's hurry home!$"
-
-OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
-	.string "LAB now.\l"
-	.string "{PLAYER}, you should hustle back, too.$"
+	.string "NORA: Toodles!$"
 
 OldaleTown_Text_TownSign:
-	.string "OLDALE TOWN\n"
-	.string "“Where things start off scarce.”$"
+	.string "ASTER TOWN\n"
+	.string "“Guiding star of Ahren.”$"
 
+OldaleTown_Text_Psychic:
+	.string "Be careful young warrior... \p"
+	.string "I sense a dangerous presence ahead...$"
+
+OldaleTown_Text_Camper:
+	.string "Finally I can see the sun!$"
+
+OldaleTown_Text_Hiker:
+	.string "Whew! My son and I just \n"
+	.string "Cameback from the Midnight Forest.\l"
+	.string "You would not believe how much \l"
+	.string "It was raining there!\p"
+	.string "Hope ya brought supplies... \p"
+	.string "Cuz it's a real dooozy...$"
+
+
+OldaleTown_Text_GachaRoboBroke: 
+	.string "Um....excuse me?\p"
+	.string "Do you think you could help me?\p"
+	.string "I lost all of the parts needed in\n"
+	.string "order to fix my GACHA ROBO...\p"
+	.string "Would you be able to find them for me?\p"
+	.string "If you did, I promise I will\n"
+	.string "give you something worthwhile!$"
+	

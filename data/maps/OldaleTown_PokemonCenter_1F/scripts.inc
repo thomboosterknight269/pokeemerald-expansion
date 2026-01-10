@@ -24,14 +24,13 @@ OldaleTown_PokemonCenter_1F_EventScript_Boy::
 	end
 
 OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
-	.string "Huzzah!\n"
-	.string "The PokeMart is just to the right\l"
+	.string "Huzzah!\p"
+	.string "The PokeMart is just to the right\n"
 	.string "of you!\p"
-	.string "You're welcome in advance!$"
+	.string "No need to thank me!$"
 
 OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
 	.string "POKéMON CENTERS are great!\p"
-	.string "You can use their services as much\n"
-	.string "as you like, and it's all for free.\l"
-	.string "You never have to worry!$"
+	.string "Just as long as you can handle\n"
+	.string "the crushing taxes living here...$"
 

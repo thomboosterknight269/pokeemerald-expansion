@@ -4,9 +4,7 @@ Common_EventScript_PkmnCenterNurse::
 	setvar VAR_0x8004, 0
 	specialvar VAR_RESULT, CountPlayerTrainerStars
 	goto_if_eq VAR_RESULT, 4, EventScript_PkmnCenterNurse_GoldCard
-	msgbox gText_WouldYouLikeToRestYourPkmn, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealPkmn
-	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
+	goto EventScript_PkmnCenterNurse_HealPkmn
 	end
 
 EventScript_PkmnCenterNurse_Goodbye::
@@ -25,7 +23,6 @@ EventScript_PkmnCenterNurse_HealPkmn::
 	end
 
 EventScript_PkmnCenterNurse_IllTakeYourPkmn::
-	message gText_IllTakeYourPkmn
 	return
 
 EventScript_PkmnCenterNurse_IllTakeYourPkmn2::
@@ -65,7 +62,6 @@ EventScript_PkmnCenterNurse_ReturnPkmn::
 	waitmessage
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
-	message gText_WeHopeToSeeYouAgain
 	return
 
 EventScript_PkmnCenterNurse_ReturnPkmn2::
@@ -73,7 +69,6 @@ EventScript_PkmnCenterNurse_ReturnPkmn2::
 	waitmessage
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
-	message gText_WeHopeToSeeYouAgain2
 	return
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
@@ -125,7 +120,6 @@ EventScript_PkmnCenterNurse_GoldCardHealPkmn::
 
 Movement_PkmnCenterNurse_Bow:
 	nurse_joy_bow
-	delay_4
 	step_end
 
 Movement_PkmnCenterNurse_Turn:

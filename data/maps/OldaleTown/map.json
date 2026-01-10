@@ -15,12 +15,12 @@
   "connections": [
     {
       "map": "MAP_ROUTE103",
-      "offset": 0,
+      "offset": 2,
       "direction": "up"
     },
     {
       "map": "MAP_ROUTE101",
-      "offset": 0,
+      "offset": 2,
       "direction": "down"
     },
     {
@@ -32,8 +32,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 21,
-      "y": 9,
+      "x": 26,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -46,7 +46,7 @@
     {
       "local_id": "LOCALID_OLDALE_MART_EMPLOYEE",
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 19,
+      "x": 21,
       "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -73,8 +73,8 @@
     },
     {
       "local_id": "LOCALID_OLDALE_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 11,
+      "graphics_id": "OBJ_EVENT_GFX_RIVAL_MAY_NORMAL",
+      "x": 12,
       "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -84,32 +84,97 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldaleTown_EventScript_Rival",
       "flag": "FLAG_HIDE_OLDALE_TOWN_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
+      "x": 28,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_EventScript_QuestBoy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REGIROCK",
+      "x": 30,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 21,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_EventScript_Camper",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_EventScript_Psychic",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 4,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_EventScript_Hiker",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 5,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 26,
-      "y": 13,
+      "x": 33,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE2",
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
+      "x": 22,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 24,
+      "x": 26,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_MART",
@@ -146,16 +211,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
-      "y": 19,
-      "elevation": 3,
-      "var": "VAR_OLDALE_RIVAL_STATE",
-      "var_value": "1",
-      "script": "OldaleTown_EventScript_RivalTrigger3"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
+      "x": 11,
       "y": 19,
       "elevation": 3,
       "var": "VAR_OLDALE_RIVAL_STATE",
@@ -174,6 +230,15 @@
     {
       "type": "trigger",
       "x": 14,
+      "y": 19,
+      "elevation": 3,
+      "var": "VAR_OLDALE_RIVAL_STATE",
+      "var_value": "1",
+      "script": "OldaleTown_EventScript_RivalTrigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
       "y": 19,
       "elevation": 3,
       "var": "VAR_OLDALE_RIVAL_STATE",
@@ -229,7 +294,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 12,
+      "x": 14,
       "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -237,7 +302,7 @@
     },
     {
       "type": "sign",
-      "x": 21,
+      "x": 23,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -245,7 +310,7 @@
     },
     {
       "type": "sign",
-      "x": 25,
+      "x": 27,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -253,7 +318,7 @@
     },
     {
       "type": "sign",
-      "x": 22,
+      "x": 24,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -261,7 +326,7 @@
     },
     {
       "type": "sign",
-      "x": 26,
+      "x": 28,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",

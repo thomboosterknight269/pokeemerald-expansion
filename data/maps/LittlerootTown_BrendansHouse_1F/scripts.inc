@@ -293,7 +293,7 @@ PlayersHouse_1F_Text_MoversPokemonGoSetClock:
 	.string "This is so convenient!\p"
 	.string "{PLAYER}, your room is upstairs.\n"
 	.string "Go check it out, dear!\p"
-	.string "DAD bought you a new clock to mark\n"
+	.string "I bought you a new clock to mark\n"
 	.string "our move here.\l"
 	.string "Don't forget to set it!$"
 
@@ -321,17 +321,15 @@ PlayersHouse_1F_Text_ItsOverWeMissedHim:
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "Oh, yes.\n"
-	.string "One of DAD's friends lives in town.\p"
-	.string "PROF. BIRCH is his name.\p"
-	.string "He lives right next door, so you should\n"
-	.string "go over and introduce yourself.$"
+	.string "Why not go outside for \l"
+	.string "a bit and explore?$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
 	.string "MOM: See you, honey!$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
 	.string "MOM: Did you introduce yourself to\n"
-	.string "PROF. BIRCH?$"
+	.string "PROF. LUCA?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit:
 	.string "MOM: How are you doing, {PLAYER}?\n"

@@ -316,13 +316,14 @@ PetalburgWoods_EventScript_JamesRematch::
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:
-	.string "Hmmm…\n"
-	.string "Not a one to be found…$"
+	.string "Hmmm…no I\n"
+	.string "still can't find it…$"
 
 PetalburgWoods_Text_HaveYouSeenShroomish:
-	.string "Hello, have you seen any POKéMON\n"
-	.string "called SHROOMISH around here?\p"
-	.string "I really love that POKéMON.$"
+	.string "Heya, ya think you could help\n"
+	.string "ya girl out here? I'm tryna find where's\l"
+	.string "my POKéMON.\p"
+	.string "If you don't know, it looks like-$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
 	.string "I was going to ambush you, but you\n"
@@ -336,28 +337,25 @@ PetalburgWoods_Text_HandOverThosePapers:
 
 PetalburgWoods_Text_YouHaveToHelpMe:
 	.string "Aiyeeeh!\p"
-	.string "You're a POKéMON TRAINER, aren't you?\n"
+	.string "You got POKéMON right?\p"
 	.string "You've got to help me, please!$"
 
 PetalburgWoods_Text_NoOneCrossesTeamAqua:
 	.string "Hunh? What do you think you're doing?\n"
-	.string "What, you're going to protect him?\p"
-	.string "No one who crosses TEAM AQUA\n"
+	.string "What, you're going to protect her?\p"
+	.string "No one who crosses me, Jessie, \n"
 	.string "gets any mercy, not even a kid!\p"
-	.string "Come on and battle me!$"
+	.string "Time for you to walk the plank!$"
 
 PetalburgWoods_Text_YoureKiddingMe:
-	.string "You're kidding me! You're tough!$"
+	.string "...no way!$"
 
 PetalburgWoods_Text_YouveGotSomeNerve:
 	.string "Grrr… You've got some nerve\n"
-	.string "meddling with TEAM AQUA!\l"
-	.string "Come on and battle me again!\p"
-	.string "I wish I could say that, but I'm out of\n"
-	.string "POKéMON…\p"
-	.string "And, hey, we of TEAM AQUA are also\n"
-	.string "after something in RUSTBORO.\p"
-	.string "I'll let you go today!$"
+	.string "meddling with TEAM NYX!\p"
+	.string "Great now I have to report back to\l"
+	.string "my superior, Nyx Captain Jones...\p"
+	.string "This isn't the last you see of me!$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "Whew…\n"
@@ -429,9 +427,8 @@ PetalburgWoods_Text_IveBeenTrainingHard:
 PetalburgWoods_Text_StayOutOfTallGrass:
 	.string "Yo, there!\n"
 	.string "Your POKéMON doing okay?\p"
-	.string "If your POKéMON are weak and you want\n"
-	.string "to avoid battles, you should stay out\l"
-	.string "of tall grass.$"
+	.string "I understand if they aren't, \n"
+	.string "Team NYX has been brutal lately.$"
 
 PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "Sometimes, there are things on the\n"
@@ -464,10 +461,5 @@ PetalburgWoods_Text_TrainerTipsExperience:
 	.string "being exposed to any harm.$"
 
 PetalburgWoods_Text_TrainerTipsPP:
-	.string "TRAINER TIPS\p"
-	.string "In addition to Hit Points (HP), POKéMON\n"
-	.string "have Power Points (PP) that are used to\l"
-	.string "make moves during battle.\p"
-	.string "If a POKéMON runs out of PP, it must be\n"
-	.string "taken to a POKéMON CENTER.$"
+	.string "{UP_ARROW} NYX DOMAIN AHEAD$"
 

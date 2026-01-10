@@ -256,8 +256,8 @@ Route101_Text_HelpMe:
 	.string "Sh-Shimatta!!!$"
 
 Route101_Text_PleaseHelp:
-	.string "Hello! You over there!\n"
-	.string "Please! Help!\p"
+	.string "Heyy!!!! You over there!\p"
+	.string "Please! Help!\n"
 	.string "or else I'll be shindeiru!!!$"
 
 Route101_Text_DontLeaveMe:
@@ -269,10 +269,10 @@ Route101_Text_YouSavedMe:
 	.string "It's too bad I forgot to bring my own\n"
 	.string "POKéMON when I was jumped.\p"
 	.string "Arigathanks alot...\p"
-	.string "Oh?\p"
-	.string "Hey, are you {PLAYER}{KUN}?\p"
+	.string "Oh?\n"
+	.string "Are you {PLAYER}{KUN}?\p"
 	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "let's go back to my lab.$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "If POKéMON get tired, take them to\n"

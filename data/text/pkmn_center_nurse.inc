@@ -6,16 +6,13 @@ gText_WouldYouLikeToRestYourPkmn::
 	.string "Would you like to rest your POKéMON?$"
 
 gText_IllTakeYourPkmn::
-	.string "Okay, I'll take your POKéMON\n"
-	.string "for a few seconds.$"
+	.string "Let's get on with it...$"
 
 gText_RestoredPkmnToFullHealth::
-	.string "Thank you for waiting.\p"
-	.string "We've restored your POKéMON\n"
-	.string "to full health.$"
+	.string "Seeya...I guess...$"
 
 gText_WeHopeToSeeYouAgain::
-	.string "We hope to see you again!$"
+	.string "Seeya...$"
 
 gText_WelcomeCutShort::
 	.string "Hello, and welcome to\n"

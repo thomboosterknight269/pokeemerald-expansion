@@ -1066,11 +1066,8 @@ Route104_Text_PrettyPetalFlowShop:
 	.string "PRETTY PETAL FLOWER SHOP$"
 
 Route104_Text_TrainerTipsDoubleBattles:
-	.string "TRAINER TIPS!\p"
-	.string "...is what it would say if the\n"
-	.string "sign wasn't vandalized... \p"
-	.string "instead it reads:\p"
-	.string "TEAM NYX DOMAIN AHEAD$"
+	.string "{UP_ARROW} NYX DOMAIN AHEAD\p"
+	.string "NYX CAPTAIN: DAVY JONES$"
 
 Route104_Text_MayWeShouldRegister:
 	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"
