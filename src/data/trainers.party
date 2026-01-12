@@ -9673,11 +9673,12 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
 Name: NORA
 Class: Rival
-Pic: May
+Pic: Nora
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Treecko
 Level: 5
@@ -9728,11 +9729,12 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_MAY_ROUTE_103_TREECKO ===
 Name: NORA
 Class: Rival
-Pic: May
+Pic: Nora
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Torchic
 Level: 5
@@ -9783,11 +9785,12 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: NORA
 Class: Rival
-Pic: May
+Pic: Nora
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Mudkip
 Level: 5

@@ -31,6 +31,6 @@ OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
 
 OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
 	.string "POKéMON CENTERS are great!\p"
-	.string "Just as long as you can handle\n"
-	.string "the crushing taxes living here...$"
+	.string "I just kinda wish the nurse here\n"
+	.string "is more...joyous...$"
 
