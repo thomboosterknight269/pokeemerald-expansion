@@ -60,9 +60,9 @@
 #define TRAINER_GABBY_AND_TY_4               54
 #define TRAINER_GABBY_AND_TY_5               55
 #define TRAINER_GABBY_AND_TY_6               56
-#define TRAINER_LOLA_1                       57
-#define TRAINER_AUSTINA                      58
-#define TRAINER_GWEN                         59
+#define TRAINER_ADRIAN                       57
+#define TRAINER_AUSTIN                       58
+#define TRAINER_JOHN                         59
 #define TRAINER_LOLA_2                       60
 #define TRAINER_LOLA_3                       61
 #define TRAINER_LOLA_4                       62
@@ -268,7 +268,7 @@
 #define TRAINER_PHOEBE                      262
 #define TRAINER_GLACIA                      263
 #define TRAINER_DRAKE                       264
-#define TRAINER_ROXANNE_1                   265
+#define TRAINER_DAVY_JONES_1                265
 #define TRAINER_BRAWLY_1                    266
 #define TRAINER_WATTSON_1                   267
 #define TRAINER_FLANNERY_1                  268
@@ -322,7 +322,7 @@
 #define TRAINER_SHELBY_4                    316
 #define TRAINER_SHELBY_5                    317
 #define TRAINER_CALVIN_1                    318
-#define TRAINER_BILLY                       319
+#define TRAINER_ARIA                        319
 #define TRAINER_JOSH                        320
 #define TRAINER_TOMMY                       321
 #define TRAINER_JOEY                        322
@@ -701,7 +701,7 @@
 #define TRAINER_SARAH                       695
 #define TRAINER_DARIAN                      696
 #define TRAINER_HAILEY                      697
-#define TRAINER_CHANDLER                    698
+#define TRAINER_DIRE                        698
 #define TRAINER_KALEB                       699
 #define TRAINER_JOSEPH                      700
 #define TRAINER_ALYSSA                      701

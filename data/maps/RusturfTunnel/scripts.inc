@@ -419,33 +419,31 @@ RusturfTunnel_EventScript_Mike::
 	end
 
 RusturfTunnel_Text_ComeAndGetSome:
-	.string "What, are you coming?\n"
+	.string "Jessie: What, are you coming?\n"
 	.string "Come and get some, then!$"
 
 RusturfTunnel_Text_Peeko:
 	.string "PEEKO: Pii pihyoh!$"
 
 RusturfTunnel_Text_GruntIntro:
-	.string "Grah, keelhaul it all!\p"
-	.string "That hostage POKéMON turned out to\n"
-	.string "be worthless!\p"
-	.string "And to think I made a getaway…\n"
-	.string "In this tunnel to nowhere!\p"
+	.string "Jessie: Grah, keelhaul it all!\p"
+	.string "If only Davy Jones wasn't such\n"
+	.string "a worthless weakling!\p"
+	.string "I would've been able to beat you\n"
+	.string "easily!\p"
 	.string "Hey! You!\n"
-	.string "So you want to battle me?$"
+	.string "I challenge you to a rematch!$"
 
 RusturfTunnel_Text_GruntDefeat:
-	.string "Urrrggh! My career in crime comes to\n"
-	.string "a dead end!$"
+	.string "Urrrggh!$"
 
 RusturfTunnel_Text_GruntTakePackage:
-	.string "This is plain not right…\p"
-	.string "The BOSS told me this would be a\n"
-	.string "slick-and-easy job to pull.\p"
-	.string "All I had to do was steal some package\n"
-	.string "from DEVON.\p"
+	.string "Jessie: This is plain not right…\p"
+	.string "Two times I have been bested...\n"
+	.string "by some no-name nobody no less!\p"
 	.string "Tch!\n"
-	.string "You want it back that badly, take it!$"
+	.string "Next time we see each other, I'll be\l"
+	.string "ready for you!$"
 
 RusturfTunnel_Text_PeekoGladToSeeYouSafe:
 	.string "PEEKO!\n"
@@ -459,12 +457,9 @@ RusturfTunnel_Text_ThankYouLetsGoHomePeeko:
 	.string "… … … … … … … …\p"
 	.string "Ah, so you are {PLAYER}{KUN}!\n"
 	.string "I sincerely thank you!\p"
-	.string "Now, if there's anything that troubles\n"
-	.string "you, don't hesitate to tell me!\p"
-	.string "You can usually find me in my cottage\n"
-	.string "by the sea near PETALBURG WOODS.\p"
-	.string "Come, PEEKO, we should make our way\n"
-	.string "home.\p"
+	.string "Now, I'm free to sail the seas\n"
+	.string "once again!\l"
+	.string "Come, PEEKO, let's head back.\p"
 	.string "PEEKO: Pihyoh!$"
 
 RusturfTunnel_Text_WhyCantTheyKeepDigging:

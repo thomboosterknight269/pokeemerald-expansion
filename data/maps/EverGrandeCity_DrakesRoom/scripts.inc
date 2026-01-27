@@ -75,7 +75,7 @@ EverGrandeCity_DrakesRoom_Text_IntroSpeech:
 	.string "prevail over me!$"
 
 EverGrandeCity_DrakesRoom_Text_Defeat:
-	.string "Superb, it should be said.$"
+	.string "Well done...$"
 
 EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
 	.string "You deserve every credit for coming\n"
