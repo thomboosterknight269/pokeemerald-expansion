@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_RUSTBORO_CITY",
-      "offset": 0,
+      "offset": -6,
       "direction": "left"
     }
   ],
@@ -496,20 +496,6 @@
       "script": "Route116_EventScript_TrainerTipsBagHasPockets"
     },
     {
-      "type": "secret_base",
-      "x": 56,
-      "y": 6,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_BLUE_CAVE3_2"
-    },
-    {
-      "type": "secret_base",
-      "x": 55,
-      "y": 15,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_BLUE_CAVE4_2"
-    },
-    {
       "type": "hidden_item",
       "x": 22,
       "y": 9,
@@ -519,8 +505,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 70,
-      "y": 13,
+      "x": 52,
+      "y": 7,
       "elevation": 3,
       "item": "ITEM_BLACK_GLASSES",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES"

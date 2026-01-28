@@ -1032,12 +1032,12 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Supersonic
 - Hyper Voice
 
-=== TRAINER_LOLA_1 ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
+=== TRAINER_ADRIAN ===
+Name: Adrian
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
@@ -1049,12 +1049,12 @@ Azurill
 Level: 12
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_AUSTINA ===
-Name: AUSTINA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
+=== TRAINER_AUSTIN ===
+Name: AUSTIN
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
@@ -1062,12 +1062,12 @@ Marill
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GWEN ===
-Name: GWEN
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
+=== TRAINER_JOHN ===
+Name: John
+Class: Ninja Boy
+Pic: Ninja Boy
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
@@ -1145,10 +1145,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_RICKY_1 ===
 Name: RICKY
-Class: Tuber M
-Pic: Tuber M
+Class: Bug Catcher
+Pic: Bug Catcher
 Gender: Male
-Music: Girl
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
@@ -4788,18 +4788,18 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Crunch
 
-=== TRAINER_ROXANNE_1 ===
-Name: ROXANNE
+=== TRAINER_DAVY_JONES_1 ===
+Name: Davy Jones
 Class: Leader
 Pic: Leader Roxanne
-Gender: Female
-Music: Female
+Gender: Male
+Music: Male
 Items: Potion / Potion
 Double Battle: No
 AI: Basic Trainer
 
 Geodude
-Level: 12
+Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
 - Defense Curl
@@ -4807,7 +4807,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Tomb
 
 Geodude
-Level: 12
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
 - Defense Curl
@@ -4815,7 +4815,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Tomb
 
 Nosepass @ Oran Berry
-Level: 15
+Level: 16
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Block
 - Harden
@@ -5953,52 +5953,36 @@ Poochyena
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BILLY ===
-Name: BILLY
-Class: Youngster
-Pic: Youngster
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Check Bad Move
-
-Zigzagoon
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Seedot
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
-Name: JOSH
-Class: Youngster
+Name: Grunt
+Class: Team Aqua
 Pic: Youngster
 Gender: Male
-Music: Male
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
 Geodude
-Level: 10
+Level: 11
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
 
 === TRAINER_TOMMY ===
-Name: TOMMY
-Class: Youngster
+Name: Grunt
+Class: Team Aqua
 Pic: Youngster
 Gender: Male
-Music: Male
+Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
 Geodude
-Level: 8
+Level: 9
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 Geodude
-Level: 8
+Level: 11
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_JOEY ===
@@ -6117,17 +6101,17 @@ Aron
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_CALVIN_2 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
-Gender: Male
-Music: Male
+=== TRAINER_ARIA ===
+Name: ARIA
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Mightyena
-Level: 27
+Weedle
+Level: 8
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_CALVIN_3 ===
@@ -10559,20 +10543,20 @@ Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MARC ===
-Name: MARC
-Class: Hiker
+Name: Grunt
+Class: Team Aqua
 Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
-
+ 
 Geodude
-Level: 8
+Level: 11
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-Geodude
-Level: 8
+Mudkip
+Level: 14
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_BRENDEN ===
@@ -12996,12 +12980,12 @@ Marill
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_CHANDLER ===
-Name: CHANDLER
-Class: Tuber M
-Pic: Tuber M
+=== TRAINER_DIRE ===
+Name: DIRE
+Class: Ninja Boy
+Pic: Ninja Boy
 Gender: Male
-Music: Girl
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 

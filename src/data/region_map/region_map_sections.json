@@ -10,7 +10,7 @@
     },
     {
       "id": "MAPSEC_OLDALE_TOWN",
-      "name": "OLDALE TOWN",
+      "name": "ASTER TOWN",
       "x": 4,
       "y": 9,
       "width": 1,
@@ -474,7 +474,7 @@
     },
     {
       "id": "MAPSEC_PETALBURG_WOODS",
-      "name": "PETALBURG WOODS",
+      "name": "Midnight Woods",
       "x": 0,
       "y": 8,
       "width": 1,
@@ -1005,7 +1005,7 @@
     },
     {
       "id": "MAPSEC_RUIN_VALLEY",
-      "name": "RUIN VALLEY"
+      "name": "SOLAS CITY"
     },
     {
       "id": "MAPSEC_TRAINER_TOWER",

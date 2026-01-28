@@ -41,7 +41,7 @@ Route109_EventScript_DoSailToDewford::
 	applymovement LOCALID_ROUTE109_BOAT, Route109_Movement_SailToDewford
 	applymovement LOCALID_PLAYER, Route109_Movement_SailToDewford
 	waitmovement 0
-	delay 50
+	delay 35
 	call Common_EventScript_StopBrineysBoatMusic
 	showobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
 	applymovement LOCALID_PLAYER, Route109_Movement_PlayerExitBoat
@@ -68,21 +68,7 @@ Route109_EventScript_DoSailToDewford::
 Route109_Movement_SailToDewford:
 	walk_in_place_faster_down
 	walk_down
-	walk_down
 	walk_fast_down
-	walk_fast_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
@@ -312,10 +298,6 @@ Route109_EventScript_ChoseNotToSail::
 	release
 	end
 
-Route109_EventScript_SeashoreHouseGirl::
-	msgbox Route109_Text_ChillAtMyPapasSpot, MSGBOX_NPC
-	end
-
 Route109_EventScript_SandCastleBoy::
 	lock
 	faceplayer
@@ -348,32 +330,6 @@ Route109_EventScript_AlreadyReceivedSoftSand::
 	release
 	end
 
-Route109_EventScript_Woman::
-	msgbox Route109_Text_LittleKidsDartAround, MSGBOX_NPC
-	end
-
-Route109_EventScript_OldMan::
-	msgbox Route109_Text_ZigzagoonPicksUpLitter, MSGBOX_NPC
-	end
-
-Route109_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-	msgbox Route109_Text_ZigzagoonCry, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
-Route109_EventScript_SeashoreHouseSign::
-	msgbox Route109_Text_SeashoreHouseSign, MSGBOX_SIGN
-	end
-
-Route109_EventScript_TrainerTipsSign::
-	msgbox Route109_Text_TrainerTipsSign, MSGBOX_SIGN
-	end
-
 Route109_EventScript_David::
 	trainerbattle_single TRAINER_DAVID, Route109_Text_DavidIntro, Route109_Text_DavidDefeated
 	msgbox Route109_Text_DavidPostBattle, MSGBOX_AUTOCLOSE
@@ -395,55 +351,25 @@ Route109_EventScript_Edmond::
 	end
 
 Route109_EventScript_Ricky::
-	trainerbattle_single TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated, Route109_EventScript_RickyRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route109_EventScript_RickyRematch
+	trainerbattle_single TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated
 	msgbox Route109_Text_RickyPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-Route109_EventScript_RickyRegisterMatchCallAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route109_Text_RickyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_RICKY_1
+Route109_EventScript_Adrian::
+	trainerbattle_single TRAINER_ADRIAN, Route109_Text_AdrianIntro, Route109_Text_AdrianDefeated
+	msgbox Route109_Text_AdrianPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-Route109_EventScript_RickyRematch::
-	trainerbattle_rematch TRAINER_RICKY_1, Route109_Text_RickyRematchIntro, Route109_Text_RickyRematchDefeated
-	msgbox Route109_Text_RickyRematchPostBattle, MSGBOX_AUTOCLOSE
+Route109_EventScript_Austin::
+	trainerbattle_single TRAINER_AUSTIN, Route109_Text_AustinIntro, Route109_Text_AustinDefeated
+	msgbox Route109_Text_AustinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route109_EventScript_Lola::
-	trainerbattle_single TRAINER_LOLA_1, Route109_Text_LolaIntro, Route109_Text_LolaDefeated, Route109_EventScript_LolaRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route109_EventScript_LolaRematch
-	msgbox Route109_Text_LolaPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route109_EventScript_LolaRegisterMatchCallAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route109_Text_LolaRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_LOLA_1
-	release
-	end
-
-Route109_EventScript_LolaRematch::
-	trainerbattle_rematch TRAINER_LOLA_1, Route109_Text_LolaRematchIntro, Route109_Text_LolaRematchDefeated
-	msgbox Route109_Text_LolaRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route109_EventScript_Austina::
-	trainerbattle_single TRAINER_AUSTINA, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
-	msgbox Route109_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route109_EventScript_Gwen::
-	trainerbattle_single TRAINER_GWEN, Route109_Text_GwenIntro, Route109_Text_GwenDefeated
-	msgbox Route109_Text_GwenPostBattle, MSGBOX_AUTOCLOSE
+Route109_EventScript_John::
+	trainerbattle_single TRAINER_JOHN, Route109_Text_JohnIntro, Route109_Text_JohnDefeated
+	msgbox Route109_Text_JohnPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Carter::
@@ -461,9 +387,9 @@ Route109_EventScript_Mel::
 	msgbox Route109_Text_MelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route109_EventScript_Chandler::
-	trainerbattle_single TRAINER_CHANDLER, Route109_Text_ChandlerIntro, Route109_Text_ChandlerDefeated
-	msgbox Route109_Text_ChandlerPostBattle, MSGBOX_AUTOCLOSE
+Route109_EventScript_Dire::
+	trainerbattle_single TRAINER_DIRE, Route109_Text_DireIntro, Route109_Text_DireDefeated
+	msgbox Route109_Text_DirePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Hailey::
@@ -512,19 +438,6 @@ Route109_Text_BrineyTellMeWhenYouNeedToSail:
 	.string "MR. BRINEY: You just tell me whenever\n"
 	.string "you need to set sail again!$"
 
-Route109_Text_ChillAtMyPapasSpot:
-	.string "Yo, TRAINERS!\n"
-	.string "Whether you're hot to trot,\l"
-	.string "or cool cat not,\l"
-	.string "chill at my papa's spot!$"
-
-Route109_Text_LittleKidsDartAround:
-	.string "Little kids can dart around so quickly…\p"
-	.string "You don't dare take your eyes off them\n"
-	.string "for an instant. It's very taxing.\p"
-	.string "Mine are with my POKéMON, so they\n"
-	.string "should be okay, but…$"
-
 Route109_Text_SandCastleTakingLongTime:
 	.string "Our sand castle's taking a long time\n"
 	.string "to make.$"
@@ -539,26 +452,3 @@ Route109_Text_WereGoingToMakeBigCastle:
 	.string "queen.\p"
 	.string "We'll let you be a servant.$"
 
-Route109_Text_ZigzagoonPicksUpLitter:
-	.string "The water around these parts is clean.\p"
-	.string "But, I get my ZIGZAGOON to pick up\n"
-	.string "litter from the shoreline at times.\p"
-	.string "Dirty water becomes rain and joins our\n"
-	.string "rivers, which we drink from…\p"
-	.string "If we pollute the sea, it all comes\n"
-	.string "back to haunt us eventually.$"
-
-Route109_Text_ZigzagoonCry:
-	.string "ZIGZAGOON: Guguu?$"
-
-Route109_Text_SeashoreHouseSign:
-	.string "SEASHORE HOUSE\p"
-	.string "“May hot battles rage on hot sands!\n"
-	.string "The place for hot TRAINERS!”$"
-
-Route109_Text_TrainerTipsSign:
-	.string "TRAINER TIPS\p"
-	.string "POKéMON at the same level may not\n"
-	.string "always have identical stats.\p"
-	.string "POKéMON raised by TRAINERS are said\n"
-	.string "to grow stronger than wild POKéMON.$"
