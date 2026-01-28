@@ -1,55 +1,72 @@
 RustboroCity_DevonCorp_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, RustboroCity_DevonCorp_1F_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_DevonCorp_1F_OnTransition
 	.byte 0
 
-RustboroCity_DevonCorp_1F_OnFrame:
-	map_script_2 VAR_RUSTBORO_CITY_STATE, 0, RustboroCity_DevonCorp_1F_EventScript_Cutscene
-	.2byte 0
-
-RustboroCity_DevonCorp_1F_EventScript_Cutscene::
-	lockall
-	applymovement Grunt1, Common_Movement_FaceDown
-	waitmovement 0
-	applymovement Grunt2, Common_Movement_FaceDown
-	waitmovement 0
-	applymovement Grunt1, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement Grunt2, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement Grunt1, Common_Movement_Delay48
-	waitmovement 0
-	applymovement Grunt2, moveUp
-	waitmovement 0
-	applymovement Grunt1, goToPlayer
-	waitmovement 0
-	msgbox RustboroCity_DevonCorp_1F_Text_Hey, MSGBOX_AUTOCLOSE
-	trainerbattle_no_intro TRAINER_JOSH, crud
-	applymovement Grunt1, BackOff
-	waitmovement 0
-	msgbox RustboroCity_DevonCorp_1F_Text_ohCrud
-	applymovement Grunt1, Flee
-	waitmovement 0
-	removeObject Grunt1
-	applymovement Grunt2, goToPlayer2
-	waitmovement 0
-	msgbox RustboroCity_DevonCorp_1F_Text_Hey2, MSGBOX_AUTOCLOSE
-	trainerbattle_no_intro TRAINER_TOMMY, crud2
-	msgbox RustboroCity_DevonCorp_1F_Text_ohCrud2
-	applymovement Grunt2, Flee
-	waitmovement 0
-	removeObject Grunt2
-	setvar VAR_RUSTBORO_CITY_STATE, 1
-	closemessage
-	releaseall
+RustboroCity_DevonCorp_1F_OnTransition:
+	call_if_unset FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_BlockStairs
 	end
 
-RustboroCity_DevonCorp_1F_EventScript_Grunt1::
+RustboroCity_DevonCorp_1F_EventScript_BlockStairs::
+	setobjectxyperm LOCALID_DEVON_CORP_STAIR_GUARD, 14, 2
+	setobjectmovementtype LOCALID_DEVON_CORP_STAIR_GUARD, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+RustboroCity_DevonCorp_1F_EventScript_Employee::
 	lock
+	faceplayer
+	goto_if_set FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_GoodsRecovered
+	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_DevonCorp_1F_EventScript_RobberWasntBright
+	msgbox RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct, MSGBOX_DEFAULT
 	release
 	end
 
-RustboroCity_DevonCorp_1F_EventScript_Grunt2::
+RustboroCity_DevonCorp_1F_EventScript_RobberWasntBright::
+	msgbox RustboroCity_DevonCorp_1F_Text_RobberWasntVeryBright, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_GoodsRecovered::
+	msgbox RustboroCity_DevonCorp_1F_Text_SoundsLikeStolenGoodsRecovered, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_StairGuard::
 	lock
+	faceplayer
+	goto_if_set FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_AlwaysWelcome
+	goto_if_set FLAG_RECOVERED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_GotRobbed
+	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_DevonCorp_1F_EventScript_GotRobbed
+	msgbox RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_AlwaysWelcome::
+	msgbox RustboroCity_DevonCorp_1F_Text_YoureAlwaysWelcomeHere, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_GotRobbed::
+	msgbox RustboroCity_DevonCorp_1F_Text_HowCouldWeGetRobbed, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_Greeter::
+	lock
+	faceplayer
+	goto_if_set FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_WelcomeToDevonCorp
+	goto_if_set FLAG_RECOVERED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_StaffGotRobbed
+	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_DevonCorp_1F_EventScript_StaffGotRobbed
+	msgbox RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_WelcomeToDevonCorp::
+	msgbox RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_StaffGotRobbed::
+	msgbox RustboroCity_DevonCorp_1F_Text_StaffGotRobbed, MSGBOX_DEFAULT
 	release
 	end
 
@@ -61,86 +78,67 @@ RustboroCity_DevonCorp_1F_EventScript_ProductsDisplay::
 	msgbox RustboroCity_DevonCorp_1F_Text_ProductDisplay, MSGBOX_SIGN
 	end
 
-RustboroCity_DevonCorp_1F_Text_Hey:
-	.string "Hey, what are you doing here?!\n"
-	.string "You better think twice before coming\l"
-	.string "around to mess with Team Nyx!$"
+RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp:
+	.string "Hello and welcome to the DEVON\n"
+	.string "CORPORATION.\p"
+	.string "We're proud producers of items and\n"
+	.string "medicine that enhance your life.$"
 
-RustboroCity_DevonCorp_1F_Text_ohCrud:
-	.string "Oh crud...they beat me...\p"
-	.string "They beat me!!!$"
+RustboroCity_DevonCorp_1F_Text_StaffGotRobbed:
+	.string "One of our research staff stupidly\n"
+	.string "got robbed of an important parcel.$"
 
-RustboroCity_DevonCorp_1F_Text_Hey2:
-	.string "You'll pay for messing with my\n"
-	.string "buddy and with our operations!$"
+RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct:
+	.string "Hey, those RUNNING SHOES!\n"
+	.string "They're one of our products!\p"
+	.string "It makes me happy when I see someone\n"
+	.string "using something we made.$"
 
-RustboroCity_DevonCorp_1F_Text_ohCrud2:
-	.string "Grr...you may have beaten us...\p"
-	.string "But once you face against our captain\n"
-	.string "You'll be sorry!$"
+RustboroCity_DevonCorp_1F_Text_RobberWasntVeryBright:
+	.string "That stolen parcel…\p"
+	.string "Well, sure it's important, but it's not\n"
+	.string "anything that anyone can use.\p"
+	.string "In my estimation, that robber must not\n"
+	.string "have been very bright.$"
 
 RustboroCity_DevonCorp_1F_Text_SoundsLikeStolenGoodsRecovered:
 	.string "It sounds like they've recovered\n"
 	.string "the ripped-off DEVON GOODS.$"
 
+RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter:
+	.string "I'm sorry, only authorized people\n"
+	.string "are allowed to enter here.$"
+
+RustboroCity_DevonCorp_1F_Text_HowCouldWeGetRobbed:
+	.string "It's beyond stupid.\n"
+	.string "How could we get robbed?$"
+
+RustboroCity_DevonCorp_1F_Text_YoureAlwaysWelcomeHere:
+	.string "Hi, there!\n"
+	.string "You're always welcome here!$"
+
 RustboroCity_DevonCorp_1F_Text_RocksMetalDisplay:
 	.string "Samples of rocks and metal are\n"
-	.string "displayed in the glass case.$"
+	.string "displayed in the glass case.\p"
+	.string "There's a panel with some writing\n"
+	.string "on it…\p"
+	.string "“DEVON CORPORATION got its start as\n"
+	.string "a producer of stones from quarries.\p"
+	.string "“The company also produced iron from\n"
+	.string "filings in the sand.\p"
+	.string "“From that humble start as a producer\n"
+	.string "of raw materials, DEVON developed.\p"
+	.string "“DEVON is now a manufacturer of a wide\n"
+	.string "range of industrial products.”$"
 
 RustboroCity_DevonCorp_1F_Text_ProductDisplay:
 	.string "Prototypes and test products fill\n"
-	.string "the glass display case.$"
+	.string "the glass display case.\p"
+	.string "There's a panel with a description…\p"
+	.string "“In addition to industrial products,\n"
+	.string "DEVON now markets sundries and\l"
+	.string "pharmaceuticals for better lifestyles.\p"
+	.string "“Recently, DEVON has begun marketing\n"
+	.string "tools for POKéMON TRAINERS, including\l"
+	.string "POKé BALLS and POKéNAV systems.”$"
 
-crud:
-	.string "Agghh!$"
-
-crud2:
-	.string "Uooooooh......$"
-
-goToPlayer:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	face_player
-	step_end
-
-moveUp:
-	walk_faster_up
-	face_player
-	step_end
-
-BackOff:
-	lock_facing_direction
-	walk_up
-	unlock_facing_direction
-	step_end
-
-Flee:
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	step_end
-
-goToPlayer2:
-	walk_fast_right
-	walk_fast_down
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	face_player
-	step_end

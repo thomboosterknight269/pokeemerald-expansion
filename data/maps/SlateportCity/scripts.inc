@@ -1,11 +1,13 @@
 SlateportCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_OnFrame
 	.byte 0
 
 SlateportCity_OnTransition:
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
 	call SlateportCity_EventScript_EnterSlateport
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
+	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
 	end
 
 SlateportCity_EventScript_EnterSlateport::
@@ -31,6 +33,86 @@ SlateportCity_EventScript_MovePeopleForSternInterview::
 	setobjectmovementtype LOCALID_SLATEPORT_MAN_1, MOVEMENT_TYPE_FACE_LEFT
 	return
 
+SlateportCity_EventScript_SetReadyForScottScene::
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_eq VAR_0x8004, 30, SlateportCity_EventScript_MoveScottLeft
+	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 23, 27
+	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+SlateportCity_EventScript_MoveScottLeft::
+	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 22, 27
+	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+SlateportCity_OnFrame:
+	map_script_2 VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_ScottScene
+	.2byte 0
+
+SlateportCity_EventScript_ScottScene::
+	lockall
+	addobject LOCALID_SLATEPORT_SCOTT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_PlayerFaceScott
+	applymovement LOCALID_SLATEPORT_SCOTT, SlateportCity_Movement_ScottApproachPlayer
+	waitmovement 0
+	msgbox SlateportCity_Text_YouDroveTeamAquaAway, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SLATEPORT_SCOTT, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	delay 60
+	msgbox SlateportCity_Text_MaybeThisTrainer, MSGBOX_DEFAULT
+	applymovement LOCALID_SLATEPORT_SCOTT, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox SlateportCity_Text_LetsRegisterEachOther, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox SlateportCity_Text_RegisteredScott, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	setflag FLAG_ENABLE_SCOTT_MATCH_CALL
+	msgbox SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SLATEPORT_SCOTT, SlateportCity_Movement_ScottExit
+	waitmovement 0
+	removeobject LOCALID_SLATEPORT_SCOTT
+	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 10, 12
+	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 2
+	addvar VAR_SCOTT_STATE, 1
+	releaseall
+	end
+
+SlateportCity_Movement_PlayerFaceScott:
+	delay_16
+	delay_8
+	walk_in_place_faster_left
+	step_end
+
+SlateportCity_Movement_ScottApproachPlayer:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+SlateportCity_Movement_ScottExit:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 SlateportCity_EventScript_EnergyGuru::
 	lock
 	faceplayer
@@ -50,6 +132,34 @@ SlateportCity_Pokemart_EnergyGuru:
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_HP_UP
 	pokemartlistend
+
+SlateportCity_EventScript_EffortRibbonWoman::
+	lock
+	faceplayer
+	bufferleadmonspeciesname STR_VAR_1
+	msgbox SlateportCity_Text_OhYourPokemon, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, LeadMonHasEffortRibbon
+	call_if_eq VAR_RESULT, TRUE, SlateportCity_EventScript_MonHasEffortRibbon
+	specialvar VAR_RESULT, Special_AreLeadMonEVsMaxedOut
+	call_if_eq VAR_RESULT, FALSE, SlateportCity_EventScript_MonEVsNotMaxed
+	msgbox SlateportCity_Text_PleaseGiveItThisEffortRibbon, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message SlateportCity_Text_ReceivedEffortRibbon
+	waitfanfare
+	msgbox SlateportCity_Text_PutEffortRibbonOnMon, MSGBOX_DEFAULT
+	special GiveLeadMonEffortRibbon
+	release
+	end
+
+SlateportCity_EventScript_MonEVsNotMaxed::
+	msgbox SlateportCity_Text_GoForItLittleHarder, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_MonHasEffortRibbon::
+	msgbox SlateportCity_Text_EffortRibbonLooksGoodOnIt, MSGBOX_DEFAULT
+	release
+	end
 
 SlateportCity_EventScript_Cook::
 	lock
@@ -144,6 +254,10 @@ SlateportCity_EventScript_Woman1AquaGone::
 	release
 	end
 
+SlateportCity_EventScript_BattleTentSign::
+	msgbox SlateportCity_Text_BattleTentSign, MSGBOX_SIGN
+	end
+
 SlateportCity_EventScript_SternsShipyardSign::
 	lockall
 	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_SternsShipyardFerryComplete
@@ -162,12 +276,20 @@ SlateportCity_EventScript_SternsShipyardFerryComplete::
 	releaseall
 	end
 
+SlateportCity_EventScript_PokemonFanClubSign::
+	msgbox SlateportCity_Text_PokemonFanClubSign, MSGBOX_SIGN
+	end
+
 SlateportCity_EventScript_OceanicMuseumSign::
 	msgbox SlateportCity_Text_OceanicMuseumSign, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_CitySign::
 	msgbox SlateportCity_Text_CitySign, MSGBOX_SIGN
+	end
+
+SlateportCity_EventScript_MarketSign::
+	msgbox SlateportCity_Text_MarketSign, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_HarborSign::
@@ -180,6 +302,10 @@ SlateportCity_EventScript_HarborSign::
 SlateportCity_EventScript_HarborSignFerryComplete::
 	msgbox SlateportCity_Text_HarborSign, MSGBOX_DEFAULT
 	releaseall
+	end
+
+SlateportCity_EventScript_NameRatersHouseSign::
+	msgbox SlateportCity_Text_NameRatersHouseSign, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_Maniac::
@@ -208,6 +334,13 @@ SlateportCity_EventScript_Sailor2::
 	msgbox SlateportCity_Text_SinkOldBoats, MSGBOX_NPC
 	end
 
+SlateportCity_EventScript_PokefanF::
+	msgbox SlateportCity_Text_BuyTooMuch, MSGBOX_NPC
+	end
+
+SlateportCity_EventScript_Man2::
+	msgbox SlateportCity_Text_BattleTentBuiltRecently, MSGBOX_NPC
+	end
 
 SlateportCity_EventScript_AquaGrunt1::
 	lock
@@ -566,6 +699,10 @@ SlateportCity_EventScript_Gabby::
 	msgbox SlateportCity_Text_MostInvaluableExperience, MSGBOX_SIGN
 	end
 
+SlateportCity_EventScript_Man3::
+	msgbox SlateportCity_Text_WonderIfLighthouseStartlesPokemon, MSGBOX_NPC
+	end
+
 SlateportCity_EventScript_BerryPowderClerk::
 	lock
 	faceplayer
@@ -725,6 +862,56 @@ SlateportCity_EventScript_NotEnoughBerryPowder::
 	goto SlateportCity_EventScript_ChooseBerryPowderItem
 	end
 
+SlateportCity_EventScript_ScottBattleTentScene::
+	lockall
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	opendoor 10, 12
+	waitdooranim
+	addobject LOCALID_SLATEPORT_SCOTT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_PushPlayerDown
+	applymovement LOCALID_SLATEPORT_SCOTT, SlateportCity_Movement_ScottExitBattleTent
+	waitmovement 0
+	closedoor 10, 12
+	waitdooranim
+	msgbox SlateportCity_Text_TakingBattleTentChallenge, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_PlayerWatchScottExit
+	applymovement LOCALID_SLATEPORT_SCOTT, SlateportCity_Movement_ScottExitAfterBattleTent
+	waitmovement 0
+	removeobject LOCALID_SLATEPORT_SCOTT
+	addvar VAR_SCOTT_STATE, 1
+	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
+	releaseall
+	end
+
+SlateportCity_Movement_PushPlayerDown:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
+SlateportCity_Movement_PlayerWatchScottExit:
+	delay_16
+	walk_in_place_faster_right
+	step_end
+
+SlateportCity_Movement_ScottExitBattleTent:
+	delay_8
+	walk_down
+	step_end
+
+SlateportCity_Movement_ScottExitAfterBattleTent:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 SlateportCity_EventScript_BerryCrushRankingsSign::
 	lockall
 	special ShowBerryCrushRankings
@@ -735,6 +922,37 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"
 	.string "sell you what you need!$"
+
+SlateportCity_Text_OhYourPokemon:
+	.string "Oh?\n"
+	.string "Your {STR_VAR_1}…$"
+
+SlateportCity_Text_PleaseGiveItThisEffortRibbon:
+	.string "Went for it stupendously!\p"
+	.string "As its reward, please give it this\n"
+	.string "EFFORT RIBBON.$"
+
+SlateportCity_Text_ReceivedEffortRibbon:
+	.string "{PLAYER} received the EFFORT RIBBON.$"
+
+SlateportCity_Text_PutEffortRibbonOnMon:
+	.string "{PLAYER} put the EFFORT RIBBON\n"
+	.string "on {STR_VAR_1}.$"
+
+SlateportCity_Text_GoForItLittleHarder:
+	.string "You have to go for it a little harder.\p"
+	.string "If you do, I'll give your POKéMON\n"
+	.string "something nice.$"
+
+SlateportCity_Text_EffortRibbonLooksGoodOnIt:
+	.string "Oh! Your {STR_VAR_1}, that EFFORT\n"
+	.string "RIBBON looks good on it!$"
+
+SlateportCity_Text_WonderIfLighthouseStartlesPokemon:
+	.string "The light of the lighthouse reaches\n"
+	.string "dozens of miles away.\p"
+	.string "I wonder if it doesn't startle POKéMON\n"
+	.string "in the sea.$"
 
 SlateportCity_Text_SeaweedFullOfLife:
 	.string "Ooh, look at this!\p"
@@ -860,10 +1078,14 @@ SlateportCity_Text_SeaIsSoWet:
 	.string "the tears shed by POKéMON?$"
 
 SlateportCity_Text_SinkOldBoats:
-	.string "I'd advise against going up ahead...\p"
-	.string "A cruel mistress lives atop of \n"
-	.string "this very mount'n that leads into\l"
-	.string "an underground labyrinth yar...$"
+	.string "Do you know what they do with old\n"
+	.string "ships that become too creaky to sail?\p"
+	.string "They sink them in the sea so they\n"
+	.string "become habitats for POKéMON.$"
+
+SlateportCity_Text_BuyTooMuch:
+	.string "Whenever I visit here, I get carried\n"
+	.string "away and buy too much.$"
 
 SlateportCity_Text_GetNameRaterToHelpYou:
 	.string "If you want to change your POKéMON's\n"
@@ -875,6 +1097,14 @@ SlateportCity_Text_CantChangeTradeMonName:
 	.string "you can't change its nickname.\p"
 	.string "The original TRAINER's love for that\n"
 	.string "POKéMON is in the nickname.$"
+
+SlateportCity_Text_BattleTentBuiltRecently:
+	.string "Recently, a BATTLE TENT was built\n"
+	.string "in SLATEPORT.\p"
+	.string "GYMS are fun, but the BATTLE TENT's\n"
+	.string "awesome in its own way.\p"
+	.string "You should go find tough POKéMON\n"
+	.string "for the BATTLE TENT!$"
 
 SlateportCity_Text_CaptSternBeingInterviewed:
 	.string "I was hoping that it was a famous star\n"
@@ -967,6 +1197,10 @@ SlateportCity_Text_PleaseComeWithMe:
 	.string "{PLAYER}{KUN}!\n"
 	.string "Please, come with me!$"
 
+SlateportCity_Text_BattleTentSign:
+	.string "BATTLE TENT SLATEPORT SITE\n"
+	.string "“Find it! The ultimate POKéMON!”$"
+
 SlateportCity_Text_SternsShipyardWantedSign:
 	.string "STERN'S SHIPYARD\p"
 	.string "“Wanted: A sailor capable of sailing\n"
@@ -984,6 +1218,10 @@ SlateportCity_Text_SternsShipyardFerryComplete:
 	.string "ferry S.S. TIDAL is handled at the\l"
 	.string "HARBOR.”$"
 
+SlateportCity_Text_PokemonFanClubSign:
+	.string "POKéMON FAN CLUB\n"
+	.string "“Calling all fans of POKéMON!”$"
+
 SlateportCity_Text_OceanicMuseumSign:
 	.string "“The endless sea sustains\n"
 	.string "all life.”\p"
@@ -993,6 +1231,10 @@ SlateportCity_Text_CitySign:
 	.string "SLATEPORT CITY\p"
 	.string "“The port where people and POKéMON\n"
 	.string "cross paths.”$"
+
+SlateportCity_Text_MarketSign:
+	.string "SLATEPORT MARKET\n"
+	.string "“Unique items found nowhere else!”$"
 
 SlateportCity_Text_HarborFerryUnderConstruction:
 	.string "SLATEPORT HARBOR\p"
@@ -1005,6 +1247,10 @@ SlateportCity_Text_HarborSign:
 	.string "SLATEPORT HARBOR\p"
 	.string "“Enjoy a delightful cruise on\n"
 	.string "the ferry S.S. TIDAL.”$"
+
+SlateportCity_Text_NameRatersHouseSign:
+	.string "NAME RATER'S HOUSE\n"
+	.string "“POKéMON nicknames rated.”$"
 
 SlateportCity_Text_ExplainBerries:
 	.string "If a wild POKéMON gets hurt, it heals\n"
@@ -1063,3 +1309,46 @@ SlateportCity_Text_ComeBackToTradeBerryPowder:
 	.string "BERRY POWDER for some medicine.\p"
 	.string "I'm always running a bazaar here.\p"
 	.string "Did you know?$"
+
+SlateportCity_Text_YouDroveTeamAquaAway:
+	.string "SCOTT: Huh?\n"
+	.string "I'm sure I met you somewhere before.\p"
+	.string "Have I introduced myself to you?\n"
+	.string "If not, my name's SCOTT.\p"
+	.string "I just saw TEAM AQUA run away from\n"
+	.string "here like they were stung.\p"
+	.string "Let me guess--you drove them away?$"
+
+SlateportCity_Text_MaybeThisTrainer:
+	.string "SCOTT: Hmm…\n"
+	.string "Maybe, just maybe, this TRAINER…$"
+
+SlateportCity_Text_LetsRegisterEachOther:
+	.string "SCOTT: All right! I think you're going\n"
+	.string "to become a good friend.\p"
+	.string "So, let's register each other in our\n"
+	.string "POKéNAVS.\p"
+	.string "… … … … … …$"
+
+SlateportCity_Text_RegisteredScott:
+	.string "Registered this SCOTT person\n"
+	.string "in the POKéNAV.$"
+
+SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
+	.string "SCOTT: What I'd like to do is tag along\n"
+	.string "with you, but I do want to keep an eye\l"
+	.string "on the talents of other people, too.\p"
+	.string "So, I'll be off to roam other towns\n"
+	.string "a bit more.\p"
+	.string "Be seeing you, {PLAYER}{KUN}!$"
+
+SlateportCity_Text_TakingBattleTentChallenge:
+	.string "SCOTT: Oh, hey!\n"
+	.string "If it isn't {PLAYER}{KUN}!\p"
+	.string "{PLAYER}{KUN}, let me guess--you're going\n"
+	.string "to take the BATTLE TENT challenge?\p"
+	.string "Yeah! That's a good idea!\n"
+	.string "That's a really great idea!\p"
+	.string "After all, a tough TRAINER is\n"
+	.string "the perfect fit for the BATTLE TENT!\p"
+	.string "Give it your best effort!$"

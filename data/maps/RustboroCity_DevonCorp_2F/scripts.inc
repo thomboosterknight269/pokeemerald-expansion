@@ -3,7 +3,6 @@ RustboroCity_DevonCorp_2F_MapScripts::
 	.byte 0
 
 RustboroCity_DevonCorp_2F_OnTransition:
-	call_if_unset FLAG_HIDE_CREW, Hostage
 	call_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
 	end
 
@@ -65,51 +64,6 @@ RustboroCity_DevonCorp_2F_EventScript_FossilScientist::
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_NoticeRootFossil
 	checkitem ITEM_CLAW_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_NoticeClawFossil
-	release
-	end
-
-RustboroCity_DevonCorp_2F_EventScript_StairGuard::
-	lock
-	faceplayer
-	msgbox RustboroCity_DevonCorp_2F_Text_Guard, MSGBOX_AUTOCLOSE
-	trainerbattle_no_intro TRAINER_MARC, crud2
-	msgbox RustboroCity_DevonCorp_2F_Text_ohCrud3
-	applymovement LOCALID_DEVON_CORP_STAIR_GUARD, moveUp
-	waitmovement 0
-	removeObject LOCALID_DEVON_CORP_STAIR_GUARD
-	release
-	end
-
-Hostage::
-	setobjectxyperm 1, 3, 7
-	setobjectxyperm 2, 4, 7
-	setobjectxyperm 3, 5, 7
-	setobjectxyperm 4, 3, 8
-	setobjectxyperm 5, 4, 8
-	setobjectxyperm 6, 5, 8
-	return
-
-RustboroCity_DevonCorp_2F_EventScript_Grunt1::
-	lock
-	msgbox G1, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_DevonCorp_2F_EventScript_Grunt2::
-	lock
-	msgbox G2, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_DevonCorp_2F_EventScript_Grunt3::
-	lock
-	msgbox G3, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_DevonCorp_2F_EventScript_Grunt4::
-	lock
-	msgbox G4, MSGBOX_DEFAULT
 	release
 	end
 
@@ -425,34 +379,4 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "inspirations into reality.\p"
 	.string "One couldn't ask for a better\n"
 	.string "environment as an engineer.$"
-
-G1:
-	.string "Don't bother trying to run away!\p"
-	.string "Our Pokemon can stomp you flat!$"
-
-G2:
-	.string "Jeez! They sure are feisty...\p"
-	.string "I figured we could trap you easily \n"
-	.string "cus you're all nerds...$"
-
-G3:
-	.string "Shoot!! Is that who I think it is?!\p"
-	.string "Someone stop them from reaching the\n"
-	.string "captain!!$"
-
-G4:
-	.string "I wish I could, but we gotta hold \n"
-	.string "these damn scientists hostage!!$"
-
-RustboroCity_DevonCorp_2F_Text_Guard:
-	.string "Ya think you can just bust in here\n"
-	.string "and interrupt our great mission?\p"
-	.string "Pwah!\p"
-	.string "You'll have to get past me!$"
-
-RustboroCity_DevonCorp_2F_Text_ohCrud3:
-	.string "So you're the hotshot Jessie has been\n"
-	.string "Warning us about...\p"
-	.string "No matter you'll never defeat \n"
-	.string "our captain!$"
 

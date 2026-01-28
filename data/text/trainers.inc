@@ -269,21 +269,18 @@ Route104_Text_IvanPostBattle:
 	.string "I got too into fishing.\n"
 	.string "I forgot I had to raise my POKéMON…$"
 
-Route104_Text_AriaIntro:
-	.string "Oh don't be fright.\p"
-	.string "But if TRAINERS lock eyes,\n"
-	.string "it's a challenge to fight.\p"
-	.string "Don't wanna battle? Then \n"
-	.string "get outta their sight.$"
+Route104_Text_BillyIntro:
+	.string "Leaving footprints in the sand is\n"
+	.string "so fun!$"
 
-Route104_Text_AriaDefeat:
-	.string "Bmmmtsh You did well.\n"
-	.string "That battle was pretty swell.$"
+Route104_Text_BillyDefeat:
+	.string "Waah! I got sand in my runners!\n"
+	.string "They're all gritty!$"
 
-Route104_Text_AriaPostBattle:
-	.string "Uh tsh Uh tsh Uh tsh Uh tsh...\n"
-	.string "So remember this tip\l"
-	.string "If you don't wanna trip.$"
+Route104_Text_BillyPostBattle:
+	.string "I want to leave my footprints in\n"
+	.string "the sand everywhere, but they\l"
+	.string "disappear quickly…$"
 
 Route104_Text_HaleyIntro:
 	.string "Should I…\n"
@@ -801,19 +798,15 @@ Route109_Text_AlicePostBattle:
 	.string "Cheeks are the most prone to burning!$"
 
 Route109_Text_HueyIntro:
-	.string "Hey it's you!\p"
-	.string "You're the guy that managed\n"
-	.string "to beat Captain Davy Jones!\p"
-	.string "No matter. I will beat you and\n"
-	.string "avenge me matey!! Yarrgh!!$"
+	.string "I've laid anchor in ports around\n"
+	.string "the world, but SLATEPORT's the best.$"
 
 Route109_Text_HueyDefeated:
-	.string "I see why Davy fell to ye....$"
+	.string "You're the best!$"
 
 Route109_Text_HueyPostBattle:
-	.string "We've been ordered by NYX Captain\n"
-	.string "Kuku to take you out before\l"
-	.string "you become a threat...$"
+	.string "In the best port was the best\n"
+	.string "TRAINER…$"
 
 Route109_Text_EdmondIntro:
 	.string "Urrrrppp…\n"
@@ -829,47 +822,79 @@ Route109_Text_EdmondPostBattle:
 	.string "I'm a SAILOR, but…$"
 
 Route109_Text_RickyIntro:
-	.string "I'm thirsty… I could go for some water...$"
+	.string "I'm thirsty… I could go for a SODA POP\n"
+	.string "at the SEASHORE HOUSE…$"
 
 Route109_Text_RickyDefeated:
 	.string "Groan…$"
 
 Route109_Text_RickyPostBattle:
-	.string "I'm getting famished… But I can't let\n"
-	.string "My Queen Kuku be disappointed...$"
+	.string "I'm getting famished… My inner tube\n"
+	.string "looks like a giant doughnut…$"
 
-Route109_Text_AdrianIntro:
-	.string "What's shaking Bug-a-boo?$"
+Route109_Text_RickyRegister:
+	.string "Will you have another match with me\n"
+	.string "when I'm not all thirsty?$"
 
-Route109_Text_AdrianDefeated:
-	.string "Meowch!$"
+Route109_Text_RickyRematchIntro:
+	.string "I'm hungry, but I've got enough pep in\n"
+	.string "me for a battle!$"
 
-Route109_Text_AdrianPostBattle:
-	.string "Do you think NYX Captain Kuku would\n"
-	.string "fall head over heels \l"
-	.string "for me with that line?$"
+Route109_Text_RickyRematchDefeated:
+	.string "I lost…\n"
+	.string "It's because I'm hungry…$"
 
-Route109_Text_AustinIntro:
-	.string "Gotcha! Time to surrender!$"
+Route109_Text_RickyRematchPostBattle:
+	.string "When you eat on a beach, everything\n"
+	.string "seems to taste a little better.$"
 
-Route109_Text_AustinDefeated:
-	.string "Aw dang it...Kuku will be\n"
-	.string "disappointed...$"
+Route109_Text_LolaIntro:
+	.string "Doesn't a beach umbrella look like\n"
+	.string "a giant flower?$"
 
-Route109_Text_AustinPostBattle:
-	.string "Sorry, but there's a bounty on\n"
-	.string "your head. Plus I could've \l"
-	.string "gotten a chance with Kuku...\p"
-	.string "The 2nd NYX Captain.$"
+Route109_Text_LolaDefeated:
+	.string "Mommy!$"
 
-Route109_Text_JohnIntro:
-	.string "You can't see me.$"
+Route109_Text_LolaPostBattle:
+	.string "If you look at the beach from the sky,\n"
+	.string "it looks like a big flower garden!$"
 
-Route109_Text_JohnDefeated:
-	.string "...$"
+Route109_Text_LolaRegister:
+	.string "Me?\n"
+	.string "I'm here every day!$"
 
-Route109_Text_JohnPostBattle:
-	.string "Well you beat me.$"
+Route109_Text_LolaRematchIntro:
+	.string "I'm not losing to you again!\n"
+	.string "That's why I have my inner tube!$"
+
+Route109_Text_LolaRematchDefeated:
+	.string "Mommy!$"
+
+Route109_Text_LolaRematchPostBattle:
+	.string "If I have an inner tube, me and my\n"
+	.string "POKéMON's cuteness goes way up!$"
+
+Route109_Text_AustinaIntro:
+	.string "I can't swim without my inner tube,\n"
+	.string "but I won't lose at POKéMON!$"
+
+Route109_Text_AustinaDefeated:
+	.string "Did I lose because I have an inner\n"
+	.string "tube?$"
+
+Route109_Text_AustinaPostBattle:
+	.string "My inner tube is a fashion item.\n"
+	.string "I can't be seen without it.$"
+
+Route109_Text_GwenIntro:
+	.string "Hi, big TRAINER.\n"
+	.string "Will you battle with me?$"
+
+Route109_Text_GwenDefeated:
+	.string "Oh, you're strong.$"
+
+Route109_Text_GwenPostBattle:
+	.string "How did you get to be so strong?$"
 
 Route109_Text_CarterIntro:
 	.string "Wahahah! This dude's going to catch\n"
@@ -917,16 +942,17 @@ Route109_Text_MelNotEnoughPokemon:
 	.string "That's why we make our POKéMON\l"
 	.string "battle together.$"
 
-Route109_Text_DireIntro:
-	.string "You feel for it fool!$"
+Route109_Text_ChandlerIntro:
+	.string "Tadaah! See?\n"
+	.string "My inner tube's round!$"
 
-Route109_Text_DireDefeated:
-	.string "...$"
+Route109_Text_ChandlerDefeated:
+	.string "Oh, oh!\n"
+	.string "Too bad!$"
 
-Route109_Text_DirePostBattle:
-	.string "Looks like you're spared\n"
-	.string "from the Thunder Cross Split\l"
-	.string "Attack...$"
+Route109_Text_ChandlerPostBattle:
+	.string "After I showed you my round inner\n"
+	.string "tube, too…$"
 
 Route109_Text_HaileyIntro:
 	.string "I can't swim, so I'm pretending\n"
