@@ -1,10 +1,10 @@
 	.align 2
 gText_ConfirmSave::
-	.string "Would you like to save the game?$"
+	.string "Wanna save?$"
 
 gText_AlreadySavedFile::
 	.string "There is already a saved file.\n"
-	.string "Is it okay to overwrite it?$"
+	.string "Is that cool with you?$"
 
 gText_SavingDontTurnOff::
 	.string "SAVING…\n"

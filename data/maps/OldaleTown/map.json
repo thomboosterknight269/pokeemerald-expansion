@@ -32,8 +32,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 26,
-      "y": 7,
+      "x": 24,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -47,7 +47,7 @@
       "local_id": "LOCALID_OLDALE_MART_EMPLOYEE",
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 21,
-      "y": 13,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -87,8 +87,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
-      "x": 28,
-      "y": 14,
+      "x": 24,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -100,8 +100,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REGIROCK",
-      "x": 30,
-      "y": 14,
+      "x": 26,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -126,8 +126,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-      "x": 12,
-      "y": 9,
+      "x": 15,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -157,13 +157,6 @@
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 33,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_OLDALE_TOWN_HOUSE2",
       "dest_warp_id": "0"
     },
     {

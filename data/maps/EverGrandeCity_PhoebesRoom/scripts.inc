@@ -59,26 +59,22 @@ EverGrandeCity_PhoebesRoom_EventScript_Defeated::
 	end
 
 EverGrandeCity_PhoebesRoom_Text_IntroSpeech:
-	.string "Ahahaha!\p"
-	.string "I'm PHOEBE of the ELITE FOUR.\n"
-	.string "I did my training on MT. PYRE.\p"
-	.string "While I trained, I gained the ability\n"
-	.string "to commune with GHOST-type POKéMON.\p"
-	.string "Yes, the bond I developed with POKéMON\n"
-	.string "is extremely tight.\p"
-	.string "So, come on, just try and see if you can\n"
-	.string "even inflict damage on my POKéMON!$"
+	.string "Oohhhhh...Is that...\n"
+	.string "a visitor? ...finally somebody..has\l"
+	.string "arrived...\p"
+	.string "I'm Kinen, the second Moon Guardian\n"
+	.string "and I'd like you to stay a while...\p"
+	.string "Stay and listen to the song of\n"
+	.string "my victory over you!$"
 
 EverGrandeCity_PhoebesRoom_Text_Defeat:
-	.string "Oh, darn.\n"
-	.string "I've gone and lost.$"
+	.string "Oh, darn...\n"
+	.string "I've gone and lost...$"
 
 EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech:
-	.string "There's a definite bond between you\n"
-	.string "and your POKéMON, too.\p"
-	.string "I didn't recognize it, so it's only\n"
-	.string "natural that I lost.\p"
-	.string "Yup, I'd like to see how far your bond\n"
-	.string "will carry you.\p"
-	.string "Go ahead, move on to the next room.$"
+	.string "It's too bad you didn't get\n"
+	.string "to hear my song...\p"
+	.string "You're just like those meanies\n"
+	.string "who defeated me before you came...\p"
+	.string "Go ahead, move on to the next room...$"
 

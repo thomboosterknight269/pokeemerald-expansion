@@ -23,8 +23,8 @@
     {
       "id": "HEAL_LOCATION_SLATEPORT_CITY",
       "map": "MAP_SLATEPORT_CITY",
-      "x": 19,
-      "y": 20,
+      "x": 24,
+      "y": 55,
       "respawn_map": "MAP_SLATEPORT_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SLATEPORT_NURSE"
     },
@@ -39,8 +39,8 @@
     {
       "id": "HEAL_LOCATION_RUSTBORO_CITY",
       "map": "MAP_RUSTBORO_CITY",
-      "x": 16,
-      "y": 39,
+      "x": 10,
+      "y": 46,
       "respawn_map": "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_RUSTBORO_NURSE"
     },
@@ -88,7 +88,7 @@
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE",
       "map": "MAP_LITTLEROOT_TOWN",
       "x": 5,
-      "y": 9,
+      "y": 11,
       "respawn_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
       "respawn_x": 2,
@@ -97,7 +97,7 @@
     {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE",
       "map": "MAP_LITTLEROOT_TOWN",
-      "x": 14,
+      "x": 17,
       "y": 9,
       "respawn_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
