@@ -133,14 +133,13 @@ PetalburgWoods_Movement_DevonResearcherLookAround:
 
 PetalburgWoods_Movement_DevonResearcherExitLeft:
 	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherApproachPlayerLeft:
@@ -161,20 +160,19 @@ PetalburgWoods_Movement_DevonResearcherApproachPlayerRight:
 
 PetalburgWoods_Movement_DevonResearcherExitRight:
 	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
 	step_end
 
 PetalburgWoods_Movement_WatchResearcherLeave:
 	delay_16
 	delay_16
-	walk_in_place_faster_down
+	walk_in_place_faster_up
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherFleeToPlayerLeft:
@@ -277,9 +275,44 @@ PetalburgWoods_EventScript_Lyle::
 	end
 
 PetalburgWoods_EventScript_James::
-	trainerbattle_single TRAINER_JAMES_1, PetalburgWoods_Text_InstantlyPopularWithBugPokemon, PetalburgWoods_Text_CantBePopularIfILose
+	trainerbattle_single TRAINER_JAMES_1, PetalburgWoods_Text_InstantlyPopularWithBugPokemon, PetalburgWoods_Text_CantBePopularIfILose, PetalburgWoods_EventScript_TryRegisterJames
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, PetalburgWoods_EventScript_JamesRematch
+	setvar VAR_0x8004, TRAINER_JAMES_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_TryRegisterJames2
 	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
 	release
+	end
+
+PetalburgWoods_EventScript_TryRegisterJames::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_HAS_MATCH_CALL, PetalburgWoods_EventScript_RegisterJames
+	release
+	end
+
+PetalburgWoods_EventScript_RegisterJames::
+	msgbox PetalburgWoods_Text_IWantRematch1, MSGBOX_DEFAULT
+	register_matchcall TRAINER_JAMES_1
+	release
+	end
+
+PetalburgWoods_EventScript_TryRegisterJames2::
+	goto_if_set FLAG_HAS_MATCH_CALL, PetalburgWoods_EventScript_RegisterJames2
+	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_EventScript_RegisterJames2::
+	msgbox PetalburgWoods_Text_IWantRematch2, MSGBOX_DEFAULT
+	register_matchcall TRAINER_JAMES_1
+	release
+	end
+
+PetalburgWoods_EventScript_JamesRematch::
+	trainerbattle_rematch TRAINER_JAMES_1, PetalburgWoods_Text_MyPokemonHaveGrown, PetalburgWoods_Text_CantBePopularIfLose
+	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:
@@ -293,12 +326,14 @@ PetalburgWoods_Text_HaveYouSeenShroomish:
 	.string "If you don't know, it looks like-$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
-	.string "Huff..huff...there you are...\p"
-	.string "You made a fool out of me in battle...$"
+	.string "I was going to ambush you, but you\n"
+	.string "had to dawdle in PETALBURG WOODS\l"
+	.string "forever, didn't you?\p"
+	.string "I got sick of waiting, so here I am!$"
 
 PetalburgWoods_Text_HandOverThosePapers:
-	.string "But this TIME,\n"
-	.string "I SHALL BE VICTORIOUS!$"
+	.string "You! DEVON RESEARCHER!\p"
+	.string "Hand over those papers!$"
 
 PetalburgWoods_Text_YouHaveToHelpMe:
 	.string "Aiyeeeh!\p"
@@ -316,25 +351,27 @@ PetalburgWoods_Text_YoureKiddingMe:
 	.string "...no way!$"
 
 PetalburgWoods_Text_YouveGotSomeNerve:
-	.string "Jessie: Grrr… You've got some nerve\n"
+	.string "Grrr… You've got some nerve\n"
 	.string "meddling with TEAM NYX!\p"
-	.string "Great now I have to report back to\n"
+	.string "Great now I have to report back to\l"
 	.string "my superior, Nyx Captain Jones...\p"
 	.string "This isn't the last you see of me!$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "Whew…\n"
 	.string "That was awfully close!\p"
+	.string "Thanks to you, he didn't rob me of\n"
+	.string "these important papers.\p"
 	.string "I know, I'll give you a GREAT BALL as\n"
 	.string "my thanks!$"
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
-	.string "Now what I about to do\n"
-	.string "again...$"
+	.string "Didn't that TEAM AQUA thug say\n"
+	.string "they were after something in\l"
+	.string "RUSTBORO, too?$"
 
 PetalburgWoods_Text_ICantBeWastingTime:
-	.string "Woopsy Daisy! I just remembered!\n"
-	.string "I got somewhere to be!\l"
+	.string "Uh-oh! It's a crisis!\n"
 	.string "I can't be wasting time!$"
 
 PetalburgWoods_Text_YoureLoadedWithItems:
@@ -355,14 +392,37 @@ PetalburgWoods_Text_ImOutOfPokeBalls:
 	.string "Now I'm out of POKé BALLS.$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon:
-	.string "Banzai!! It's time to take you out!!$"
+	.string "If you take BUG POKéMON to school,\n"
+	.string "you get to be instantly popular!$"
 
 PetalburgWoods_Text_CantBePopularIfILose:
-	.string "Oh...$"
+	.string "I can't be popular if I lose.$"
 
 PetalburgWoods_Text_PeopleRespectYou:
-	.string "...Well don't even think about\n"
-	.string "hurting my queen Kuku.$"
+	.string "If you have a big BUG POKéMON,\n"
+	.string "people respect you for it.$"
+
+PetalburgWoods_Text_IWantRematch1:
+	.string "I want a rematch when my BUG\n"
+	.string "POKéMON grow up!\p"
+	.string "I'm registering you in my POKéNAV!$"
+
+PetalburgWoods_Text_IWantRematch2:
+	.string "I want a rematch when my BUG \n"
+	.string "POKéMON grow up!\p"
+	.string "I'm registering you in my POKéNAV!$"
+
+PetalburgWoods_Text_MyPokemonHaveGrown:
+	.string "My BUG POKéMON have grown.\n"
+	.string "I'll be popular again.$"
+
+PetalburgWoods_Text_CantBePopularIfLose:
+	.string "I can't be popular if I lose.$"
+
+PetalburgWoods_Text_IveBeenTrainingHard:
+	.string "You get to be popular if you have\n"
+	.string "strong POKéMON, right?\l"
+	.string "So, I've been training hard.$"
 
 PetalburgWoods_Text_StayOutOfTallGrass:
 	.string "Yo, there!\n"

@@ -65,26 +65,23 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated::
 	end
 
 EverGrandeCity_SidneysRoom_Text_IntroSpeech:
-	.string "Greetings, challenger.\n"
-	.string "I'm Naomi, the first Moon Guardian.\p"
-	.string "In my 30 years of guardsmanship,\n"
-	.string "Nobody has ever gotten past me.\p"
-	.string "Hm. I can see conviction and power\n"
-	.string "in your eyes.\p"
-	.string "Very well! Show me your strength!\n"
-	.string "I shall not lose my streak now!$"
+	.string "Welcome, challenger!\n"
+	.string "I'm SIDNEY of the ELITE FOUR.\p"
+	.string "I like that look you're giving me.\n"
+	.string "I guess you'll give me a good match.\l"
+	.string "That's good! Looking real good!\p"
+	.string "All right! You and me, let's enjoy\n"
+	.string "a battle that can only be staged\l"
+	.string "here in the POKéMON LEAGUE!$"
 
 EverGrandeCity_SidneysRoom_Text_Defeat:
-	.string "Well, well, I was defeated.\n"
-	.string "It's time I tell you something...$"
+	.string "Well, how do you like that? I lost!\n"
+	.string "Eh, it was fun, so it doesn't matter.$"
 
 EverGrandeCity_SidneysRoom_Text_PostBattleSpeech:
 	.string "Well, listen to what this loser has\n"
 	.string "to say.\p"
-	.string "Two other trainers have gotten here\n"
-	.string "before you with that same look\l"
-	.string "in their eyes.\p"
-	.string "They were able to defeat me, but\n"
-	.string "I have a feeling you can\l"
-	.string "go even further.$"
+	.string "You've got what it takes to go far.\n"
+	.string "Now, go on to the next room and enjoy\l"
+	.string "your next battle!$"
 

@@ -275,20 +275,18 @@ Route101_Text_YouSavedMe:
 	.string "let's go back to my lab.$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "Grr...\p"
-	.string "My friend seriously thinks Team NYX\n"
-	.string "is saving the region.\p"
-	.string "How dumb! Team LUX are our true\n"
-	.string "heroes.$"
+	.string "If POKéMON get tired, take them to\n"
+	.string "a POKéMON CENTER.\p"
+	.string "There's a POKéMON CENTER in OLDALE\n"
+	.string "TOWN right close by.$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Grr...\p"
-	.string "My friend seriously thinks Team LUX\n"
-	.string "is in the right.\p"
-	.string "What an idiot! Doesn't he know that\n"
-	.string "Team NYX is in the right?$"
+	.string "Wild POKéMON will jump out at you in\n"
+	.string "tall grass.\p"
+	.string "If you want to catch POKéMON, you have\n"
+	.string "to go into the tall grass and search.$"
 
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
-	.string "{UP_ARROW} ASTER TOWN$"
+	.string "{UP_ARROW} OLDALE TOWN$"
 

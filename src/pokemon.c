@@ -84,7 +84,6 @@ static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 perso
 static void EncryptBoxMon(struct BoxPokemon *boxMon);
 static void DecryptBoxMon(struct BoxPokemon *boxMon);
 static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
-static void ShuffleStatArray(u8* statArray);
 void TrySpecialOverworldEvo();
 
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
@@ -1040,8 +1039,6 @@ void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFix
 
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
-    u8 maxIV = MAX_IV_MASK;
-    u8 statIDs[] = {0, 1, 2, 3, 4, 5};
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
     u32 personality = Random32();
     u32 value;
@@ -1209,13 +1206,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                     break;
                 }
             }
-        }
-         // Set three random IVs to 31
-        ShuffleStatArray(statIDs);
-
-        for (i = 0; i < 6; i++)
-        {
-            SetBoxMonData(boxMon, MON_DATA_HP_IV + statIDs[i], &maxIV);
         }
     }
 
@@ -7495,17 +7485,4 @@ bool32 IsSpeciesOfType(u32 species, enum Type type)
      || gSpeciesInfo[species].types[1] == type)
         return TRUE;
     return FALSE;
-}
-
-static void ShuffleStatArray(u8* statArray)
-{
-    int i;
-
-    // Shuffle the stats array using a Fisher-Yates shuffle
-    for (i = NUM_STATS - 1; i > 0; i--)
-    {
-        u8 temp;
-        int j = Random() % (i + 1);
-        SWAP(statArray[i], statArray[j], temp);
-    }
 }
