@@ -144,43 +144,10 @@ SlateportCity_EventScript_Woman1AquaGone::
 	release
 	end
 
-SlateportCity_EventScript_SternsShipyardSign::
-	lockall
-	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_SternsShipyardFerryComplete
-	goto_if_set FLAG_BADGE07_GET, SlateportCity_EventScript_SternsShipyardNearsCompletion
-	msgbox SlateportCity_Text_SternsShipyardWantedSign, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SlateportCity_EventScript_SternsShipyardNearsCompletion::
-	msgbox SlateportCity_Text_SternsShipyardNearsCompletion, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SlateportCity_EventScript_SternsShipyardFerryComplete::
-	msgbox SlateportCity_Text_SternsShipyardFerryComplete, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SlateportCity_EventScript_OceanicMuseumSign::
-	msgbox SlateportCity_Text_OceanicMuseumSign, MSGBOX_SIGN
-	end
-
 SlateportCity_EventScript_CitySign::
 	msgbox SlateportCity_Text_CitySign, MSGBOX_SIGN
 	end
 
-SlateportCity_EventScript_HarborSign::
-	lockall
-	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_HarborSignFerryComplete
-	msgbox SlateportCity_Text_HarborFerryUnderConstruction, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SlateportCity_EventScript_HarborSignFerryComplete::
-	msgbox SlateportCity_Text_HarborSign, MSGBOX_DEFAULT
-	releaseall
-	end
 
 SlateportCity_EventScript_Maniac::
 	lock
@@ -206,139 +173,6 @@ SlateportCity_EventScript_Sailor1::
 
 SlateportCity_EventScript_Sailor2::
 	msgbox SlateportCity_Text_SinkOldBoats, MSGBOX_NPC
-	end
-
-
-SlateportCity_EventScript_AquaGrunt1::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_QuitPushing, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_1, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt2::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_AquaHasPolicy, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_2, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt3::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_BossIsBrilliant, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_3, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt4::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_WhatsNewSchemeIWonder, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_4, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt5::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_ShouldTakeItAll, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_5, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt6::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_DontButtIn, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_6, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt7::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_RemindsMeOfLongLineForGames, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_7, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt8::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_WhyAreWeLiningUp, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_8, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_EventScript_AquaGrunt9::
-	lock
-	faceplayer
-	playse SE_PIN
-	applymovement LOCALID_SLATEPORT_GRUNT_9, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_SLATEPORT_GRUNT_9, Common_Movement_Delay48
-	waitmovement 0
-	msgbox SlateportCity_Text_WhatDoYouWant, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_9, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	applymovement LOCALID_SLATEPORT_GRUNT_9, SlateportCity_Movement_DelayAquaGrunt
-	waitmovement 0
-	applymovement LOCALID_SLATEPORT_GRUNT_9, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox SlateportCity_Text_IllReadSignForYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_9, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	applymovement LOCALID_SLATEPORT_GRUNT_9, SlateportCity_Movement_DelayAquaGrunt
-	waitmovement 0
-	msgbox SlateportCity_Text_SaysSomethingLikeSeaIsEndless, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_9, Common_Movement_FacePlayer
-	waitmovement 0
-	applymovement LOCALID_SLATEPORT_GRUNT_9, SlateportCity_Movement_DelayAquaGrunt
-	waitmovement 0
-	applymovement LOCALID_SLATEPORT_GRUNT_9, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
-SlateportCity_Movement_DelayAquaGrunt:
-	delay_16
-	delay_16
-	step_end
-
-SlateportCity_EventScript_AquaGrunt10::
-	msgbox SlateportCity_Text_ShouldveBroughtMyGameBoy, MSGBOX_SIGN
-	end
-
-SlateportCity_EventScript_AquaGrunt11::
-	lock
-	faceplayer
-	msgbox SlateportCity_Text_HotSpringsAfterOperation, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_GRUNT_11, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
 	end
 
 SlateportCity_EventScript_DollClerk::
@@ -791,69 +625,6 @@ SlateportCity_Text_VisitedMuseumOften:
 	.string "I used to dream about the mysteries of\n"
 	.string "the sea after seeing the exhibits.$"
 
-SlateportCity_Text_QuitPushing:
-	.string "Hey, there! Quit pushing!\n"
-	.string "This is the line, can't you see?$"
-
-SlateportCity_Text_AquaHasPolicy:
-	.string "TEAM AQUA has a policy of\n"
-	.string "assembling and dispersing at\l"
-	.string "the operation site.$"
-
-SlateportCity_Text_BossIsBrilliant:
-	.string "Our BOSS is brilliant.\p"
-	.string "What would he want to do with\n"
-	.string "a MUSEUM now?$"
-
-SlateportCity_Text_WhatsNewSchemeIWonder:
-	.string "What's the new scheme, I wonder?\p"
-	.string "Our BOSS is scary when he's mad, so\n"
-	.string "I'd better not screw things up…$"
-
-SlateportCity_Text_ShouldTakeItAll:
-	.string "If there's something we need in\n"
-	.string "the MUSEUM, we should take it all!$"
-
-SlateportCity_Text_DontButtIn:
-	.string "Hey, you there!\n"
-	.string "Don't butt in!$"
-
-SlateportCity_Text_RemindsMeOfLongLineForGames:
-	.string "A long line, huh?\p"
-	.string "It reminds me of the times I lined up to\n"
-	.string "buy smash-hit games…$"
-
-SlateportCity_Text_WhyAreWeLiningUp:
-	.string "Why are we even lining up and paying?\n"
-	.string "We should just march in!$"
-
-SlateportCity_Text_WhatDoYouWant:
-	.string "What?\n"
-	.string "What do you want?$"
-
-SlateportCity_Text_IllReadSignForYou:
-	.string "You want to read this sign?\n"
-	.string "I'll read it for you!$"
-
-SlateportCity_Text_SaysSomethingLikeSeaIsEndless:
-	.string "Let's see…\p"
-	.string "Um… I think it says something like\n"
-	.string "“the life in the sea is endless.”\p"
-	.string "Yup, I'm pretty sure that's what\n"
-	.string "it says.$"
-
-SlateportCity_Text_ShouldveBroughtMyGameBoy:
-	.string "Grumble…\p"
-	.string "I should've brought my Game Boy\n"
-	.string "Advance so I wouldn't get bored in line…\p"
-	.string "Grumble…$"
-
-SlateportCity_Text_HotSpringsAfterOperation:
-	.string "When this operation's over, I'll take\n"
-	.string "you to a hot spring spa!\p"
-	.string "That's what our leader said.\n"
-	.string "I can't wait!$"
-
 SlateportCity_Text_SeaIsSoWet:
 	.string "The sea is just so vast…\p"
 	.string "Could the sea have been made by\n"
@@ -978,16 +749,6 @@ SlateportCity_Text_SternsShipyardNearsCompletion:
 	.string "completion for serving the ports of\l"
 	.string "SLATEPORT and LILYCOVE.”$"
 
-SlateportCity_Text_SternsShipyardFerryComplete:
-	.string "STERN'S SHIPYARD\p"
-	.string "“Boarding of the SLATEPORT-LILYCOVE\n"
-	.string "ferry S.S. TIDAL is handled at the\l"
-	.string "HARBOR.”$"
-
-SlateportCity_Text_OceanicMuseumSign:
-	.string "“The endless sea sustains\n"
-	.string "all life.”\p"
-	.string "OCEANIC MUSEUM$"
 
 SlateportCity_Text_CitySign:
 	.string "SLATEPORT CITY\p"
@@ -1000,11 +761,6 @@ SlateportCity_Text_HarborFerryUnderConstruction:
 	.string "construction in the SHIPYARD.\p"
 	.string "“Service is scheduled to begin\n"
 	.string "shortly.”$"
-
-SlateportCity_Text_HarborSign:
-	.string "SLATEPORT HARBOR\p"
-	.string "“Enjoy a delightful cruise on\n"
-	.string "the ferry S.S. TIDAL.”$"
 
 SlateportCity_Text_ExplainBerries:
 	.string "If a wild POKéMON gets hurt, it heals\n"

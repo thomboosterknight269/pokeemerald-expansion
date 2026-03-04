@@ -38,10 +38,6 @@ MauvilleCity_EventScript_CitySign::
 	msgbox MauvilleCity_Text_CitySign, MSGBOX_SIGN
 	end
 
-MauvilleCity_EventScript_GymSign::
-	msgbox MauvilleCity_Text_GymSign, MSGBOX_SIGN
-	end
-
 MauvilleCity_EventScript_BikeShopSign::
 	msgbox MauvilleCity_Text_BikeShopSign, MSGBOX_SIGN
 	end
@@ -633,11 +629,6 @@ MauvilleCity_Text_PokemonCanJumpYouOnBike:
 MauvilleCity_Text_CitySign:
 	.string "MAUVILLE CITY\n"
 	.string "“The bright and shiny city of fun!”$"
-
-MauvilleCity_Text_GymSign:
-	.string "MAUVILLE CITY POKéMON GYM\n"
-	.string "LEADER: WATTSON\l"
-	.string "“The cheerfully electrifying man!”$"
 
 MauvilleCity_Text_BikeShopSign:
 	.string "“Ride in gravel and shake up your\n"

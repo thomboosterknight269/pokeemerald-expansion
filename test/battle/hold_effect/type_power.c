@@ -36,6 +36,7 @@ SINGLE_BATTLE_TEST("Type-enhancing items increase the base power of moves by 20%
         ASSUME(GetMovePower(move) > 0);
         if (item != ITEM_NONE) {
             ASSUME(GetItemHoldEffect(item) == HOLD_EFFECT_TYPE_POWER);
+            ASSUME(GetItemHoldEffect(item) == HOLD_EFFECT_MIRACLE_SEED);
             ASSUME(GetItemSecondaryId(item) == type);
         }
         PLAYER(SPECIES_WOBBUFFET) { Item(item); }
@@ -64,6 +65,7 @@ SINGLE_BATTLE_TEST("Type-enhancing items do not increase the power of Struggle",
     GIVEN {
         if (item != ITEM_NONE) {
             ASSUME(GetItemHoldEffect(item) == HOLD_EFFECT_TYPE_POWER);
+            ASSUME(GetItemHoldEffect(item) == HOLD_EFFECT_MIRACLE_SEED);
             ASSUME(GetItemSecondaryId(item) == GetMoveType(MOVE_STRUGGLE));
         }
         PLAYER(SPECIES_WOBBUFFET) { Item(item); }

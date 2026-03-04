@@ -1,20 +1,68 @@
 OldaleTown_PokemonCenter_2F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CableClub_OnFrame
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CableClub_OnWarp
-	map_script MAP_SCRIPT_ON_LOAD, CableClub_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, CableClub_OnTransition
 	.byte 0
 
-@ The below 3 are unused and leftover from RS
-OldaleTown_PokemonCenter_2F_EventScript_Colosseum::
-	call CableClub_EventScript_Colosseum
+OldaleTown_Mart_EventScript_Clerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_ExpandedItems
+	pokemart OldaleTown_Mart_Pokemart_Basic
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
 	end
 
-OldaleTown_PokemonCenter_2F_EventScript_TradeCenter::
-	call CableClub_EventScript_TradeCenter
+	.align 2
+OldaleTown_Mart_Pokemart_Basic:
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+
+OldaleTown_Mart_ExpandedItems::
+	pokemart OldaleTown_Mart_Pokemart_Expanded
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
 	end
 
-OldaleTown_PokemonCenter_2F_EventScript_RecordCorner::
-	call CableClub_EventScript_RecordCorner
+	.align 2
+OldaleTown_Mart_Pokemart_Expanded:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+
+OldaleTown_Mart_EventScript_Woman::
+	lock
+	faceplayer
+	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_EventScript_PokeBallsInStock
+	msgbox OldaleTown_Mart_Text_PokeBallsAreSoldOut, MSGBOX_DEFAULT
+	release
 	end
+
+OldaleTown_Mart_EventScript_PokeBallsInStock::
+	msgbox OldaleTown_Mart_Text_ImGoingToBuyPokeBalls, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_Mart_EventScript_Boy::
+	msgbox OldaleTown_Mart_Text_RestoreHPWithPotion, MSGBOX_NPC
+	end
+
+OldaleTown_Mart_Text_PokeBallsAreSoldOut:
+	.string "The clerk says they're all sold out.\n"
+	.string "I can't buy any POKé BALLS...$"
+
+OldaleTown_Mart_Text_ImGoingToBuyPokeBalls:
+	.string "I'm going to buy a bunch of POKé BALLS\n"
+	.string "and catch a bunch of POKéMON!$"
+
+OldaleTown_Mart_Text_RestoreHPWithPotion:
+	.string "You should stock up on healing\n"
+	.string "items like POTIONs and ANTIDOTEs.\p"
+	.string "I heard it'll be a long while\n"
+	.string "before the next town over.$"
 

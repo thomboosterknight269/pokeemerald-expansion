@@ -1,20 +1,32 @@
 DewfordTown_PokemonCenter_2F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CableClub_OnFrame
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CableClub_OnWarp
-	map_script MAP_SCRIPT_ON_LOAD, CableClub_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, CableClub_OnTransition
 	.byte 0
 
-@ The below 3 are unused and leftover from RS
-DewfordTown_PokemonCenter_2F_EventScript_Colosseum::
-	call CableClub_EventScript_Colosseum
+DewFordTown_Mart_EventScript_Clerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	goto DewFordTown_Mart_EventScript_PokemartExpanded
 	end
 
-DewfordTown_PokemonCenter_2F_EventScript_TradeCenter::
-	call CableClub_EventScript_TradeCenter
+DewFordTown_Mart_EventScript_PokemartExpanded::
+	pokemart DewFordTown_Mart_Pokemart_Expanded
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
 	end
 
-DewfordTown_PokemonCenter_2F_EventScript_RecordCorner::
-	call CableClub_EventScript_RecordCorner
-	end
-
+	.align 2
+DewFordTown_Mart_Pokemart_Expanded:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_TIMER_BALL
+	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_REPEL
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
+	pokemartlistend

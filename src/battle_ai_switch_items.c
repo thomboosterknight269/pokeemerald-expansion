@@ -1661,6 +1661,12 @@ static s32 GetSwitchinWeatherImpact(void)
             }
             else if (ability == ABILITY_RAIN_DISH)
             {
+                weatherImpact = -(maxHP / 8);
+                if (weatherImpact == 0)
+                    weatherImpact = -1;
+            }
+            else if (gAiLogicData->switchinCandidate.battleMon.types[0] == TYPE_WATER || gAiLogicData->switchinCandidate.battleMon.types[1] == TYPE_WATER)
+            {
                 weatherImpact = -(maxHP / 16);
                 if (weatherImpact == 0)
                     weatherImpact = -1;
@@ -1679,9 +1685,12 @@ static s32 GetSwitchinWeatherImpact(void)
 // Gets one turn of recurring healing
 static u32 GetSwitchinRecurringHealing(void)
 {
+
+    u32 startingHP = gAiLogicData->switchinCandidate.battleMon.hp;
     u32 recurringHealing = 0, maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP;
     enum Ability ability = gAiLogicData->switchinCandidate.battleMon.ability;
     enum HoldEffect holdEffect = GetItemHoldEffect(gAiLogicData->switchinCandidate.battleMon.item);
+    s32 currentHP = startingHP;
 
     // Items
     if (ability != ABILITY_KLUTZ)
@@ -1696,6 +1705,13 @@ static u32 GetSwitchinRecurringHealing(void)
         {
             recurringHealing = maxHP / 16;
             if (recurringHealing == 0)
+                recurringHealing = 1;
+        }
+        else if (holdEffect == HOLD_EFFECT_FOCUS_BAND)
+        {
+            if (currentHP < maxHP / 2)
+                recurringHealing = maxHP / 12;
+                if (recurringHealing == 0)
                 recurringHealing = 1;
         }
     } // Intentionally omitting Shell Bell for its inconsistency

@@ -8517,7 +8517,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Miracle Seed"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_TYPE_POWER,
+        .holdEffect = HOLD_EFFECT_MIRACLE_SEED,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = sRoseIncenseDesc,
         .pocket = POCKET_ITEMS,
@@ -13493,22 +13493,22 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_LavaCookieAndLetter,
     },
 
-    [ITEM_DEVON_PARTS] =
-    {
-        .name = ITEM_NAME("Devon Parts"),
-        .pluralName = ITEM_PLURAL_NAME("Devon Parts"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "A package that\n"
-            "contains Devon's\n"
-            "machine parts."),
-        .importance = 2,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_DevonParts,
-        .iconPalette = gItemIconPalette_DevonParts,
-    },
+    //[ITEM_DEVON_PARTS] =
+    //{
+    //    .name = ITEM_NAME("Devon Parts"),
+    //    .pluralName = ITEM_PLURAL_NAME("Devon Parts"),
+    //    .price = 0,
+    //    .description = COMPOUND_STRING(
+    //        "A package that\n"
+    //        "contains Devon's\n"
+    //        "machine parts."),
+    //    .importance = 2,
+    //    .pocket = POCKET_KEY_ITEMS,
+    //    .type = ITEM_USE_BAG_MENU,
+    //   .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    //    .iconPic = gItemIcon_DevonParts,
+    //    .iconPalette = gItemIconPalette_DevonParts,
+    //},
 
     [ITEM_GO_GOGGLES] =
     {

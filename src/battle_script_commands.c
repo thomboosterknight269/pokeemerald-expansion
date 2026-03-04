@@ -1619,7 +1619,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     }
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
           || MoveAlwaysCrits(move)
-          || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
+          || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & (STATUS1_PSN_ANY | STATUS1_BURN | STATUS1_PARALYSIS | STATUS1_FROSTBITE)))
     {
         critChance = CRITICAL_HIT_ALWAYS;
     }
@@ -1702,7 +1702,7 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     // Guaranteed crits
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
              || MoveAlwaysCrits(move)
-             || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
+             || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY & STATUS1_BURN & STATUS1_PARALYSIS & STATUS1_FROSTBITE))
     {
         critChance = CRITICAL_HIT_ALWAYS;
     }
@@ -1929,6 +1929,13 @@ static void Cmd_adjustdamage(void)
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
         }
+        else if (holdEffect == HOLD_EFFECT_MIRACLE_SEED && rand < param)
+        {
+            enduredHit |= 1u << battlerDef;
+            RecordItemEffectBattle(battlerDef, holdEffect);
+            gLastUsedItem = gBattleMons[battlerDef].item;
+            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
+        }
         else if (GetConfig(CONFIG_STURDY) >= GEN_5 && GetBattlerAbility(battlerDef) == ABILITY_STURDY && IsBattlerAtMaxHp(battlerDef))
         {
             enduredHit |= 1u << battlerDef;
@@ -1941,6 +1948,12 @@ static void Cmd_adjustdamage(void)
             enduredHit |= 1u << battlerDef;
             RecordItemEffectBattle(battlerDef, holdEffect);
             gLastUsedItem = gBattleMons[battlerDef].item;
+            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
+        }
+        else if (GetBattlerAbility(battlerDef) == ABILITY_SUPER_LUCK && rand < param){
+            enduredHit |= 1u << battlerDef;
+            RecordAbilityBattle(battlerDef, ABILITY_SUPER_LUCK);
+            gLastUsedAbility = ABILITY_SUPER_LUCK;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
         }
         else if (B_AFFECTION_MECHANICS == TRUE && IsOnPlayerSide(battlerDef) && affectionScore >= AFFECTION_THREE_HEARTS)
@@ -10962,6 +10975,12 @@ static void Cmd_tryKO(void)
         endured = FOCUS_BANDED;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
     }
+    else if (holdEffect == HOLD_EFFECT_MIRACLE_SEED
+         && (Random() % 100) < GetBattlerHoldEffectParam(gBattlerTarget))
+    {
+        endured = FOCUS_BANDED;
+        RecordItemEffectBattle(gBattlerTarget, holdEffect);
+    }
     else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && IsBattlerAtMaxHp(gBattlerTarget))
     {
         endured = FOCUS_SASHED;
@@ -16390,6 +16409,7 @@ void BS_TryFlingHoldEffect(void)
     case HOLD_EFFECT_LIGHT_BALL:
         SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_PARALYSIS, cmd->nextInstr, NO_FLAGS);
         break;
+    case HOLD_EFFECT_MIRACLE_SEED:
     case HOLD_EFFECT_TYPE_POWER:
         if (GetItemSecondaryId(gLastUsedItem) != TYPE_POISON)
             gBattlescriptCurrInstr = cmd->nextInstr;

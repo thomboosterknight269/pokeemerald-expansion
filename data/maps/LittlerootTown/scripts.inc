@@ -75,12 +75,12 @@ LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
 	return
 
 LittlerootTown_EventScript_MoveMomToMaysDoor::
-	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 8
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 17, 8
 	return
 
 LittlerootTown_EventScript_SetTwinPos::
 	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
-	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 10, 1
+	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 12, 2
 	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -102,7 +102,7 @@ LittlerootTown_EventScript_SetMomInFrontOfDoorMale::
 	return
 
 LittlerootTown_EventScript_SetMomInFrontOfDoorFemale::
-	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 9
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 17, 9
 	return
 
 LittlerootTown_OnFrame:
@@ -114,7 +114,7 @@ LittlerootTown_OnFrame:
 LittlerootTown_EventScript_StepOffTruckMale::
 	lockall
 	setvar VAR_0x8004, 5
-	setvar VAR_0x8005, 8
+	setvar VAR_0x8005, 10
 	call LittlerootTown_EventScript_GoInsideWithMom
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
 	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 8, 8
@@ -124,7 +124,7 @@ LittlerootTown_EventScript_StepOffTruckMale::
 
 LittlerootTown_EventScript_StepOffTruckFemale::
 	lockall
-	setvar VAR_0x8004, 14
+	setvar VAR_0x8004, 17
 	setvar VAR_0x8005, 8
 	call LittlerootTown_EventScript_GoInsideWithMom
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
@@ -901,7 +901,7 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: We're finally here, honey!\p"
 	.string "Must've been tiring riding with our things\n"
 	.string "our things in that truck.\p"
-	.string "Well, this is Dawna Town.\p"
+	.string "Well, this is DAWNA Town.\p"
 	.string "How do you like it?\n"
 	.string "It has a quaint feel, but it seems to be\l"
 	.string "an easy place to live, don't you think?\p"

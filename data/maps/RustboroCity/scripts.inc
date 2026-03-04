@@ -22,13 +22,7 @@ ResetWeather :
 RustboroCity_EventScript_FatMan::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_EventScript_FatManSawGrunt
 	msgbox RustboroCity_Text_WeShortenItToDevon, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_EventScript_FatManSawGrunt::
-	msgbox RustboroCity_Text_SneakyLookingManWentAroundCorner, MSGBOX_DEFAULT
 	release
 	end
 
@@ -102,10 +96,63 @@ RustboroCity_EventScript_LittleGirl::
 	release
 	end
 
+RustboroCity_EventScript_BlockBoy::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_Haha, MSGBOX_DEFAULT
+	applymovement 17, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+RustboroCity_EventScript_BlockBoy2::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_Haha2, MSGBOX_DEFAULT
+	applymovement 18, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
 RustboroCity_EventScript_Man2::
 	lock
 	faceplayer
 	msgbox RustboroCity_Text_TradePokemonGrowFast, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_EventScript_Nyx1::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_Block1, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_EventScript_Nyx2::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_Block2, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_EventScript_Nyx3::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_Block3, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_EventScript_Nyx4::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_Block4, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_EventScript_Nyx5::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_Block5, MSGBOX_DEFAULT
 	release
 	end
 
@@ -231,7 +278,6 @@ RustboroCity_EventScript_DevonEmployee1::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECOVERED_DEVON_GOODS, RustboroCity_EventScript_ReturnGoodsSpokeToEmployee
-	msgbox RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel, MSGBOX_DEFAULT
 	release
 	end
 
@@ -592,40 +638,39 @@ RustboroCity_EventScript_RivalTrigger7::
 
 
 RustboroCity_EventScript_RivalEncounter::
-	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_MayBrineyHint
-	goto_if_set FLAG_MET_RIVAL_RUSTBORO, RustboroCity_EventScript_MayAskToBattle
+	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_NoraBrineyHint
+	goto_if_set FLAG_MET_RIVAL_RUSTBORO, RustboroCity_EventScript_NoraAskToBattle
 	setflag FLAG_MET_RIVAL_RUSTBORO
-	msgbox RustboroCity_Text_MayHiLetsRegister, MSGBOX_DEFAULT
+	msgbox RustboroCity_Text_NoraHiYouDefeatedDavyJones, MSGBOX_DEFAULT
 	closemessage
-	delay 30
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_0x8008, 0
-	msgbox RustboroCity_Text_MayPassedBrineyWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleMay
-	msgbox RustboroCity_Text_MayOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
+	msgbox RustboroCity_Text_NoraPassedWantToBattle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleNora
+	msgbox RustboroCity_Text_NoraOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
 	call RustboroCity_EventScript_RestoreBgm
 	releaseall
 	end
 
-RustboroCity_EventScript_MayAskToBattle::
+RustboroCity_EventScript_NoraAskToBattle::
 	setvar VAR_0x8008, 1
-	msgbox RustboroCity_Text_MayWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleMay
-	msgbox RustboroCity_Text_MayOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
+	msgbox RustboroCity_Text_NoraWantToBattle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleNora
+	msgbox RustboroCity_Text_NoraOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
 	releaseall
 	end
 
-RustboroCity_EventScript_BattleMay::
-	msgbox RustboroCity_Text_MayImNotGoingToLose, MSGBOX_DEFAULT
+RustboroCity_EventScript_BattleNora::
+	msgbox RustboroCity_Text_NoraImNotGoingToLose, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
 	case 0, RustboroCity_EventScript_BattleMayTreecko
 	case 1, RustboroCity_EventScript_BattleMayTorchic
 	case 2, RustboroCity_EventScript_BattleMayMudkip
 	end
 
-RustboroCity_EventScript_MayBrineyHint::
-	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
+RustboroCity_EventScript_NoraBrineyHint::
+	msgbox RustboroCity_Text_NoraMrBrineyHint, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
 	releaseall
 	end
@@ -636,21 +681,21 @@ RustboroCity_EventScript_RestoreBgm::
 	return
 
 RustboroCity_EventScript_BattleMayTreecko::
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_NoraDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_NoraBrineyHint
 	end
 
 RustboroCity_EventScript_BattleMayTorchic::
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_NoraDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_NoraBrineyHint
 	end
 
 RustboroCity_EventScript_BattleMayMudkip::
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_NoraDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_NoraBrineyHint
 	end
 
 RustboroCity_Movement_RivalApproachPlayer0:
@@ -714,15 +759,9 @@ RustboroCity_EventScript_Boy1::
 	end
 
 RustboroCity_Text_WeShortenItToDevon:
-	.string "The DEVON CORPORATION…\n"
-	.string "We all just shorten it to DEVON.\p"
-	.string "That company makes all sorts of\n"
-	.string "convenient products.$"
-
-RustboroCity_Text_SneakyLookingManWentAroundCorner:
-	.string "Hm? A sneaky-looking man?\p"
-	.string "Come to think of it, yes, a shady-\n"
-	.string "looking guy went around the corner.$"
+	.string "Thank you for saving us...\n"
+	.string "Most of us don't own any POKeMON\l"
+	.string "so we just fled to our homes.$"
 
 RustboroCity_Text_YoureNewAroundHere:
 	.string "Oh? Who might you be?\n"
@@ -731,11 +770,10 @@ RustboroCity_Text_YoureNewAroundHere:
 	.string "POKéMON TRAINER'S SCHOOL?$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
-	.string "I challenged the GYM LEADER, but…\p"
-	.string "It's not going to be easy winning with\n"
-	.string "my FIRE-type POKéMON…\p"
-	.string "FIRE-type POKéMON don't match up\n"
-	.string "well against ROCK-type POKéMON…$"
+	.string "I challenged the NYX CAPTAIN, but\n"
+	.string "I couldn't even get past their grunts...\p"
+	.string "He must be even stronger if those\n"
+	.string "grunts are that tough!$"
 
 RustboroCity_Text_MrBrineyWalksInTheTunnel:
 	.string "The old sailor MR. BRINEY lives in\n"
@@ -762,13 +800,42 @@ RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
 	.string "to catch rare POKéMON easily?$"
 
 RustboroCity_Text_PokemonCanChangeLookFromExp:
-	.string "If a POKéMON gains experience in\n"
-	.string "battles, it can sometimes change in\l"
-	.string "the way it looks.$"
+	.string "I have a crazy idea.\p"
+	.string "What if there was a POKéMON that\n"
+	.string "looked like an orange fire dragon?$"
 
 RustboroCity_Text_PokemonChangeShape:
-	.string "A POKéMON changes shape?\n"
-	.string "If one did that, I would be shocked!$"
+	.string "Wow! That's so cool! It'd\n"
+	.string "be like a Charred Dragon!$"
+
+RustboroCity_Text_Haha:
+	.string "Haha! You're not getting anywhere!\n"
+	.string "We're not moving at all!$"
+
+RustboroCity_Text_Haha2:
+	.string "You think TEAM NYX wouldn't leave any\n"
+	.string "chance of escape open?\p"
+	.string "Think again! Ha ha!$"
+
+RustboroCity_Text_Block1:
+	.string "Tsk tsk tsk...\n"
+	.string "We, TEAM NYX are blocking this path!$"
+
+RustboroCity_Text_Block2:
+	.string "You can't go that way!\n"
+	.string "Try as you might, you just can't!$"
+
+RustboroCity_Text_Block3:
+	.string "You want me to move? Sure!\p"
+	.string "I'll move my mouth \n"
+	.string "to say...buzz off!$"
+
+RustboroCity_Text_Block4:
+	.string "Today, we're blocking for no reason!\n"
+	.string "Someday, we'll disappear for no reason!$"
+
+RustboroCity_Text_Block5:
+	.string "Don't even think about it lad.$"
 
 RustboroCity_Text_TradePokemonGrowFast:
 	.string "A POKéMON you get in a trade from\n"
@@ -793,10 +860,6 @@ RustboroCity_Text_HelpMeIWasRobbed:
 	.string "If I don't…\n"
 	.string "I'm going to be in serious trouble.$"
 
-RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
-	.string "That shady character, I think he took\n"
-	.string "off towards the tunnel over there.$"
-
 RustboroCity_Text_YouGotItThankYou:
 	.string "Oh! How did it go?\n"
 	.string "The DEVON GOODS?\p"
@@ -813,48 +876,40 @@ RustboroCity_Text_PleaseComeWithMe:
 	.string "Excuse me, please!\n"
 	.string "Please come with me!$"
 
-RustboroCity_Text_MayHiLetsRegister:
-	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"
-	.string "You had a MATCH CALL feature put\n"
-	.string "on your POKéNAV!\p"
-	.string "Let's register each other so we can\n"
-	.string "contact one another anytime!\p"
-	.string "… … … … … …$"
+RustboroCity_Text_NoraHiYouDefeatedDavyJones:
+	.string "NORA: Oh, hi, {PLAYER}{KUN}!\n"
+	.string "I see you have defeated DAVY JONES...\p"
+	.string "...\p"
+	.string "Good for you! You saved this\n"
+	.string "town from the clutches of TEAM NYX!$"
 
-RustboroCity_Text_RegisteredMay:
-	.string "Registered MAY\n"
-	.string "in the POKéNAV.$"
-
-RustboroCity_Text_MayPassedBrineyWantToBattle:
-	.string "MAY: Oh, by the way, I passed\n"
-	.string "MR. BRINEY in PETALBURG WOODS.\p"
-	.string "I guess he's on his way home to his\n"
-	.string "cottage by the sea.\p"
-	.string "How's your POKéDEX coming along,\n"
-	.string "{PLAYER}{KUN}? Mine's looking pretty decent!\p"
+RustboroCity_Text_NoraPassedWantToBattle:
+	.string "NORA: I've been thinking about\n"
+	.string "it for a while now...\p"
+	.string "That one time you caught me \n"
+	.string "off guard in ROUTE 103.\p"
+	.string "I couldn't beat you back then, but\n"
+	.string "that's because I was frolicking about.\p"
 	.string "So…\n"
 	.string "How about a little battle?$"
 
-RustboroCity_Text_MayOhHaventRaisedPokemonEnough:
-	.string "MAY: Oh, what's the matter?\p"
-	.string "Haven't you caught or raised your\n"
-	.string "POKéMON very much?\p"
-	.string "That's not very good for a TRAINER!$"
+RustboroCity_Text_NoraOhHaventRaisedPokemonEnough:
+	.string "NORA: Oh that's okay!\p"
+	.string "Not everyone cut out to be a Trainer <3$"
 
-RustboroCity_Text_MayWantToBattle:
-	.string "MAY: So, what do you think?\n"
-	.string "How about a little battle here?$"
+RustboroCity_Text_NoraWantToBattle:
+	.string "NORA: So, what do you think?\n"
+	.string "How about a little battle?$"
 
-RustboroCity_Text_MayImNotGoingToLose:
-	.string "MAY: You just became a TRAINER,\n"
+RustboroCity_Text_NoraImNotGoingToLose:
+	.string "NORA: You just became a TRAINER,\n"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 
-RustboroCity_Text_MayDefeat:
-	.string "Yikes!\n"
-	.string "You're better than I expected!$"
+RustboroCity_Text_NoraDefeat:
+	.string "Oh!$"
 
-RustboroCity_Text_MayMrBrineyHint:
-	.string "MAY: Oh, by the way, MR. BRINEY, who\n"
+RustboroCity_Text_NoraMrBrineyHint:
+	.string "NORA: Oh, by the way, MR. BRINEY, who\n"
 	.string "I just passed…\p"
 	.string "{PLAYER}{KUN}, you just moved here so you\n"
 	.string "might not know this, but MR. BRINEY\l"
@@ -868,14 +923,14 @@ RustboroCity_Text_TunnelNearingCompletion:
 	.string "across it in red paint…$"
 
 RustboroCity_Text_DevonCorpSign:
-	.string "DEVON CORPORATION\p"
-	.string "“For all your living needs, we make\n"
-	.string "it all.”$"
+	.string "SOLAS SCIENCE CENTRE\p"
+	.string "“The premiere research facility\n"
+	.string "in the AHREN Region.”$"
 
 RustboroCity_Text_CitySign:
-	.string "Solas City\p"
+	.string "SOLAS City\p"
 	.string "“The capital of\n"
-	.string "science in the Gasho Region.”$"
+	.string "science in the AHREN Region.”$"
 
 RustboroCity_Text_TrainersSchoolSign:
 	.string "POKéMON TRAINER'S SCHOOL\p"
@@ -887,10 +942,8 @@ RustboroCity_Text_CuttersHouse:
 
 RustboroCity_Text_YouCanHave2On2Battle:
 	.string "Did you know this?\p"
-	.string "You can have a 2-on-2 battle even\n"
-	.string "if you're not with another TRAINER.\p"
-	.string "If you catch the eyes of two TRAINERS\n"
-	.string "when you have two or more POKéMON,\l"
-	.string "they'll both challenge you.\p"
-	.string "Don't you think it'd be cool if you\n"
-	.string "could beat two TRAINERS by yourself?$"
+	.string "Our city has a garden right\n"
+	.string "smack in the middle.\p"
+	.string "That means POKéMON will be able\n"
+	.string "to spawn in the garden.\p"
+	.string "Thankfully they aren't too aggressive.$"

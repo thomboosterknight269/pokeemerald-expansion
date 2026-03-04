@@ -230,6 +230,7 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
 
     [HOLD_EFFECT_FOCUS_BAND] =
     {
+        .leftovers = TRUE,
     },
 
     [HOLD_EFFECT_LUCKY_EGG] =
@@ -645,5 +646,8 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     {
         .onSwitchIn = TRUE,
         .onSwitchInFirstTurn = TRUE,
+    },
+    [HOLD_EFFECT_MIRACLE_SEED] =
+    {
     },
 };

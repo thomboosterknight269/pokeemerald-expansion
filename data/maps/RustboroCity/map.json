@@ -25,15 +25,15 @@
     },
     {
       "map": "MAP_ROUTE116",
-      "offset": 6,
+      "offset": 4,
       "direction": "right"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
-      "x": 27,
-      "y": 33,
+      "x": 15,
+      "y": 38,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -98,12 +98,12 @@
     {
       "local_id": "LOCALID_RUSTBORO_LITTLE_BOY",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 37,
-      "y": 27,
+      "x": 38,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
       "movement_range_x": 3,
-      "movement_range_y": 2,
+      "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RustboroCity_EventScript_LittleBoy",
@@ -112,12 +112,12 @@
     {
       "local_id": "LOCALID_RUSTBORO_LITTLE_GIRL",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 42,
+      "x": 39,
       "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RustboroCity_EventScript_LittleGirl",
@@ -253,7 +253,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RustboroCity_EventScript_BlockBoy",
       "flag": "FLAG_HIDE_CREW"
     },
     {
@@ -266,7 +266,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RustboroCity_EventScript_BlockBoy2",
       "flag": "FLAG_HIDE_CREW"
     },
     {
@@ -279,7 +279,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RustboroCity_EventScript_Nyx1",
       "flag": "FLAG_HIDE_CREW"
     },
     {
@@ -292,7 +292,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RustboroCity_EventScript_Nyx5",
       "flag": "FLAG_HIDE_CREW"
     },
     {
@@ -305,7 +305,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RustboroCity_EventScript_Nyx2",
       "flag": "FLAG_HIDE_CREW"
     },
     {
@@ -318,7 +318,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RustboroCity_EventScript_Nyx3",
       "flag": "FLAG_HIDE_CREW"
     },
     {
@@ -331,13 +331,13 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RustboroCity_EventScript_Nyx4",
       "flag": "FLAG_HIDE_CREW"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 29,
-      "y": 7,
+      "x": 42,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -349,8 +349,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
-      "x": 29,
-      "y": 12,
+      "x": 42,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -370,14 +370,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
-      "y": 45,
-      "elevation": 0,
-      "dest_map": "MAP_RUSTBORO_CITY_MART",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 10,
+      "x": 13,
       "y": 45,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F",
@@ -655,14 +648,6 @@
       "y": 45,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Common_EventScript_ShowPokemartSign"
-    },
-    {
-      "type": "sign",
-      "x": 12,
-      "y": 45,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
     },
     {
@@ -675,15 +660,7 @@
     },
     {
       "type": "sign",
-      "x": 16,
-      "y": 45,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Common_EventScript_ShowPokemartSign"
-    },
-    {
-      "type": "sign",
-      "x": 11,
+      "x": 14,
       "y": 45,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",

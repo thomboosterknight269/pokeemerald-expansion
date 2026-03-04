@@ -21929,14 +21929,18 @@ gBattleAnimMove_TailWhip::
 	end
 
 gBattleAnimMove_Cut::
+	loadspritegfx ANIM_TAG_LEAF
+	loadspritegfx ANIM_TAG_RAZOR_LEAF
 	loadspritegfx ANIM_TAG_CUT
 	monbg ANIM_TARGET
 	setalpha 12, 8
 	playsewithpan SE_M_CUT, SOUND_PAN_TARGET
 	createsprite gCuttingSliceSpriteTemplate, ANIM_ATTACKER, 2, 40, -32, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 8, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_DEF_PARTNER, 2, 0, 8, 1
+	createsprite gRazorLeafParticleSpriteTemplate, ANIM_TARGET, 4, -10, -4, ANIM_TARGET, 2
+	createsprite gRazorLeafParticleSpriteTemplate, ANIM_TARGET, 4, 10, 4, ANIM_TARGET, 2
 	delay 5
-	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 10, 1
-	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
 	waitforvisualfinish

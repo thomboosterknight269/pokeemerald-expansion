@@ -493,17 +493,30 @@ static const u16 sBlastoiseTeachableLearnset[] = {
 
 #if P_FAMILY_CATERPIE
 static const u16 sCaterpieTeachableLearnset[] = {
+    MOVE_BULLET_SEED,
+    MOVE_HYPER_BEAM,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
     MOVE_SNORE,
+    MOVE_STEEL_WING,
+    MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
 
 static const u16 sMetapodTeachableLearnset[] = {
+    MOVE_BULLET_SEED,
+    MOVE_HYPER_BEAM,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
+    MOVE_STEEL_WING,
+    MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
 
 static const u16 sButterfreeTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
+    MOVE_BULLET_SEED,
     MOVE_DOUBLE_EDGE,
     MOVE_DOUBLE_TEAM,
     MOVE_DREAM_EATER,
@@ -524,11 +537,13 @@ static const u16 sButterfreeTeachableLearnset[] = {
     MOVE_SLEEP_TALK,
     MOVE_SNORE,
     MOVE_SOLAR_BEAM,
+    MOVE_STEEL_WING,
     MOVE_SUNNY_DAY,
     MOVE_SWAGGER,
     MOVE_SWIFT,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_CATERPIE
@@ -687,6 +702,7 @@ static const u16 sRattataTeachableLearnset[] = {
 };
 
 static const u16 sRaticateTeachableLearnset[] = {
+    MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
     MOVE_BODY_SLAM,

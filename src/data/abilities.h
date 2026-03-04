@@ -2412,4 +2412,10 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+    [ABILITY_PROFIENCY] =
+    {
+        .name = _("Proficiency"),
+        .description = COMPOUND_STRING("Boosts different type attacks."),
+        .aiRating = 8,
+    },
 };

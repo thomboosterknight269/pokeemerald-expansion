@@ -222,36 +222,6 @@ SlateportCity_PokemonFanClub_EventScript_Twin::
 	msgbox SlateportCity_PokemonFanClub_Text_MonEnjoyedProtein, MSGBOX_NPC
 	end
 
-SlateportCity_PokemonFanClub_EventScript_Skitty::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
-	msgbox SlateportCity_PokemonFanClub_Text_Skitty, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
-SlateportCity_PokemonFanClub_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-	msgbox SlateportCity_PokemonFanClub_Text_Zigzagoon, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
-SlateportCity_PokemonFanClub_EventScript_Azumarill::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
-	msgbox SlateportCity_PokemonFanClub_Text_Azumarill, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 SlateportCity_PokemonFanClub_Text_MeetChairman:
 	.string "Er-hem! I am the CHAIRMAN of the\n"
 	.string "POKéMON FAN CLUB!\p"
@@ -388,13 +358,4 @@ SlateportCity_PokemonFanClub_Text_MonEnjoyedProtein:
 	.string "on them?\p"
 	.string "Mine acted really happy when I gave\n"
 	.string "it some PROTEIN.$"
-
-SlateportCity_PokemonFanClub_Text_Skitty:
-	.string "SKITTY: Fffnyaaaah…$"
-
-SlateportCity_PokemonFanClub_Text_Zigzagoon:
-	.string "ZIGZAGOON: Kyuuu…$"
-
-SlateportCity_PokemonFanClub_Text_Azumarill:
-	.string "AZUMARILL: Marimari?$"
 

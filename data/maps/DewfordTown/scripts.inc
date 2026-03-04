@@ -61,10 +61,6 @@ DewfordTown_EventScript_TownSign::
 	msgbox DewfordTown_Text_TownSign, MSGBOX_SIGN
 	end
 
-DewfordTown_EventScript_GymSign::
-	msgbox DewfordTown_Text_GymSign, MSGBOX_SIGN
-	end
-
 DewfordTown_EventScript_HallSign::
 	msgbox DewfordTown_Text_HallSign, MSGBOX_SIGN
 	end
@@ -614,11 +610,6 @@ DewfordTown_Text_TinyIslandCommunity:
 DewfordTown_Text_TownSign:
 	.string "DEWFORD TOWN\n"
 	.string "“A tiny island in the blue sea.”$"
-
-DewfordTown_Text_GymSign:
-	.string "DEWFORD TOWN POKéMON GYM\n"
-	.string "LEADER: BRAWLY\l"
-	.string "“A big wave in fighting!”$"
 
 DewfordTown_Text_HallSign:
 	.string "DEWFORD HALL\n"
