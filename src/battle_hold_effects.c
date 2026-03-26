@@ -639,6 +639,23 @@ static enum ItemEffect TryLeftovers(enum BattlerId battler, enum HoldEffect hold
     return effect;
 }
 
+static enum ItemEffect TryFocusBand(u32 battler, enum HoldEffect holdEffect)
+{
+    enum ItemEffect effect = ITEM_NO_EFFECT;
+
+    if (gBattleMons[battler].hp < gBattleMons[battler].maxHP/2
+     && !(B_HEAL_BLOCKING >= GEN_5 && gBattleMons[battler].volatiles.healBlock))
+    {
+        SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+        RecordItemEffectBattle(battler, holdEffect);
+        BattleScriptExecute(BattleScript_ItemHealHP_End2);
+        effect = ITEM_HP_CHANGE;
+    }
+
+    return effect;
+}
+
+
 static enum ItemEffect TryBlackSludgeDamage(enum BattlerId battler, enum HoldEffect holdEffect)
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;

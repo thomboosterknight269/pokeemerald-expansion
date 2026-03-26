@@ -2033,18 +2033,17 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_RARE_CANDY] =
     {
-        .name = ITEM_NAME("Rare Candy"),
-        .pluralName = ITEM_PLURAL_NAME("Rare Candies"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
+        .name = ITEM_NAME("Common Candy"),
+        .pluralName = ITEM_PLURAL_NAME("Common Candies"),
+        .price = 0,
         .description = COMPOUND_STRING(
-            "Raises the level\n"
-            "of a Pokémon by\n"
-            "one."),
+            "A piece of candy.\n"
+            "Bad for your\n"
+            "Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .effect = gItemEffect_RareCandy,
+        .sortType = ITEM_TYPE_UNCATEGORIZED,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_RareCandy,
         .iconPalette = gItemIconPalette_RareCandy,
@@ -2054,17 +2053,15 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy XS"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XS"),
-        .price = 20,
-        .holdEffectParam = EXP_100,
+        .price = 0,
         .description = COMPOUND_STRING(
             "Gives a very small\n"
             "amount of Exp. to\n"
             "a single Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .effect = gItemEffect_RareCandy,
+        .sortType = ITEM_TYPE_UNCATEGORIZED,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyXS,
         .iconPalette = gItemIconPalette_ExpCandies,
@@ -2074,17 +2071,16 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy S"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies S"),
-        .price = 240,
+        .price = 0,
         .holdEffectParam = EXP_800,
         .description = COMPOUND_STRING(
             "Gives a small\n"
             "amount of Exp. to\n"
             "a single Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .effect = gItemEffect_RareCandy,
+        .sortType = ITEM_TYPE_UNCATEGORIZED,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyS,
         .iconPalette = gItemIconPalette_ExpCandies,
@@ -2094,17 +2090,16 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy M"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies M"),
-        .price = 1000,
+        .price = 0,
         .holdEffectParam = EXP_3000,
         .description = COMPOUND_STRING(
             "Gives a moderate\n"
             "amount of Exp. to\n"
             "a single Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .effect = gItemEffect_RareCandy,
+        .sortType = ITEM_TYPE_UNCATEGORIZED,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyM,
         .iconPalette = gItemIconPalette_ExpCandies,
@@ -2114,17 +2109,16 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy L"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies L"),
-        .price = 3000,
+        .price = 0,
         .holdEffectParam = EXP_10000,
         .description = COMPOUND_STRING(
             "Gives a large\n"
             "amount of Exp. to\n"
             "a single Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .effect = gItemEffect_RareCandy,
+        .sortType = ITEM_TYPE_UNCATEGORIZED,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyL,
         .iconPalette = gItemIconPalette_ExpCandies,
@@ -2134,17 +2128,16 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy XL"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XL"),
-        .price = 10000,
+        .price = 0,
         .holdEffectParam = EXP_30000,
         .description = COMPOUND_STRING(
             "Gives a very large\n"
             "amount of Exp. to\n"
             "a single Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .effect = gItemEffect_RareCandy,
+        .sortType = ITEM_TYPE_UNCATEGORIZED,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_ExpCandyXL,
         .iconPalette = gItemIconPalette_ExpCandies,
@@ -2160,9 +2153,9 @@ const struct ItemInfo gItemsInfo[] =
             "Level of a single\n"
             "Pokémon by one."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_DynamaxCandy,
+        .sortType = ITEM_TYPE_UNCATEGORIZED,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
         .iconPic = gItemIcon_DynamaxCandy,
         .iconPalette = gItemIconPalette_DynamaxCandy,

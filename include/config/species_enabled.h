@@ -233,7 +233,7 @@
 #define P_FAMILY_LILEEP                  P_GEN_3_POKEMON
 #define P_FAMILY_ANORITH                 P_GEN_3_POKEMON
 #define P_FAMILY_FEEBAS                  P_GEN_3_POKEMON
-#define P_FAMILY_CASTFORM                FALSE
+#define P_FAMILY_CASTFORM                P_GEN_3_POKEMON
 #define P_FAMILY_KECLEON                 P_GEN_3_POKEMON
 #define P_FAMILY_SHUPPET                 P_GEN_3_POKEMON
 #define P_FAMILY_DUSKULL                 P_GEN_3_POKEMON

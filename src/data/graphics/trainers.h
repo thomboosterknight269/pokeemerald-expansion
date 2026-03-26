@@ -597,9 +597,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_LEAF, gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
-    TRAINER_SPRITE(TRAINER_PIC_NERO, gTrainerFrontPic_Nero, gTrainerPalette_Nero),
-    TRAINER_SPRITE(TRAINER_PIC_NORA, gTrainerFrontPic_Nora, gTrainerPalette_Nora),
-
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_NERO, gTrainerFrontPic_Nero, gTrainerPalette_Nero),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_NORA, gTrainerFrontPic_Nora, gTrainerPalette_Nora),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_YOUNGSTER_FRLG, gTrainerFrontPic_YoungsterFrlg, gTrainerPalette_YoungsterFrlg),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_BUG_CATCHER_FRLG, gTrainerFrontPic_BugCatcherFrlg, gTrainerPalette_BugCatcherFrlg),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_LASS_FRLG, gTrainerFrontPic_LassFrlg, gTrainerPalette_LassFrlg),

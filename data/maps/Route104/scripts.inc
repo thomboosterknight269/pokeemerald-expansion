@@ -19,7 +19,7 @@ Route104_OnTransition:
 	end
 
 Storm:
-	setweather WEATHER_RAIN_THUNDERSTORM  
+	setweather WEATHER_DOWNPOUR  
 	doweather
 	return
 

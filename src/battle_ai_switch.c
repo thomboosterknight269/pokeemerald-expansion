@@ -1596,12 +1596,6 @@ static s32 GetSwitchinWeatherImpact(enum BattlerId battler)
                 if (weatherImpact == 0)
                     weatherImpact = -1;
             }
-            else if (gAiLogicData->switchinCandidate.battleMon.types[0] == TYPE_WATER || gAiLogicData->switchinCandidate.battleMon.types[1] == TYPE_WATER)
-            {
-                weatherImpact = -(maxHP / 16);
-                if (weatherImpact == 0)
-                    weatherImpact = -1;
-            }
         }
         if (((gBattleWeather & B_WEATHER_HAIL) || (gBattleWeather & B_WEATHER_SNOW)) && ability == ABILITY_ICE_BODY)
         {
@@ -1619,6 +1613,8 @@ static u32 GetSwitchinRecurringHealing(enum BattlerId battler)
     u32 recurringHealing = 0, maxHP = gBattleMons[battler].maxHP;
     enum Ability ability = gAiLogicData->abilities[battler];
     enum HoldEffect holdEffect = gAiLogicData->holdEffects[battler];
+    u32 startingHP = gBattleMons[battler].hp;
+    s32 currentHP = startingHP;
 
     // Items
     if (ability != ABILITY_KLUTZ)
@@ -1640,7 +1636,7 @@ static u32 GetSwitchinRecurringHealing(enum BattlerId battler)
             if (currentHP < maxHP / 2)
                 recurringHealing = maxHP / 12;
                 if (recurringHealing == 0)
-                recurringHealing = 1;
+                    recurringHealing = 1;
         }
     } // Intentionally omitting Shell Bell for its inconsistency
 

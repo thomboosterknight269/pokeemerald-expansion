@@ -72,7 +72,7 @@ Comments can be added as C comment blocks
 
 /*Comments can also be on a single line*/
 
-
+/*
 === TRAINER_NONE ===
 Name:
 Class: Pkmn Trainer 1
@@ -80,7 +80,7 @@ Pic: Hiker
 Gender: Male
 Music: Male
 Double Battle: No
-
+*/
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker
@@ -1990,7 +1990,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Duskull
+Shuppet
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2007,7 +2007,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Duskull
+Shuppet
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2101,7 +2101,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Duskull
+Shuppet
 Level: 42
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -8833,7 +8833,7 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Duskull
+Shuppet
 Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Night Shade

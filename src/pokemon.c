@@ -90,7 +90,6 @@ static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 perso
 static void EncryptBoxMon(struct BoxPokemon *boxMon);
 static void DecryptBoxMon(struct BoxPokemon *boxMon);
 static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
-static void ShuffleStatArray(u8* statArray);
 void TrySpecialOverworldEvo();
 
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
@@ -1292,7 +1291,7 @@ void ZeroEnemyPartyMons(void)
 
 void CreateRandomMon(struct Pokemon *mon, u16 species, u8 level)
 {
-    CreateRandomMonWithIVs(mon, species, level, USE_RANDOM_IVS);
+    CreateRandomMonWithIVs(mon, species, level, 31);
 }
 
 void CreateRandomMonWithIVs(struct Pokemon *mon, u16 species, u8 level, u8 fixedIv)
@@ -1372,8 +1371,6 @@ void SetBoxMonIVs(struct BoxPokemon *mon, u8 fixedIV)
 
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personality, struct OriginalTrainerId trainerId)
 {
-    u8 maxIV = MAX_IV_MASK;
-    u8 statIDs[] = {0, 1, 2, 3, 4, 5};
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
     u32 value;
     u16 checksum;
@@ -1457,106 +1454,32 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personal
     value = boxMon->personality & 0x1;
     u32 teraType = value == 0 ? GetSpeciesType(species, 0) : GetSpeciesType(species, 1);
     SetBoxMonData(boxMon, MON_DATA_TERA_TYPE, &teraType);
-
-    if (fixedIV < USE_RANDOM_IVS)
-    {
-        SetBoxMonData(boxMon, MON_DATA_HP_IV, &fixedIV);
-        SetBoxMonData(boxMon, MON_DATA_ATK_IV, &fixedIV);
-        SetBoxMonData(boxMon, MON_DATA_DEF_IV, &fixedIV);
-        SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &fixedIV);
-        SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &fixedIV);
-        SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &fixedIV);
-    }
-    else
-    {
-        u32 iv;
-        u32 ivRandom = Random32();
-        value = (u16)ivRandom;
-
-        iv = value & MAX_IV_MASK;
-        SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
-        iv = (value & (MAX_IV_MASK << 5)) >> 5;
-        SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
-        iv = (value & (MAX_IV_MASK << 10)) >> 10;
-        SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
-
-        value = (u16)(ivRandom >> 16);
-
-        iv = value & MAX_IV_MASK;
-        SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
-        iv = (value & (MAX_IV_MASK << 5)) >> 5;
-        SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
-        iv = (value & (MAX_IV_MASK << 10)) >> 10;
-        SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
-
-        if (gSpeciesInfo[species].perfectIVCount != 0)
-        {
-            iv = MAX_PER_STAT_IVS;
-            // Initialize a list of IV indices.
-            for (i = 0; i < NUM_STATS; i++)
-            {
-                availableIVs[i] = i;
-            }
-
-            // Select the IVs that will be perfected.
-            for (i = 0; i < NUM_STATS && i < gSpeciesInfo[species].perfectIVCount; i++)
-            {
-                u8 index = Random() % (NUM_STATS - i);
-                selectedIvs[i] = availableIVs[index];
-                RemoveIVIndexFromList(availableIVs, index);
-            }
-            for (i = 0; i < NUM_STATS && i < gSpeciesInfo[species].perfectIVCount; i++)
-            {
-                switch (selectedIvs[i])
-                {
-                case STAT_HP:
-                    SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
-                    break;
-                case STAT_ATK:
-                    SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
-                    break;
-                case STAT_DEF:
-                    SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
-                    break;
-                case STAT_SPEED:
-                    SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
-                    break;
-                case STAT_SPATK:
-                    SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
-                    break;
-                case STAT_SPDEF:
-                    SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
-                    break;
-                default:
-                    break;
-                }
-            }
-        }
-         // Set three random IVs to 31
-        ShuffleStatArray(statIDs);
-
-        for (i = 0; i < 6; i++)
-        {
-            SetBoxMonData(boxMon, MON_DATA_HP_IV + statIDs[i], &maxIV);
-        }
-    }
-
+    //using gen 3-4 ability formula, it was changed in later gens
     if (GetSpeciesAbility(species, 1))
-    {
-        value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
-    }
-
-    GiveBoxMonInitialMoveset(boxMon);
 }
 
-void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
+static bool32 IsValidGender(u32 gender)
 {
-    u32 personality;
-
-    do
+    switch (gender)
     {
-        personality = Random32();
+    case MON_MALE:
+    case MON_FEMALE:
+    case MON_GENDERLESS:
+    case MON_GENDER_RANDOM:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+u32 GetMonPersonality(u16 species, u8 gender, u8 nature, u8 unownLetter)
+{
+    u32 personality, actualLetter;
+
+    assertf(IsValidGender(gender), "invalid gender: %d", gender)
+    {
+        gender = MON_GENDER_RANDOM;
     }
 
     assertf(nature <= NATURE_RANDOM, "invalid nature: %d", nature)
@@ -5884,10 +5807,10 @@ u16 GetBattleBGM(void)
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-                return MUS_RG_VS_TRAINER;
+                return MUS_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
                 return MUS_VS_TRAINER;
-            return MUS_RG_VS_TRAINER;
+            return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
         case TRAINER_CLASS_CHAMPION_FRLG:
@@ -7142,12 +7065,10 @@ bool32 TryBoxMonFormChange(struct BoxPokemon *boxMon, enum FormChanges method)
 
 u16 SanitizeSpeciesId(u16 species)
 {
-    assertf(species <= NUM_SPECIES && (species == SPECIES_NONE || IsSpeciesEnabled(species)), "invalid species: %d", species)
-    {
+    if (species > NUM_SPECIES || !IsSpeciesEnabled(species))
         return SPECIES_NONE;
-    }
-
-    return species;
+    else
+        return species;
 }
 
 bool32 IsSpeciesEnabled(u16 species)
@@ -7310,7 +7231,7 @@ u16 GetSpeciesPreEvolution(u16 species)
 
         for (j = 0; evolutions[j].method != EVOLUTIONS_END; j++)
         {
-            if (SanitizeSpeciesId(evolutions[j].targetSpecies) == species)
+            if (IsSpeciesEnabled(evolutions[j].targetSpecies) && SanitizeSpeciesId(evolutions[j].targetSpecies) == species)
                 return i;
         }
     }
@@ -7455,19 +7376,6 @@ bool32 IsSpeciesOfType(u32 species, enum Type type)
      || gSpeciesInfo[species].types[1] == type)
         return TRUE;
     return FALSE;
-}
-
-static void ShuffleStatArray(u8* statArray)
-{
-    int i;
-
-    // Shuffle the stats array using a Fisher-Yates shuffle
-    for (i = NUM_STATS - 1; i > 0; i--)
-    {
-        u8 temp;
-        int j = Random() % (i + 1);
-        SWAP(statArray[i], statArray[j], temp);
-    }
 }
 
 struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void)

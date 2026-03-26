@@ -412,14 +412,12 @@
 #define OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG      385
 #define OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG         386
 #define OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG        387
-
+#define OBJ_EVENT_GFX_NERO                       388
 // FRLG equivalents
 
 // #define OBJ_EVENT_GFX_MEW OBJ_EVENT_GFX_NINJA_BOY
 // #define OBJ_EVENT_GFX_LUGIA OBJ_EVENT_GFX_NINJA_BOY
 
-
-#define OBJ_EVENT_GFX_NERO                       388
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit

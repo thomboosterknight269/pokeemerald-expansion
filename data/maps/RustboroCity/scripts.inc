@@ -11,7 +11,7 @@ RustboroCity_OnTransition:
 
 RustboroCity_EventScript_HidePeople :
 	setflag FLAG_HIDE_CIVS_SOLAS
-	setweather WEATHER_RAIN_THUNDERSTORM  
+	setweather WEATHER_DOWNPOUR  
 	doweather
 	return
 

@@ -1128,6 +1128,8 @@
 #define P_FAMILY_TERAPAGOS               TRUE
 #undef P_FAMILY_PECHARUNT
 #define P_FAMILY_PECHARUNT               TRUE
+#undef P_FAMILY_SPOILEAF
+#define P_FAMILY_SPOILEAF                TRUE
 
 // Vars
 #undef B_VAR_DIFFICULTY

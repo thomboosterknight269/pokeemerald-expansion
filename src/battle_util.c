@@ -7368,10 +7368,10 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct BattleContext *ctx)
     if (ctx->moveType == TYPE_MYSTERY)
         return UQ_4_12(1.0);
     else if (gBattleStruct->pledgeMove && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(ctx->battlerAtk), ctx->moveType))
-        return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.5) : UQ_4_12(1.25);
+        return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.8) : UQ_4_12(1.4);
     else if (!IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType) || ctx->move == MOVE_STRUGGLE || ctx->move == MOVE_NONE)
-        return (ctx->abilityAtk == ABILITY_PROFIENCY) ? UQ_4_12(1.25) : UQ_4_12(1.0);
-    return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.5) : UQ_4_12(1.25);
+        return (ctx->abilityAtk == ABILITY_PROFIENCY) ? UQ_4_12(1.4) : UQ_4_12(1.0);
+    return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.8) : UQ_4_12(1.4);
 }
 
 // Utility Umbrella holders take normal damage from what would be rain- and sun-weakened attacks.
@@ -7380,7 +7380,7 @@ static uq4_12_t GetWeatherDamageModifier(struct BattleContext *ctx)
     if (ctx->weather == B_WEATHER_NONE)
         return UQ_4_12(1.0);
     if (GetMoveEffect(ctx->move) == EFFECT_HYDRO_STEAM && (ctx->weather & B_WEATHER_SUN) && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
-        return UQ_4_12(1.25);
+        return UQ_4_12(1.4);
     if (ctx->holdEffectDef == HOLD_EFFECT_UTILITY_UMBRELLA)
         return UQ_4_12(1.0);
 
@@ -7388,13 +7388,13 @@ static uq4_12_t GetWeatherDamageModifier(struct BattleContext *ctx)
     {
         if (ctx->moveType != TYPE_FIRE && ctx->moveType != TYPE_WATER)
             return UQ_4_12(1.0);
-        return (ctx->moveType == TYPE_FIRE) ? UQ_4_12(0.5) : UQ_4_12(1.25);
+        return (ctx->moveType == TYPE_FIRE) ? UQ_4_12(0.5) : UQ_4_12(1.4);
     }
     if (ctx->weather & B_WEATHER_SUN)
     {
         if (ctx->moveType != TYPE_FIRE && ctx->moveType != TYPE_WATER)
             return UQ_4_12(1.0);
-        return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.25);
+        return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.4);
     }
     return UQ_4_12(1.0);
 }
@@ -7504,7 +7504,7 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(enum BattlerId battlerAtk, u
     switch (abilityAtk)
     {
     case ABILITY_NEUROFORCE:
-        if (typeEffectivenessModifier >= UQ_4_12(1.75))
+        if (typeEffectivenessModifier >= UQ_4_12(1.8))
             return UQ_4_12(1.25);
         break;
     case ABILITY_SNIPER:
@@ -7539,7 +7539,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct BattleContext *ctx)
     case ABILITY_FILTER:
     case ABILITY_SOLID_ROCK:
     case ABILITY_PRISM_ARMOR:
-        if (ctx->typeEffectivenessModifier >= UQ_4_12(1.75))
+        if (ctx->typeEffectivenessModifier >= UQ_4_12(1.8))
         {
             modifier = UQ_4_12(0.75);
             recordAbility = TRUE;
@@ -7548,7 +7548,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct BattleContext *ctx)
     case ABILITY_FLUFFY:
         if (ctx->moveType == TYPE_FIRE && !IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
         {
-            modifier = UQ_4_12(1.75);
+            modifier = UQ_4_12(1.8);
             recordAbility = TRUE;
         }
         if (ctx->moveType != TYPE_FIRE && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
@@ -7611,7 +7611,7 @@ static inline uq4_12_t GetAttackerItemsModifier(enum BattlerId battlerAtk, uq4_1
         return uq4_12_add(UQ_4_12(1.0), metronomeBoostBase * metronomeTurns);
         break;
     case HOLD_EFFECT_EXPERT_BELT:
-        if (typeEffectivenessModifier >= UQ_4_12(1.75))
+        if (typeEffectivenessModifier >= UQ_4_12(1.8))
             return UQ_4_12(1.2);
         break;
     case HOLD_EFFECT_LIFE_ORB:
@@ -7630,7 +7630,7 @@ static inline uq4_12_t GetDefenderItemsModifier(struct BattleContext *ctx)
     case HOLD_EFFECT_RESIST_BERRY:
         if (IsUnnerveBlocked(ctx->battlerDef, gBattleMons[ctx->battlerDef].item))
             return UQ_4_12(1.0);
-        if (ctx->moveType == GetBattlerHoldEffectParam(ctx->battlerDef) && (ctx->moveType == TYPE_NORMAL || ctx->typeEffectivenessModifier >= UQ_4_12(1.75)))
+        if (ctx->moveType == GetBattlerHoldEffectParam(ctx->battlerDef) && (ctx->moveType == TYPE_NORMAL || ctx->typeEffectivenessModifier >= UQ_4_12(1.8)))
         {
             if (ctx->updateFlags)
                 gSpecialStatuses[ctx->battlerDef].berryReduced = TRUE;
@@ -7878,7 +7878,7 @@ static inline s32 DoFutureSightAttackDamageCalcVars(struct BattleContext *ctx)
 
     // Same type attack bonus
     if (GetSpeciesType(partyMonSpecies, 0) == moveType || GetSpeciesType(partyMonSpecies, 1) == moveType)
-        DAMAGE_APPLY_MODIFIER(UQ_4_12(1.25));
+        DAMAGE_APPLY_MODIFIER(UQ_4_12(1.4));
     else
         DAMAGE_APPLY_MODIFIER(UQ_4_12(1.0));
     DAMAGE_APPLY_MODIFIER(ctx->typeEffectivenessModifier);

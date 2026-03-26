@@ -1083,7 +1083,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Hellbird"),
         .cryId = CRY_BEEDRILL,
-        .natDexNum = NATIONAL_DEX_BEEDRILL,
+        .natDexNum = NATIONAL_DEX_HELLBIRD,
         .categoryName = _("Halberd"),
         .height = 10,
         .weight = 295,
@@ -1101,12 +1101,18 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 5,
         .frontAnimFrames = ANIM_FRAMES(
             ANIMCMD_FRAME(0, 5),
-            ANIMCMD_FRAME(1, 35),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 35),
+            ANIMCMD_FRAME(1, 5),
+            ANIMCMD_FRAME(0, 5),
+            ANIMCMD_FRAME(1, 5),
             ANIMCMD_FRAME(0,5),
+             ANIMCMD_FRAME(1, 5),
+            ANIMCMD_FRAME(0, 5),
+             ANIMCMD_FRAME(1, 5),
+            ANIMCMD_FRAME(0, 5),
+             ANIMCMD_FRAME(1, 5),
+            ANIMCMD_FRAME(0, 5),
         ),
-        .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_H_VIBRATE : ANIM_V_SHAKE_LOW_TWICE_SLOW,
+        .frontAnimId = ANIM_LUNGE_GROW,
         .enemyMonElevation = P_GBA_STYLE_SPECIES_GFX ? 8 : 9,
         .backPic = gMonBackPic_Beedrill,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
@@ -1117,21 +1123,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .iconSprite = gMonIcon_Beedrill,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(11, 15, SHADOW_SIZE_L)
+        SHADOW(2, 15, SHADOW_SIZE_L)
         FOOTPRINT(Beedrill)
-        OVERWORLD(
-            sPicTable_Beedrill,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Beedrill,
-            gShinyOverworldPalette_Beedrill
-        )
         .levelUpLearnset = sBeedrillLevelUpLearnset,
         .teachableLearnset = sBeedrillTeachableLearnset,
-        .formSpeciesIdTable = sBeedrillFormSpeciesIdTable,
-        .formChangeTable = sBeedrillFormChangeTable,
     },
 #endif //P_FAMILY_WEEDLE
 

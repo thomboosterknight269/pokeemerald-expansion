@@ -100,17 +100,17 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_WEEDLE"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
                 "species": "SPECIES_PIDGEY"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PIDGEY"
+                "species": "SPECIES_PIDGEOT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_PIDGEOT"
               },
               {
                 "min_level": 3,
@@ -130,12 +130,12 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_PIDGEY"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_PIDGEY"
               },
               {
                 "min_level": 3,
