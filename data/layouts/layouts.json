@@ -114,7 +114,7 @@
     {
       "id": "LAYOUT_OLDALE_TOWN",
       "name": "OldaleTown_Layout",
-      "width": 38,
+      "width": 34,
       "height": 27,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",

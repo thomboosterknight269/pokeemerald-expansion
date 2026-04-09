@@ -72,20 +72,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_OLDALE_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_RIVAL_MAY_NORMAL",
-      "x": 16,
-      "y": 21,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "OldaleTown_EventScript_Rival",
-      "flag": "FLAG_HIDE_OLDALE_TOWN_RIVAL"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
       "x": 29,
       "y": 18,
@@ -126,8 +112,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-      "x": 22,
-      "y": 10,
+      "x": 20,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -180,87 +166,6 @@
     },
     {
       "type": "trigger",
-      "x": 13,
-      "y": 21,
-      "elevation": 3,
-      "var": "VAR_OLDALE_RIVAL_STATE",
-      "var_value": "1",
-      "script": "OldaleTown_EventScript_RivalTrigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 21,
-      "elevation": 3,
-      "var": "VAR_OLDALE_RIVAL_STATE",
-      "var_value": "1",
-      "script": "OldaleTown_EventScript_RivalTrigger2"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 21,
-      "elevation": 3,
-      "var": "VAR_OLDALE_RIVAL_STATE",
-      "var_value": "1",
-      "script": "OldaleTown_EventScript_RivalTrigger3"
-    },
-    {
-      "type": "trigger",
-      "x": 17,
-      "y": 21,
-      "elevation": 3,
-      "var": "VAR_OLDALE_RIVAL_STATE",
-      "var_value": "1",
-      "script": "OldaleTown_EventScript_RivalTrigger3"
-    },
-    {
-      "type": "trigger",
-      "x": 18,
-      "y": 21,
-      "elevation": 3,
-      "var": "VAR_OLDALE_RIVAL_STATE",
-      "var_value": "1",
-      "script": "OldaleTown_EventScript_RivalTrigger3"
-    },
-    {
-      "type": "trigger",
-      "x": 19,
-      "y": 21,
-      "elevation": 3,
-      "var": "VAR_OLDALE_RIVAL_STATE",
-      "var_value": "1",
-      "script": "OldaleTown_EventScript_RivalTrigger3"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 15,
-      "elevation": 3,
-      "var": "VAR_OLDALE_TOWN_STATE",
-      "var_value": "0",
-      "script": "OldaleTown_EventScript_BlockedPath"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 14,
-      "elevation": 3,
-      "var": "VAR_OLDALE_TOWN_STATE",
-      "var_value": "0",
-      "script": "OldaleTown_EventScript_BlockedPath"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 14,
-      "elevation": 3,
-      "var": "VAR_OLDALE_TOWN_STATE",
-      "var_value": "0",
-      "script": "OldaleTown_EventScript_BlockedPath"
-    },
-    {
-      "type": "trigger",
       "x": 4,
       "y": 13,
       "elevation": 3,
@@ -272,6 +177,15 @@
       "type": "trigger",
       "x": 4,
       "y": 12,
+      "elevation": 3,
+      "var": "VAR_OLDALE_TOWN_STATE",
+      "var_value": "0",
+      "script": "OldaleTown_EventScript_BlockedPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 15,
       "elevation": 3,
       "var": "VAR_OLDALE_TOWN_STATE",
       "var_value": "0",

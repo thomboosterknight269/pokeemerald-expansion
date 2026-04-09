@@ -111,14 +111,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	waitmessage
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
-	end
-
-LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::
-	setvar VAR_0x8004, 0
-	call Common_EventScript_NameReceivedPartyMon
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
 
@@ -669,10 +661,6 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "used earlier.\p"
 	.string "{PLAYER} received the {STR_VAR_1}!$"
 
-LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
-	.string "PROF. LUCA: While you're at it, why not\n"
-	.string "give a nickname to that {STR_VAR_1}?$"
-
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "PROF. LUCA: NORA, another trainer\n"
 	.string "helping me has been away for a while...\p"
@@ -713,15 +701,14 @@ LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
 	.string "NORA: Oh, wow, {PLAYER}{KUN}!\n"
 	.string "You got a POKéDEX, too!\p"
-	.string "That's wonderful!\n"
+	.string "How wonderful!\n"
 	.string "Here's something from me to you! <3$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
 	.string "NORA: I suggest you get lots of\n"
 	.string "different POKéMON!\p"
 	.string "You'll never know when you need\n"
-	.string "backup POKéMON when your main\l"
-	.string "team gets confiscated! <3$"
+	.string "to switch it up you know!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 	.string "Huh???? Your BAG's full.$"

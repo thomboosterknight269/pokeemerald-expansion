@@ -1234,11 +1234,11 @@ static enum CancelerResult CancelerMoveFailure(struct BattleContext *ctx)
     {
         u32 rand = RandomUniform(RNG_PRESENT, 0, 0xFF);
         if (rand < 102)
-            gBattleStruct->presentBasePower = 40;
+            gBattleStruct->presentBasePower = 50;
         else if (rand < 178)
-            gBattleStruct->presentBasePower = 80;
+            gBattleStruct->presentBasePower = 100;
         else if (rand < 204)
-            gBattleStruct->presentBasePower = 120;
+            gBattleStruct->presentBasePower = 150;
         else
             gBattleStruct->presentBasePower = 0; // Healing
     }

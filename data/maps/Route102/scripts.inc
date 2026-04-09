@@ -235,9 +235,9 @@ Route102_Text_NeroSpeech :
 	.string "You think you're SOOOOOOO \n"
 	.string "much better, huh?\p"
 	.string "This is merely just the beginning...\p"
-	.string "I'll show this world \n"
-	.string "what happens without their \l"
-	.string "precious rules...$"
+	.string "I'll show everyone what \n"
+	.string "happens when they cross me, \l"
+	.string "Nero...$"
 	end
 
 goBack :

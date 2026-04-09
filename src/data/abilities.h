@@ -286,8 +286,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_HUGE_POWER] =
     {
-        .name = _("Huge Power"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .name = _("Huge Power!"),
+        .description = COMPOUND_STRING("Raises Attack and PP."),
         .aiRating = 10,
     },
 
@@ -559,8 +559,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_PURE_POWER] =
     {
-        .name = _("Pure Power"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .name = _("Pure Power!"),
+        .description = COMPOUND_STRING("Raises Attack and PP."),
         .aiRating = 10,
     },
 

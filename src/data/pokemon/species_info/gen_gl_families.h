@@ -62,7 +62,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .levelUpLearnset = sWickoonLevelUpLearnset,
         .teachableLearnset = sBulbasaurTeachableLearnset,
         .eggMoveLearnset = sBulbasaurEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_WICKOON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_WICKOON}),
     },
 
     [SPECIES_WICKOON] =
@@ -123,7 +123,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         FOOTPRINT(Ivysaur)
         .levelUpLearnset = sWickoonLevelUpLearnset,
         .teachableLearnset = sIvysaurTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_FLORARCH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_FLORARCH}),
     },
 
     [SPECIES_FLORARCH] =
@@ -236,7 +236,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .levelUpLearnset = sCharmanderLevelUpLearnset,
         .teachableLearnset = sCharmanderTeachableLearnset,
         .eggMoveLearnset = sCharmanderEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_ALFLAME}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_ALFLAME}),
     },
 
     [SPECIES_ALFLAME] =
@@ -293,10 +293,10 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 5, SHADOW_SIZE_M)
-        FOOTPRINT(Charmeleon),
+        FOOTPRINT(Charmeleon)
         .levelUpLearnset = sCharmeleonLevelUpLearnset,
         .teachableLearnset = sCharmeleonTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_LOBLAZE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_LOBLAZE}),
     },
 
     [SPECIES_LOBLAZE] =
@@ -416,7 +416,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .levelUpLearnset = sSquirtleLevelUpLearnset,
         .teachableLearnset = sSquirtleTeachableLearnset,
         .eggMoveLearnset = sSquirtleEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_AQUANGST}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_AQUANGST}),
     },
 
     [SPECIES_AQUANGST] =
@@ -476,7 +476,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         FOOTPRINT(Wartortle)
         .levelUpLearnset = sWartortleLevelUpLearnset,
         .teachableLearnset = sWartortleTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_DECEPHALO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_DECEPHALO}),
     },
 
     [SPECIES_DECEPHALO] =
@@ -658,7 +658,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         FOOTPRINT(Metapod)
         .levelUpLearnset = sMetapodLevelUpLearnset,
         .teachableLearnset = sMetapodTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_BALLISTAQUILA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_BALLISQUILA}),
     },
 
 #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -671,7 +671,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
     #define BUTTERFREE_EXP_YIELD 160
 #endif
 
-    [SPECIES_BALLISTAQUILA] =
+    [SPECIES_BALLISQUILA] =
     {
         .baseHP        = 75,
         .baseAttack    = 70,
@@ -691,9 +691,9 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
         .abilities = { ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_MEGA_LAUNCHER },
-        .speciesName = _("Ballistaquila"),
+        .speciesName = _("Ballisquila"),
         .cryId = CRY_BUTTERFREE,
-        .natDexNum = NATIONAL_DEX_BALLISTAQUILA,
+        .natDexNum = NATIONAL_DEX_BALLISQUILA,
         .categoryName = _("Gun Bird"),
         .height = 11,
         .weight = 320,
@@ -1142,10 +1142,10 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         FOOTPRINT(Pidgeot)
         .levelUpLearnset = sPidgeotLevelUpLearnset,
         .teachableLearnset = sPidgeotTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_KOKOROKUN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_KOKOROKOON}),
     },
 
-    [SPECIES_KOKOROKUN] =
+    [SPECIES_KOKOROKOON] =
     {
         .baseHP        = 30,
         .baseAttack    = 56,
@@ -1166,7 +1166,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Kokorokun"),
         .cryId = CRY_RATTATA,
-        .natDexNum = NATIONAL_DEX_KOKOROKUN,
+        .natDexNum = NATIONAL_DEX_KOKOROKOON,
         .categoryName = _("Cocoon"),
         .height = 3,
         .weight = 35,
@@ -1324,7 +1324,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .levelUpLearnset = sTreeckoLevelUpLearnset,
         .teachableLearnset = sTreeckoTeachableLearnset,
         .eggMoveLearnset = sTreeckoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_SNACOLYTE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_SNACOLYTE}),
     },
 
     [SPECIES_SNACOLYTE] =
@@ -1385,7 +1385,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         FOOTPRINT(Grovyle)
         .levelUpLearnset = sGrovyleLevelUpLearnset,
         .teachableLearnset = sGrovyleTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SERAPENT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_SERAPENT}),
     },
 
     [SPECIES_SERAPENT] =
@@ -1515,7 +1515,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .levelUpLearnset = sTorchicLevelUpLearnset,
         .teachableLearnset = sTorchicTeachableLearnset,
         .eggMoveLearnset = sTorchicEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_EMOLTEEN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_EMOLTEEN}),
     },
 
     [SPECIES_EMOLTEEN] =
@@ -1575,7 +1575,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         FOOTPRINT(Combusken)
         .levelUpLearnset = sCombuskenLevelUpLearnset,
         .teachableLearnset = sCombuskenTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_ASHASSIN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_ASHASSIN}),
     },
 
     [SPECIES_ASHASSIN] =
@@ -1705,7 +1705,7 @@ const struct SpeciesInfo gSpeciesInfoGenGL[] =
         .levelUpLearnset = sMudkipLevelUpLearnset,
         .teachableLearnset = sMudkipTeachableLearnset,
         .eggMoveLearnset = sMudkipEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_WARRUFF}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_WARRUFF}),
     },
 
     [SPECIES_WARRUFF] =

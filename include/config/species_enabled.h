@@ -15,6 +15,7 @@
 #define P_GEN_7_POKEMON                  FALSE // Generation 7 Pokémon (SM, USUM, LGPE)
 #define P_GEN_8_POKEMON                  FALSE // Generation 8 Pokémon (SwSh, BDSP, LA)
 #define P_GEN_9_POKEMON                  FALSE // Generation 9 Pokémon (SV)
+#define P_GEN_FAKEMON                    TRUE //All fakemon
 
 // Setting this to TRUE will add the new evolutions to the Regional Dex.
 #define P_NEW_EVOS_IN_REGIONAL_DEX       TRUE
@@ -602,5 +603,14 @@
 #define P_FAMILY_IRON_CROWN              P_GEN_9_POKEMON
 #define P_FAMILY_TERAPAGOS               P_GEN_9_POKEMON
 #define P_FAMILY_PECHARUNT               P_GEN_9_POKEMON
+
+//fakemon
+#define P_FAMILY_SPOILEAF                P_GEN_FAKEMON
+#define P_FAMILY_KINTEN                  P_GEN_FAKEMON
+#define P_FAMILY_SADROP                 P_GEN_FAKEMON
+#define P_FAMILY_PEWPEK                  P_GEN_FAKEMON
+#define P_FAMILY_PITCHICK                P_GEN_FAKEMON
+#define P_FAMILY_RATATO                  P_GEN_FAKEMON
+#define P_FAMILY_DAISQUIRM               P_GEN_FAKEMON
 
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H

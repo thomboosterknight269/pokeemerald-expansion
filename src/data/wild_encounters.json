@@ -85,62 +85,62 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_PEWPEK"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_PEWPEK"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_RATATO"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PIDGEY"
+                "species": "SPECIES_PEWPEK"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PIDGEOT"
+                "species": "SPECIES_PITCHICK"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PIDGEOT"
+                "species": "SPECIES_RATATO"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_WEEDLE"
+                "species": "SPECIES_RATATO"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_WEEDLE"
+                "species": "SPECIES_DAISQUIRM"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_WEEDLE"
+                "species": "SPECIES_DAISQUIRM"
               },
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_PIDGEY"
+                "species": "SPECIES_DAISQUIRM"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PIDGEY"
+                "species": "SPECIES_PEWPEK"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_PIDGEY"
+                "species": "SPECIES_PITCHICK"
               }
             ]
           }

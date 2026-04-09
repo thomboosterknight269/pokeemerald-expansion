@@ -6650,7 +6650,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         break;
     case ABILITY_WATER_BUBBLE:
         if (moveType == TYPE_WATER)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_STEELWORKER:
         if (moveType == TYPE_STEEL)
@@ -6933,9 +6933,12 @@ static inline u32 CalcAttackStat(struct BattleContext *ctx)
     switch (ctx->abilityAtk)
     {
     case ABILITY_HUGE_POWER:
-    case ABILITY_PURE_POWER:
         if (IsBattleMovePhysical(move))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_PURE_POWER:
+        if (IsBattleMoveSpecial(move))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_SLOW_START:
         if (gBattleMons[battlerAtk].volatiles.slowStartTimer > 0)
@@ -7266,6 +7269,11 @@ static inline u32 CalcDefenseStat(struct BattleContext *ctx)
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         }
         break;
+    case ABILITY_PRESSURE:
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.2));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_PRESSURE);
+        break;
     default:
         break;
     }
@@ -7368,10 +7376,10 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct BattleContext *ctx)
     if (ctx->moveType == TYPE_MYSTERY)
         return UQ_4_12(1.0);
     else if (gBattleStruct->pledgeMove && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(ctx->battlerAtk), ctx->moveType))
-        return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.8) : UQ_4_12(1.4);
+        return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.5) : UQ_4_12(1.25);
     else if (!IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType) || ctx->move == MOVE_STRUGGLE || ctx->move == MOVE_NONE)
-        return (ctx->abilityAtk == ABILITY_PROFIENCY) ? UQ_4_12(1.4) : UQ_4_12(1.0);
-    return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.8) : UQ_4_12(1.4);
+        return (ctx->abilityAtk == ABILITY_PROFIENCY) ? UQ_4_12(1.25) : UQ_4_12(1.0);
+    return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.5) : UQ_4_12(1.25);
 }
 
 // Utility Umbrella holders take normal damage from what would be rain- and sun-weakened attacks.
@@ -7548,7 +7556,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct BattleContext *ctx)
     case ABILITY_FLUFFY:
         if (ctx->moveType == TYPE_FIRE && !IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
         {
-            modifier = UQ_4_12(1.8);
+            modifier = UQ_4_12(1.5);
             recordAbility = TRUE;
         }
         if (ctx->moveType != TYPE_FIRE && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
@@ -7611,7 +7619,7 @@ static inline uq4_12_t GetAttackerItemsModifier(enum BattlerId battlerAtk, uq4_1
         return uq4_12_add(UQ_4_12(1.0), metronomeBoostBase * metronomeTurns);
         break;
     case HOLD_EFFECT_EXPERT_BELT:
-        if (typeEffectivenessModifier >= UQ_4_12(1.8))
+        if (typeEffectivenessModifier >= UQ_4_12(1.5))
             return UQ_4_12(1.2);
         break;
     case HOLD_EFFECT_LIFE_ORB:
