@@ -28,6 +28,8 @@
 #include "intro_frlg.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
+#include "main_menu.h"
+#include "event_data.h"
 
 /*
     The intro is grouped into the following scenes
