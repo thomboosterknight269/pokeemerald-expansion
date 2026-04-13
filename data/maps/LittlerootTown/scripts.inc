@@ -245,14 +245,6 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeFemale::
 	setobjectxy LOCALID_LITTLEROOT_BIRCH, 14, 10
 	end
 
-LittlerootTown_EventScript_FatMan::
-	msgbox LittlerootTown_Text_CanUsePCToStoreItems, MSGBOX_NPC
-	end
-
-LittlerootTown_EventScript_Boy::
-	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
-	end
-
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
@@ -941,20 +933,6 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "…But please be careful.\n"
 	.string "If anything happens, you can come home.\p"
 	.string "Go on, go get them, honey!$"
-
-LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "I'm indifferent to technology \n"
-	.string "to be honest. \p"
-	.string "I'm thinking about taking up\n"
-	.string "hiking.$"
-
-LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. LUCA spends days in her LAB\n"
-	.string "playing video games and watching anime,\l"
-	.string "then suddenly she would just vanish,\l"
-	.string "coming out of that building.\p"
-	.string "How did she ever become a\n"
-	.string "Pokemon Professor?$"
 	
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "mmmmmm.....no\p"
