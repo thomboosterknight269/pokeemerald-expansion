@@ -35,32 +35,12 @@ Route110_EventScript_Boy2::
 	msgbox Route110_Text_WhichShouldIChoose, MSGBOX_NPC
 	end
 
-Route110_EventScript_SlateportCitySign::
-	msgbox Route110_Text_SlateportCitySign, MSGBOX_SIGN
-	end
-
-Route110_EventScript_CyclingRoadSign::
-	msgbox Route110_Text_CyclingRoadSign, MSGBOX_SIGN
-	end
-
-Route110_EventScript_VandalizedSign::
-	msgbox Route110_Text_AquaWasHere, MSGBOX_SIGN
-	end
-
 Route110_EventScript_Route103Sign::
 	msgbox Route110_Text_Route103Sign, MSGBOX_SIGN
 	end
 
-Route110_EventScript_SeasideParkingSign::
-	msgbox Route110_Text_SeasideParkingSign, MSGBOX_SIGN
-	end
-
 Route110_EventScript_MauvilleCitySign::
 	msgbox Route110_Text_MauvilleCitySign, MSGBOX_SIGN
-	end
-
-Route110_EventScript_TrainerTipsPrlzSleep::
-	msgbox Route110_Text_TrainerTipsPrlzSleep, MSGBOX_SIGN
 	end
 
 Route110_EventScript_TrainerTipsRegisterItems::
@@ -308,20 +288,6 @@ Route110_Text_AcroBikesDoNotQualify:
 	.string "ACRO BIKES do not qualify for rating.\n"
 	.string "They are easy to turn, so it's not fair.$"
 
-Route110_Text_SlateportCitySign:
-	.string "ROUTE 110\n"
-	.string "{DOWN_ARROW} SLATEPORT CITY$"
-
-Route110_Text_CyclingRoadSign:
-	.string "SEASIDE CYCLING ROAD$"
-
-Route110_Text_AquaWasHere:
-	.string "“TEAM AQUA was here!”\p"
-	.string "Someone painted that onto this sign,\n"
-	.string "but then someone else painted over it.\p"
-	.string "“TEAM MAGMA rules!” is what it\n"
-	.string "says now.$"
-
 Route110_Text_Route103Sign:
 	.string "ROUTE 110\n"
 	.string "{LEFT_ARROW} ROUTE 103$"
@@ -332,13 +298,6 @@ Route110_Text_SeasideParkingSign:
 Route110_Text_MauvilleCitySign:
 	.string "ROUTE 110\n"
 	.string "{UP_ARROW} MAUVILLE CITY$"
-
-Route110_Text_TrainerTipsPrlzSleep:
-	.string "TRAINER TIPS\p"
-	.string "The foe can be made helpless by\n"
-	.string "paralyzing it or causing it to sleep.\p"
-	.string "It is an important technique for\n"
-	.string "POKéMON battles.$"
 
 Route110_Text_TrainerTipsRegisterItems:
 	.string "TRAINER TIPS\p"

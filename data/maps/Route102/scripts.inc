@@ -1,6 +1,5 @@
 Route102_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route102_OnTransition
-	setvar VAR_ROUTE_102_STATE, 0
 	.byte 0
 
 Route102_OnTransition:
@@ -121,10 +120,6 @@ Route102_EventScript_RouteSignOldale::
 	msgbox Route102_Text_RouteSignOldale, MSGBOX_SIGN
 	end
 
-Route102_EventScript_RouteSignPetalburg::
-	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
-	end
-
 Route102_EventScript_RouteSignFlower::
 	msgbox Route102_Text_RouteSignFlower, MSGBOX_SIGN
 	end
@@ -193,10 +188,6 @@ Route102_Text_RouteSignOldale:
 	.string "ROUTE 102\n"
 	.string "{RIGHT_ARROW} Aster Town$"
 
-Route102_Text_RouteSignPetalburg:
-	.string "ROUTE 102\n"
-	.string "{LEFT_ARROW} PETALBURG CITY$"
-
 Route102_Text_RouteSignFlower:
 	.string "RIP Calvin. 20XX - 20XX \n"
 	.string "Was once an aspiring trainer,\l"
@@ -256,7 +247,7 @@ GoAway :
 	step_end
 
 Irritated :
-	jump_in_place_up_down
+	jump_in_place_up
 	emote_exclamation_mark
 	delay_16
 	step_end

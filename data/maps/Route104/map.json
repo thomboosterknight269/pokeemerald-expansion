@@ -32,8 +32,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 16,
-      "y": 59,
+      "x": 18,
+      "y": 61,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -399,7 +399,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 16,
-      "y": 58,
+      "y": 57,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -520,8 +520,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 32,
-      "y": 50,
+      "x": 30,
+      "y": 66,
       "elevation": 3,
       "item": "ITEM_POTION",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_POTION"
@@ -536,8 +536,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 29,
-      "y": 61,
+      "x": 32,
+      "y": 50,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE"

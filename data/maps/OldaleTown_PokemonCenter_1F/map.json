@@ -61,14 +61,14 @@
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_OLDALE_TOWN",
-      "dest_warp_id": "OldaleTown_PokemonCenter"
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_OLDALE_TOWN",
-      "dest_warp_id": "OldaleTown_PokemonCenter"
+      "dest_warp_id": "0"
     },
     {
       "x": 1,

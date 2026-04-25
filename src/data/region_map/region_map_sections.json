@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "id": "MAPSEC_LITTLEROOT_TOWN",
-      "name": "DAWNA TOWN",
+      "name": "EVERBLOOM PATH",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -74,7 +74,7 @@
     },
     {
       "id": "MAPSEC_MAUVILLE_CITY",
-      "name": "MAUVILLE CITY",
+      "name": "TACHYON CITY",
       "x": 8,
       "y": 6,
       "width": 2,
@@ -82,7 +82,7 @@
     },
     {
       "id": "MAPSEC_RUSTBORO_CITY",
-      "name": "RUSTBORO CITY",
+      "name": "SOLARIOS CITY",
       "x": 0,
       "y": 5,
       "width": 1,
@@ -498,7 +498,7 @@
     },
     {
       "id": "MAPSEC_NEW_MAUVILLE",
-      "name": "NEW MAUVILLE",
+      "name": "NEW TACHYON",
       "x": 8,
       "y": 7,
       "width": 1,
@@ -773,7 +773,7 @@
     },
     {
       "id": "MAPSEC_SAFFRON_CITY",
-      "name": "SAFFRON CITY",
+      "name": "SOLARIOS CITY",
       "x": 14,
       "y": 6,
       "width": 1,
@@ -1285,7 +1285,7 @@
     },
     {
       "id": "MAPSEC_RUIN_VALLEY",
-      "name": "RUIN VALLEY",
+      "name": "SOLARIOS CITY",
       "x": 16,
       "y": 7,
       "width": 2,

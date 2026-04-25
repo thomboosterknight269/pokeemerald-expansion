@@ -1059,34 +1059,15 @@ EventScript_WhiteOut::
 	end
 
 EventScript_AfterWhiteOutHeal::
-	lockall
-	msgbox gText_FirstShouldRestoreMonsHealth
-	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
-	call_if_unset FLAG_DEFEATED_SOLAS_GYM, EventScript_AfterWhiteOutHealMsgPreRoxanne
-	call_if_set FLAG_DEFEATED_SOLAS_GYM, EventScript_AfterWhiteOutHealMsg
-	applymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
-	fadedefaultbgm
-	releaseall
 	end
 
 EventScript_AfterWhiteOutHealMsgPreRoxanne::
-	msgbox gText_MonsHealedShouldBuyPotions
 	return
 
 EventScript_AfterWhiteOutHealMsg::
-	msgbox gText_MonsHealed
 	return
 
 EventScript_AfterWhiteOutMomHeal::
-	lockall
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	msgbox gText_HadQuiteAnExperienceTakeRest
-	call Common_EventScript_OutOfCenterPartyHeal
-	msgbox gText_MomExplainHPGetPotions
-	fadedefaultbgm
-	releaseall
 	end
 
 EventScript_ResetMrBriney::
@@ -1736,3 +1717,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/NewBeginning/scripts.inc"

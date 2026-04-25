@@ -83,53 +83,53 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_PEWPEK"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_PEWPEK"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_RATATO"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_PEWPEK"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_PITCHICK"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_RATATO"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_RATATO"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_DAISQUIRM"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_DAISQUIRM"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_DAISQUIRM"
               },
               {
@@ -221,63 +221,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 20,
+                "max_level": 20,
                 "species": "SPECIES_POOCHYENA"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 60,
+                "max_level": 60,
                 "species": "SPECIES_POOCHYENA"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 60,
+                "max_level": 60,
                 "species": "SPECIES_POOCHYENA"
               },
               {
-                "min_level": 4,
-                "max_level": 4,
+                "min_level": 60,
+                "max_level": 60,
                 "species": "SPECIES_POOCHYENA"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 60,
+                "max_level": 60,
                 "species": "SPECIES_WINGULL"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 70,
+                "max_level": 70,
                 "species": "SPECIES_ZIGZAGOON"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 70,
+                "max_level": 70,
                 "species": "SPECIES_ZIGZAGOON"
               },
               {
-                "min_level": 4,
-                "max_level": 4,
+                "min_level": 80,
+                "max_level": 80,
                 "species": "SPECIES_ZIGZAGOON"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_WINGULL"
               },
               {
-                "min_level": 3,
-                "max_level": 3,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_WINGULL"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_WINGULL"
               },
               {
-                "min_level": 4,
-                "max_level": 4,
+                "min_level": 90,
+                "max_level": 90,
                 "species": "SPECIES_WINGULL"
               }
             ]
